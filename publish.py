@@ -27,13 +27,14 @@ def save_index(posts):
         json.dump(posts, f, ensure_ascii=False, indent=2)
 
 def slugify(text):
-    # Extract meaningful English words/tickers, remove Chinese + special chars
-    text = re.sub(r'[^a-zA-Z0-9\s-]', ' ', text.lower()).strip()
-    text = re.sub(r'\s+', '-', text)
-    # If slug is empty or too short, use 'daily-brief' as fallback
-    if len(text) < 3:
-        return 'daily-brief'
-    return text
+    # Use the title as-is, only sanitize for URL
+    # Keep chinese chars; the date prefix ensures uniqueness
+    text = text.strip()
+    # Keep chinese + english + numbers, replace spaces/special with hyphens
+    text = re.sub(r'[\s]+', '-', text)
+    text = re.sub(r'[^\w\u4e00-\u9fff-]', '', text)
+    text = re.sub(r'-+', '-', text).strip('-')
+    return text or 'daily-brief'
 
 def html_to_text(html):
     """Strip HTML tags for meta description."""
