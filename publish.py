@@ -12,7 +12,7 @@ import subprocess
 import sys
 from datetime import datetime
 
-REPO_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+REPO_DIR = os.path.dirname(os.path.abspath(__file__))
 POSTS_DIR = os.path.join(REPO_DIR, 'posts')
 INDEX_JSON = os.path.join(POSTS_DIR, 'index.json')
 
