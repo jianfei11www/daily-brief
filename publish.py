@@ -27,14 +27,8 @@ def save_index(posts):
         json.dump(posts, f, ensure_ascii=False, indent=2)
 
 def slugify(text):
-    # Use the title as-is, only sanitize for URL
-    # Keep chinese chars; the date prefix ensures uniqueness
-    text = text.strip()
-    # Keep chinese + english + numbers, replace spaces/special with hyphens
-    text = re.sub(r'[\s]+', '-', text)
-    text = re.sub(r'[^\w\u4e00-\u9fff-]', '', text)
-    text = re.sub(r'-+', '-', text).strip('-')
-    return text or 'daily-brief'
+    # Date-prefix ensures uniqueness; title part can be empty (use 'brief' as fallback)
+    return 'brief'
 
 def html_to_text(html):
     """Strip HTML tags for meta description."""
@@ -50,8 +44,9 @@ def main():
     parser.add_argument('--body', required=True, help='HTML body content')
     args = parser.parse_args()
 
-    # Generate slug
-    slug = f"{args.date}-{slugify(args.title)}"
+    # Generate slug (date-prefixed for uniqueness)
+    date_prefix = args.date.replace('-', '')
+    slug = f"{date_prefix}-{slugify(args.title)}"
     desc = args.desc or html_to_text(args.body)[:120]
 
     # Load template
