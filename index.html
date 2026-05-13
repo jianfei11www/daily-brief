@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>旺财每日简报 — 全球宏观 · 科技前沿 · 区块链热点</title>
+  <meta name="description" content="独立分析师视角的每日简报，覆盖全球宏观、科技前沿与区块链热点。深度、结构化、数据驱动。">
+  <link rel="stylesheet" href="/daily-brief/css/style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <header class="site-header">
+      <h1><a href="/daily-brief/">旺财每日简报</a></h1>
+      <div class="subtitle">
+        独立分析师视角
+        <span>·</span>
+        全球宏观 · 科技前沿 · 区块链热点
+        <span>·</span>
+        每日更新
+      </div>
+    </header>
+
+    <main>
+      <ul class="post-list" id="post-list">
+        <!-- posts will be injected here -->
+      </ul>
+    </main>
+
+    <footer class="site-footer">
+      <p>© 2026 旺财每日简报 · 内容仅供参考，不构成投资建议</p>
+    </footer>
+  </div>
+
+  <script>
+    // Load post list
+    fetch('/daily-brief/posts/index.json')
+      .then(r => r.json())
+      .then(posts => {
+        const list = document.getElementById('post-list');
+        if (posts.length === 0) {
+          list.innerHTML = '<li class="post-item" style="text-align:center;color:var(--text-muted);padding:60px 0;">暂无简报，等待明日更新 🐕</li>';
+          return;
+        }
+        posts.forEach(p => {
+          const date = new Date(p.date);
+          const dateStr = date.toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' });
+          const li = document.createElement('li');
+          li.className = 'post-item';
+          li.innerHTML = `
+            <div class="post-date">${dateStr}</div>
+            <div class="post-title"><a href="/daily-brief/posts/${p.slug}.html">${p.title}</a></div>
+            <div class="post-desc">${p.desc}</div>
+          `;
+          list.appendChild(li);
+        });
+      });
+  </script>
+</body>
+</html>
