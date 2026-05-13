@@ -34,10 +34,6 @@
     .section-tabs .tab:hover {
       border-color: var(--accent);
     }
-    .section-content { display: none; }
-    .section-content.active { display: block; }
-    .private-sections { display: none; }
-    .private-sections.show { display: block; }
     .lock-badge {
       font-size: 11px;
       background: #fef2f2;
@@ -46,6 +42,7 @@
       border-radius: 4px;
       margin-left: 4px;
     }
+    .hidden { display: none !important; }
   </style>
 </head>
 <body>
@@ -62,36 +59,34 @@
     </header>
 
     <main>
-      <!-- 板块导航（私密板块仅密钥用户可见） -->
+      <!-- 板块导航 -->
       <div class="section-tabs" id="tabs">
         <a class="tab active" data-section="brief">📊 每日简报</a>
-        <span class="private-sections" id="private-tabs">
-          <a class="tab" data-section="chain">🔗 链上热点 <span class="lock-badge">🔒</span></a>
-          <a class="tab" data-section="launch">🚀 新币融资 <span class="lock-badge">🔒</span></a>
-          <a class="tab" data-section="hkipo">🇭🇰 港股打新 <span class="lock-badge">🔒</span></a>
-        </span>
+        <a class="tab hidden" data-section="chain" id="tab-chain">🔗 链上热点 <span class="lock-badge">🔒</span></a>
+        <a class="tab hidden" data-section="launch" id="tab-launch">🚀 新币融资 <span class="lock-badge">🔒</span></a>
+        <a class="tab hidden" data-section="hkipo" id="tab-hkipo">🇭🇰 港股打新 <span class="lock-badge">🔒</span></a>
       </div>
 
       <!-- 每日简报（公开） -->
-      <div class="section-content active" id="section-brief">
+      <div id="section-brief">
         <ul class="post-list" id="post-list">
         </ul>
       </div>
 
       <!-- 链上热点（私密） -->
-      <div class="section-content private-sections" id="section-chain">
+      <div id="section-chain" class="hidden">
         <ul class="post-list" id="chain-list">
         </ul>
       </div>
 
       <!-- 新币融资（私密） -->
-      <div class="section-content private-sections" id="section-launch">
+      <div id="section-launch" class="hidden">
         <ul class="post-list" id="launch-list">
         </ul>
       </div>
 
       <!-- 港股打新（私密） -->
-      <div class="section-content private-sections" id="section-hkipo">
+      <div id="section-hkipo" class="hidden">
         <ul class="post-list" id="hkipo-list">
         </ul>
       </div>
@@ -104,50 +99,60 @@
 
   <script>
     // 密钥验证
-    const params = new URLSearchParams(window.location.search);
-    const key = params.get('key');
-    const isOwner = (key === '7003');
+    var params = new URLSearchParams(window.location.search);
+    var key = params.get('key');
+    var isOwner = (key === '7003');
 
-    // 显示私密板块
+    // 显示私密板块标签
     if (isOwner) {
-      document.querySelectorAll('.private-sections').forEach(el => el.classList.add('show'));
+      document.getElementById('tab-chain').classList.remove('hidden');
+      document.getElementById('tab-launch').classList.remove('hidden');
+      document.getElementById('tab-hkipo').classList.remove('hidden');
     }
 
     // 板块切换
-    document.querySelectorAll('.tab').forEach(tab => {
+    document.querySelectorAll('.tab').forEach(function(tab) {
       tab.addEventListener('click', function() {
-        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-        document.querySelectorAll('.section-content').forEach(s => s.classList.remove('active'));
+        // 隐藏所有板块
+        document.querySelectorAll('.tab').forEach(function(t) { t.classList.remove('active'); });
+        document.getElementById('section-brief').classList.add('hidden');
+        document.getElementById('section-chain').classList.add('hidden');
+        document.getElementById('section-launch').classList.add('hidden');
+        document.getElementById('section-hkipo').classList.add('hidden');
+
+        // 显示选中板块
         this.classList.add('active');
-        const section = this.getAttribute('data-section');
-        document.getElementById('section-' + section).classList.add('active');
+        var section = this.getAttribute('data-section');
+        document.getElementById('section-' + section).classList.remove('hidden');
       });
     });
+
+    // 默认显示每日简报
+    document.getElementById('section-brief').classList.remove('hidden');
 
     // 加载文章列表
     function loadPosts(jsonUrl, listId, pathPrefix) {
       fetch(jsonUrl)
-        .then(r => r.json())
-        .then(posts => {
-          const list = document.getElementById(listId);
+        .then(function(r) { return r.json(); })
+        .then(function(posts) {
+          var list = document.getElementById(listId);
           if (posts.length === 0) {
             list.innerHTML = '<li class="post-item" style="text-align:center;color:var(--text-muted);padding:40px 0;">暂无内容，等待更新 🐕</li>';
             return;
           }
-          posts.forEach(p => {
-            const date = new Date(p.date);
-            const dateStr = date.toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' });
-            const li = document.createElement('li');
+          posts.forEach(function(p) {
+            var date = new Date(p.date);
+            var dateStr = date.toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' });
+            var li = document.createElement('li');
             li.className = 'post-item';
-            li.innerHTML = `
-              <div class="post-date">${dateStr}</div>
-              <div class="post-title"><a href="${pathPrefix}${p.slug}.html${isOwner ? '?key=7003' : ''}">${p.title}</a></div>
-              <div class="post-desc">${p.desc}</div>
-            `;
+            var href = pathPrefix + p.slug + '.html' + (isOwner ? '?key=7003' : '');
+            li.innerHTML = '<div class="post-date">' + dateStr + '</div>' +
+              '<div class="post-title"><a href="' + href + '">' + p.title + '</a></div>' +
+              '<div class="post-desc">' + p.desc + '</div>';
             list.appendChild(li);
           });
         })
-        .catch(() => {
+        .catch(function() {
           document.getElementById(listId).innerHTML = '<li class="post-item" style="text-align:center;color:var(--text-muted);padding:40px 0;">暂无内容 🐕</li>';
         });
     }
