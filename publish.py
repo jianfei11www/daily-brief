@@ -27,7 +27,8 @@ def save_index(posts):
         json.dump(posts, f, ensure_ascii=False, indent=2)
 
 def slugify(text):
-    text = re.sub(r'[^\w\s-]', '', text.lower())
+    # Remove Chinese characters and special chars, keep English/numbers/hyphens
+    text = re.sub(r'[^a-zA-Z0-9\s-]', '', text.lower())
     return re.sub(r'[-\s]+', '-', text).strip('-')
 
 def html_to_text(html):
