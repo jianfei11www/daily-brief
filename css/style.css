@@ -234,6 +234,7 @@ body {
 /* Color indicators */
 .up { color: var(--green); }
 .down { color: var(--red); }
+.important { color: var(--red); font-weight: 700; }
 
 /* Responsive */
 @media (max-width: 600px) {

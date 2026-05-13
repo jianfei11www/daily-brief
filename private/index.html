@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>链研观察 — 私密板块</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="/daily-brief/css/style.css">
+  <style>
+    .section-nav {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .section-card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 24px;
+      background: var(--bg-card);
+      text-decoration: none;
+      color: var(--text);
+      transition: border-color 0.2s;
+    }
+    .section-card:hover {
+      border-color: var(--accent);
+    }
+    .section-card h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+      border: none;
+      padding: 0;
+    }
+    .section-card p {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+    .section-card .badge {
+      display: inline-block;
+      font-size: 11px;
+      background: #fef2f2;
+      color: #dc2626;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header class="site-header">
+      <h1><a href="/daily-brief/private/">链研观察 🔒</a></h1>
+      <div class="subtitle">
+        私密板块
+        <span>·</span>
+        仅限内部查看
+      </div>
+    </header>
+
+    <main>
+      <div class="section-nav">
+        <a class="section-card" href="/daily-brief/private/chain/" id="chain-link">
+          <span class="badge">🔒 私密</span>
+          <h3>🔗 链上热点扫描</h3>
+          <p>ETH / BSC / SOL / Base 链上热点项目 · 每日 12:00 更新</p>
+        </a>
+        <a class="section-card" href="/daily-brief/private/launch/" id="launch-link">
+          <span class="badge">🔒 私密</span>
+          <h3>🚀 Crypto Launch & 融资</h3>
+          <p>新币上线 · 近期融资 · 赚钱机会 · 风险规避 · 每日 15:00 更新</p>
+        </a>
+        <a class="section-card" href="/daily-brief/private/hkipo/" id="hkipo-link">
+          <span class="badge">🔒 私密</span>
+          <h3>🇭🇰 港股打新日报</h3>
+          <p>港股IPO · 认购数据 · 配发结果 · 每日 16:00 更新</p>
+        </a>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <p>© 2026 链研观察 · 内容仅供参考，不构成投资建议</p>
+      <p style="margin-top:4px;"><a href="/daily-brief/" style="color:var(--accent);text-decoration:none;">← 返回公开首页</a></p>
+    </footer>
+  </div>
+
+  <script>
+    // Load latest posts for each section
+    ['chain', 'launch', 'hkipo'].forEach(section => {
+      fetch(`/daily-brief/private/${section}/index.json`)
+        .then(r => r.json())
+        .then(posts => {
+          if (posts.length > 0) {
+            const link = document.getElementById(`${section}-link`);
+            const latest = posts[0];
+            link.href = `/daily-brief/private/${section}/${latest.slug}.html`;
+          }
+        })
+        .catch(() => {});
+    });
+  </script>
+</body>
+</html>
