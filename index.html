@@ -65,6 +65,7 @@
         <a class="tab hidden" data-section="chain" id="tab-chain">🔗 链上热点 <span class="lock-badge">🔒</span></a>
         <a class="tab hidden" data-section="launch" id="tab-launch">🚀 新币融资 <span class="lock-badge">🔒</span></a>
         <a class="tab hidden" data-section="hkipo" id="tab-hkipo">🇭🇰 港股打新 <span class="lock-badge">🔒</span></a>
+        <a class="tab hidden" data-section="stock" id="tab-stock">📈 股票投研 <span class="lock-badge">🔒</span></a>
       </div>
 
       <!-- 每日简报（公开） -->
@@ -90,6 +91,12 @@
         <ul class="post-list" id="hkipo-list">
         </ul>
       </div>
+
+      <!-- 股票投研（私密） -->
+      <div id="section-stock" class="hidden">
+        <ul class="post-list" id="stock-list">
+        </ul>
+      </div>
     </main>
 
     <footer class="site-footer">
@@ -108,6 +115,7 @@
       document.getElementById('tab-chain').classList.remove('hidden');
       document.getElementById('tab-launch').classList.remove('hidden');
       document.getElementById('tab-hkipo').classList.remove('hidden');
+      document.getElementById('tab-stock').classList.remove('hidden');
     }
 
     // 板块切换
@@ -119,6 +127,7 @@
         document.getElementById('section-chain').classList.add('hidden');
         document.getElementById('section-launch').classList.add('hidden');
         document.getElementById('section-hkipo').classList.add('hidden');
+        document.getElementById('section-stock').classList.add('hidden');
 
         // 显示选中板块
         this.classList.add('active');
@@ -165,6 +174,7 @@
       loadPosts('/daily-brief/private/chain/index.json', 'chain-list', '/daily-brief/private/chain/');
       loadPosts('/daily-brief/private/launch/index.json', 'launch-list', '/daily-brief/private/launch/');
       loadPosts('/daily-brief/private/hkipo/index.json', 'hkipo-list', '/daily-brief/private/hkipo/');
+      loadPosts('/daily-brief/private/stock/index.json', 'stock-list', '/daily-brief/private/stock/');
     }
   </script>
 </body>

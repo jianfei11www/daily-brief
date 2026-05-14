@@ -75,6 +75,11 @@
           <h3>🇭🇰 港股打新日报</h3>
           <p>港股IPO · 认购数据 · 配发结果 · 每日 16:00 更新</p>
         </a>
+        <a class="section-card" href="/daily-brief/private/stock/" id="stock-link">
+          <span class="badge">🔒 私密</span>
+          <h3>📈 股票投研</h3>
+          <p>美股 / 港股 / 行业公司研究 · 完整投研报告归档</p>
+        </a>
       </div>
     </main>
 
@@ -86,7 +91,7 @@
 
   <script>
     // Load latest posts for each section
-    ['chain', 'launch', 'hkipo'].forEach(section => {
+    ['chain', 'launch', 'hkipo', 'stock'].forEach(section => {
       fetch(`/daily-brief/private/${section}/index.json`)
         .then(r => r.json())
         .then(posts => {
