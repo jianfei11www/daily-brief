@@ -246,16 +246,23 @@ body {
 }
 
 /* === Tables === */
+.table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 20px 0;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
 .article-body table {
   width: 100%;
+  min-width: 560px;
   border-collapse: separate;
   border-spacing: 0;
-  margin: 20px 0;
   font-size: 14px;
   background: var(--bg);
   border-radius: var(--radius);
   overflow: hidden;
-  border: 1px solid var(--border);
 }
 
 .article-body thead th {
@@ -340,17 +347,17 @@ body {
 
 /* === Responsive === */
 @media (max-width: 600px) {
-  .wrapper { padding: 0 16px; }
+  .wrapper { padding: 0 14px; }
   .site-header { padding: 28px 0 20px; }
   .site-header h1 { font-size: 22px; }
-  .article-header h2 { font-size: 22px; }
-  .article-body h2 { font-size: 17px; padding: 12px 16px; }
+  .article-header h2 { font-size: 20px; }
+  .article-body h2 { font-size: 17px; padding: 12px 14px; }
   .article-body h3 { font-size: 15px; }
   .article-body p { font-size: 14px; padding: 6px 10px; }
   .article-body li { font-size: 14px; padding: 10px 12px; }
-  .article-body table { font-size: 12px; }
-  .article-body thead th { padding: 10px 10px; font-size: 11px; }
-  .article-body tbody td { padding: 10px 10px; font-size: 13px; }
+  .article-body table { font-size: 13px; min-width: 480px; }
+  .article-body thead th { padding: 8px 10px; font-size: 11px; }
+  .article-body tbody td { padding: 8px 10px; font-size: 13px; }
   .section-tabs .tab { font-size: 13px; padding: 6px 12px; }
 }
 
