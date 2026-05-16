@@ -309,6 +309,121 @@ body {
   font-size: 12px;
 }
 
+/* === Brief Cards === */
+.brief-card-list,
+.metric-grid {
+  display: grid;
+  gap: 12px;
+  margin: 18px 0 28px;
+}
+
+.event-list,
+.project-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.compact-card-list {
+  grid-template-columns: 1fr;
+}
+
+.brief-card,
+.metric-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-card);
+  padding: 16px 18px;
+}
+
+.brief-card h4 {
+  font-size: 16px;
+  line-height: 1.45;
+  margin: 4px 0 12px;
+  color: var(--text);
+}
+
+.brief-card p {
+  padding: 0;
+  margin-bottom: 8px;
+  background: transparent;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.brief-card p:hover {
+  background: transparent;
+}
+
+.card-kicker {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.metric-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.sentiment-grid,
+.stock-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.metric-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.metric-head span,
+.small-metric span {
+  font-weight: 800;
+  color: var(--text);
+}
+
+.metric-head strong {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.metric-row {
+  display: grid;
+  grid-template-columns: 64px 1fr 80px;
+  gap: 10px;
+  padding: 8px 0;
+  border-top: 1px solid var(--border);
+  align-items: baseline;
+}
+
+.metric-row span,
+.metric-row em,
+.small-metric em {
+  color: var(--text-muted);
+  font-size: 12px;
+  font-style: normal;
+}
+
+.metric-row b,
+.small-metric b {
+  font-size: 18px;
+  color: var(--text);
+}
+
+.metric-card p {
+  padding: 10px 0 0;
+  margin: 8px 0 0;
+  background: transparent;
+  border-top: 1px solid var(--border);
+  font-size: 14px;
+}
+
+.small-metric {
+  display: grid;
+  gap: 8px;
+}
+
 /* === Blockquote === */
 .article-body blockquote {
   border-left: 4px solid var(--accent);
@@ -377,6 +492,28 @@ body {
   .article-body thead th { padding: 8px 10px; font-size: 11px; }
   .article-body tbody td { padding: 8px 10px; font-size: 13px; }
   .section-tabs .tab { font-size: 13px; padding: 6px 12px; }
+  .event-list,
+  .project-list,
+  .metric-grid,
+  .sentiment-grid,
+  .stock-grid {
+    grid-template-columns: 1fr;
+  }
+  .brief-card,
+  .metric-card {
+    padding: 14px 14px;
+  }
+  .brief-card h4 { font-size: 15px; }
+  .metric-row {
+    grid-template-columns: 58px 1fr;
+  }
+  .metric-row em {
+    grid-column: 2;
+  }
+  .metric-row b,
+  .small-metric b {
+    font-size: 16px;
+  }
 }
 
 .hidden { display: none !important; }
