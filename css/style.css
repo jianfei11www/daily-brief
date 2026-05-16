@@ -292,6 +292,23 @@ body {
   background: var(--bg-hover);
 }
 
+.compact-table table {
+  table-layout: fixed;
+  min-width: 720px;
+}
+
+.compact-table th,
+.compact-table td {
+  vertical-align: middle;
+  line-height: 1.6;
+}
+
+.compact-table .money,
+.compact-table .term {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
 /* === Blockquote === */
 .article-body blockquote {
   border-left: 4px solid var(--accent);
@@ -356,6 +373,7 @@ body {
   .article-body p { font-size: 14px; padding: 6px 10px; }
   .article-body li { font-size: 14px; padding: 10px 12px; }
   .article-body table { font-size: 13px; min-width: 480px; }
+  .compact-table table { min-width: 640px; }
   .article-body thead th { padding: 8px 10px; font-size: 11px; }
   .article-body tbody td { padding: 8px 10px; font-size: 13px; }
   .section-tabs .tab { font-size: 13px; padding: 6px 12px; }
