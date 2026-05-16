@@ -62,9 +62,8 @@
       <!-- 板块导航 -->
       <div class="section-tabs" id="tabs">
         <a class="tab active" data-section="brief">📊 每日简报</a>
+        <a class="tab hidden" data-section="claude" id="tab-claude">🧠 4.6每日简报 <span class="lock-badge">🔒</span></a>
         <a class="tab hidden" data-section="gpt" id="tab-gpt">🤖 GPT每日简报 <span class="lock-badge">🔒</span></a>
-        <a class="tab hidden" data-section="chain" id="tab-chain">🔗 链上热点 <span class="lock-badge">🔒</span></a>
-        <a class="tab hidden" data-section="launch" id="tab-launch">🚀 新币融资 <span class="lock-badge">🔒</span></a>
         <a class="tab hidden" data-section="hkipo" id="tab-hkipo">🇭🇰 港股打新 <span class="lock-badge">🔒</span></a>
         <a class="tab hidden" data-section="stock" id="tab-stock">📈 股票投研 <span class="lock-badge">🔒</span></a>
       </div>
@@ -75,21 +74,15 @@
         </ul>
       </div>
 
+      <!-- 4.6每日简报（私密） -->
+      <div id="section-claude" class="hidden">
+        <ul class="post-list" id="claude-list">
+        </ul>
+      </div>
+
       <!-- GPT每日简报（私密） -->
       <div id="section-gpt" class="hidden">
         <ul class="post-list" id="gpt-list">
-        </ul>
-      </div>
-
-      <!-- 链上热点（私密） -->
-      <div id="section-chain" class="hidden">
-        <ul class="post-list" id="chain-list">
-        </ul>
-      </div>
-
-      <!-- 新币融资（私密） -->
-      <div id="section-launch" class="hidden">
-        <ul class="post-list" id="launch-list">
         </ul>
       </div>
 
@@ -119,9 +112,8 @@
 
     // 显示私密板块标签
     if (isOwner) {
+      document.getElementById('tab-claude').classList.remove('hidden');
       document.getElementById('tab-gpt').classList.remove('hidden');
-      document.getElementById('tab-chain').classList.remove('hidden');
-      document.getElementById('tab-launch').classList.remove('hidden');
       document.getElementById('tab-hkipo').classList.remove('hidden');
       document.getElementById('tab-stock').classList.remove('hidden');
     }
@@ -132,9 +124,8 @@
         // 隐藏所有板块
         document.querySelectorAll('.tab').forEach(function(t) { t.classList.remove('active'); });
         document.getElementById('section-brief').classList.add('hidden');
+        document.getElementById('section-claude').classList.add('hidden');
         document.getElementById('section-gpt').classList.add('hidden');
-        document.getElementById('section-chain').classList.add('hidden');
-        document.getElementById('section-launch').classList.add('hidden');
         document.getElementById('section-hkipo').classList.add('hidden');
         document.getElementById('section-stock').classList.add('hidden');
 
@@ -180,9 +171,8 @@
 
     // 加载私密板块（仅密钥用户）
     if (isOwner) {
+      loadPosts('/daily-brief/private/claude/index.json', 'claude-list', '/daily-brief/private/claude/');
       loadPosts('/daily-brief/private/gpt/index.json', 'gpt-list', '/daily-brief/private/gpt/');
-      loadPosts('/daily-brief/private/chain/index.json', 'chain-list', '/daily-brief/private/chain/');
-      loadPosts('/daily-brief/private/launch/index.json', 'launch-list', '/daily-brief/private/launch/');
       loadPosts('/daily-brief/private/hkipo/index.json', 'hkipo-list', '/daily-brief/private/hkipo/');
       loadPosts('/daily-brief/private/stock/index.json', 'stock-list', '/daily-brief/private/stock/');
     }
