@@ -326,6 +326,11 @@ body {
   grid-template-columns: 1fr;
 }
 
+.secondary-card-list {
+  gap: 8px;
+  margin: 12px 0 22px;
+}
+
 .brief-card,
 .metric-card {
   border: 1px solid var(--border);
@@ -351,6 +356,22 @@ body {
 
 .brief-card p:hover {
   background: transparent;
+}
+
+.secondary-card-list .brief-card {
+  padding: 11px 14px;
+}
+
+.secondary-card-list .brief-card h4 {
+  font-size: 14px;
+  line-height: 1.35;
+  margin: 0 0 7px;
+}
+
+.secondary-card-list .brief-card p {
+  font-size: 13px;
+  line-height: 1.55;
+  margin-bottom: 0;
 }
 
 .card-kicker {
@@ -541,6 +562,21 @@ body {
     padding: 14px 14px;
   }
   .brief-card h4 { font-size: 15px; }
+  .secondary-card-list {
+    gap: 7px;
+    margin: 10px 0 18px;
+  }
+  .secondary-card-list .brief-card {
+    padding: 9px 12px;
+  }
+  .secondary-card-list .brief-card h4 {
+    font-size: 13px;
+    margin-bottom: 5px;
+  }
+  .secondary-card-list .brief-card p {
+    font-size: 12px;
+    line-height: 1.45;
+  }
   .metric-row {
     grid-template-columns: 58px 1fr;
   }
