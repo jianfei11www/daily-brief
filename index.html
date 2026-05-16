@@ -7,33 +7,51 @@
   <meta name="description" content="独立分析师视角 · 区块链热点、全球宏观 · 科技前沿 · 每日更新">
   <link rel="stylesheet" href="/daily-brief/css/style.css">
   <style>
-    .section-tabs {
-      display: flex;
-      gap: 12px;
-      margin-bottom: 32px;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 12px;
-      flex-wrap: wrap;
+    .module-section {
+      margin-bottom: 34px;
     }
-    .section-tabs .tab {
-      padding: 8px 16px;
-      border-radius: 6px;
-      font-size: 14px;
-      font-weight: 600;
-      cursor: pointer;
-      background: var(--bg);
+
+    .module-section h2 {
+      font-size: 17px;
+      margin-bottom: 14px;
+      color: var(--text);
+    }
+
+    .module-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .module-card {
+      display: block;
+      min-height: 118px;
+      padding: 18px;
       border: 1px solid var(--border);
-      color: var(--text-muted);
+      border-radius: 8px;
+      background: var(--bg-card);
+      color: var(--text);
       text-decoration: none;
+      transition: border-color 0.2s, transform 0.2s;
     }
-    .section-tabs .tab.active {
-      background: var(--accent);
-      color: #fff;
+
+    .module-card:hover {
       border-color: var(--accent);
+      transform: translateY(-1px);
     }
-    .section-tabs .tab:hover {
-      border-color: var(--accent);
+
+    .module-card .module-title {
+      font-size: 17px;
+      font-weight: 800;
+      margin-bottom: 8px;
     }
+
+    .module-card .module-desc {
+      font-size: 13px;
+      line-height: 1.55;
+      color: var(--text-muted);
+    }
+
     .lock-badge {
       font-size: 11px;
       background: #fef2f2;
@@ -41,8 +59,20 @@
       padding: 2px 6px;
       border-radius: 4px;
       margin-left: 4px;
+      vertical-align: middle;
     }
+
     .hidden { display: none !important; }
+
+    @media (max-width: 760px) {
+      .module-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .module-card {
+        min-height: auto;
+      }
+    }
   </style>
 </head>
 <body>
@@ -59,37 +89,53 @@
     </header>
 
     <main>
-      <!-- 板块导航 -->
-      <div class="section-tabs" id="tabs">
-        <a class="tab active" data-section="brief">📊 每日简报</a>
-        <a class="tab hidden" data-section="chain-radar" id="tab-chain-radar">🔗 链上雷达 <span class="lock-badge">🔒</span></a>
-        <a class="tab hidden" data-section="hkipo" id="tab-hkipo">🇭🇰 港股打新 <span class="lock-badge">🔒</span></a>
-        <a class="tab hidden" data-section="stock" id="tab-stock">📈 股票投研 <span class="lock-badge">🔒</span></a>
-      </div>
+      <section class="module-section">
+        <h2>公开资料</h2>
+        <div class="module-grid">
+          <a class="module-card" href="/daily-brief/posts/20260516-brief.html">
+            <div class="module-title">区块链日报</div>
+            <div class="module-desc">每日核心结论、加密行业事件、一级机会、资金情绪。</div>
+          </a>
+          <a class="module-card owner-link" data-href="/daily-brief/private/chain-radar/20260516-chain-radar.html" href="/daily-brief/private/chain-radar/20260516-chain-radar.html">
+            <div class="module-title">链上雷达</div>
+            <div class="module-desc">链上新玩法、新机制、早期热度和飞书提醒沉淀。</div>
+          </a>
+          <a class="module-card owner-link" data-href="/daily-brief/private/crypto-research/index.html" href="/daily-brief/private/crypto-research/index.html">
+            <div class="module-title">加密投研</div>
+            <div class="module-desc">项目研报、一级项目观察池、融资和空投机会。</div>
+          </a>
+          <a class="module-card owner-link" data-href="/daily-brief/private/hk-us-daily/index.html" href="/daily-brief/private/hk-us-daily/index.html">
+            <div class="module-title">港美股日报</div>
+            <div class="module-desc">港股、美股科技和宏观市场的每日观察。</div>
+          </a>
+          <a class="module-card owner-link" data-href="/daily-brief/private/hkipo/20260516-hkipo.html" href="/daily-brief/private/hkipo/20260516-hkipo.html">
+            <div class="module-title">港股打新</div>
+            <div class="module-desc">HKEX 披露项目、招股信息、配发结果和待补数据。</div>
+          </a>
+          <a class="module-card owner-link" data-href="/daily-brief/private/stock/index.html" href="/daily-brief/private/stock/index.html">
+            <div class="module-title">股票投研</div>
+            <div class="module-desc">美股科技、港股重点公司和个股研究沉淀。</div>
+          </a>
+        </div>
+      </section>
 
-      <!-- 每日简报（公开） -->
-      <div id="section-brief">
-        <ul class="post-list" id="post-list">
-        </ul>
-      </div>
-
-      <!-- 链上雷达（私密） -->
-      <div id="section-chain-radar" class="hidden">
-        <ul class="post-list" id="chain-radar-list">
-        </ul>
-      </div>
-
-      <!-- 港股打新（私密） -->
-      <div id="section-hkipo" class="hidden">
-        <ul class="post-list" id="hkipo-list">
-        </ul>
-      </div>
-
-      <!-- 股票投研（私密） -->
-      <div id="section-stock" class="hidden">
-        <ul class="post-list" id="stock-list">
-        </ul>
-      </div>
+      <section class="module-section hidden" id="distribution-section">
+        <h2>内容分发 <span class="lock-badge">私密</span></h2>
+        <div class="module-grid">
+          <a class="module-card owner-link" data-href="/daily-brief/private/distribution/twitter.html" href="/daily-brief/private/distribution/twitter.html">
+            <div class="module-title">推特分发</div>
+            <div class="module-desc">X 短帖、长推和每日观点拆分。</div>
+          </a>
+          <a class="module-card owner-link" data-href="/daily-brief/private/distribution/wechat.html" href="/daily-brief/private/distribution/wechat.html">
+            <div class="module-title">公众号分发</div>
+            <div class="module-desc">微信公众号公开版文案和排版草稿。</div>
+          </a>
+          <a class="module-card owner-link" data-href="/daily-brief/private/distribution/zhihu.html" href="/daily-brief/private/distribution/zhihu.html">
+            <div class="module-title">知乎分发</div>
+            <div class="module-desc">主题问答、长文沉淀和搜索型内容。</div>
+          </a>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer">
@@ -98,73 +144,16 @@
   </div>
 
   <script>
-    // 密钥验证
     var params = new URLSearchParams(window.location.search);
     var key = params.get('key');
     var isOwner = (key === '7003');
 
-    // 显示私密板块标签
     if (isOwner) {
-      document.getElementById('tab-chain-radar').classList.remove('hidden');
-      document.getElementById('tab-hkipo').classList.remove('hidden');
-      document.getElementById('tab-stock').classList.remove('hidden');
-    }
-
-    // 板块切换
-    document.querySelectorAll('.tab').forEach(function(tab) {
-      tab.addEventListener('click', function() {
-        // 隐藏所有板块
-        document.querySelectorAll('.tab').forEach(function(t) { t.classList.remove('active'); });
-        document.getElementById('section-brief').classList.add('hidden');
-        document.getElementById('section-chain-radar').classList.add('hidden');
-        document.getElementById('section-hkipo').classList.add('hidden');
-        document.getElementById('section-stock').classList.add('hidden');
-
-        // 显示选中板块
-        this.classList.add('active');
-        var section = this.getAttribute('data-section');
-        document.getElementById('section-' + section).classList.remove('hidden');
+      document.getElementById('distribution-section').classList.remove('hidden');
+      document.querySelectorAll('.owner-link').forEach(function(link) {
+        var href = link.getAttribute('data-href');
+        link.setAttribute('href', href + '?key=7003');
       });
-    });
-
-    // 默认显示每日简报
-    document.getElementById('section-brief').classList.remove('hidden');
-
-    // 加载文章列表
-    function loadPosts(jsonUrl, listId, pathPrefix) {
-      fetch(jsonUrl)
-        .then(function(r) { return r.json(); })
-        .then(function(posts) {
-          var list = document.getElementById(listId);
-          if (posts.length === 0) {
-            list.innerHTML = '<li class="post-item" style="text-align:center;color:var(--text-muted);padding:40px 0;">暂无内容，等待更新 🐕</li>';
-            return;
-          }
-          posts.forEach(function(p) {
-            var date = new Date(p.date);
-            var dateStr = date.toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' });
-            var li = document.createElement('li');
-            li.className = 'post-item';
-            var href = pathPrefix + p.slug + '.html' + (isOwner ? '?key=7003' : '');
-            li.innerHTML = '<div class="post-date">' + dateStr + '</div>' +
-              '<div class="post-title"><a href="' + href + '">' + p.title + '</a></div>' +
-              '<div class="post-desc">' + p.desc + '</div>';
-            list.appendChild(li);
-          });
-        })
-        .catch(function() {
-          document.getElementById(listId).innerHTML = '<li class="post-item" style="text-align:center;color:var(--text-muted);padding:40px 0;">暂无内容 🐕</li>';
-        });
-    }
-
-    // 加载公开简报
-    loadPosts('/daily-brief/posts/index.json', 'post-list', '/daily-brief/posts/');
-
-    // 加载私密板块（仅密钥用户）
-    if (isOwner) {
-      loadPosts('/daily-brief/private/chain-radar/index.json', 'chain-radar-list', '/daily-brief/private/chain-radar/');
-      loadPosts('/daily-brief/private/hkipo/index.json', 'hkipo-list', '/daily-brief/private/hkipo/');
-      loadPosts('/daily-brief/private/stock/index.json', 'stock-list', '/daily-brief/private/stock/');
     }
   </script>
 </body>
