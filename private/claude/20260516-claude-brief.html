@@ -17,20 +17,13 @@
     .action-card strong { font-size: 14px; }
     .action-card p { font-size: 14px; color: var(--text-secondary); margin-top: 4px; }
     .event-highlight { background: var(--bg-card); border-radius: var(--radius); padding: 14px 18px; margin-bottom: 12px; }
-    .event-highlight .tag { font-size: 12px; color: #fff; background: var(--accent); padding: 2px 8px; border-radius: 4px; margin-right: 8px; }
+    .event-highlight .tag { font-size: 12px; color: #fff; padding: 2px 8px; border-radius: 4px; margin-right: 8px; }
+    .tag-inst { background: var(--accent); }
+    .tag-macro { background: var(--orange); }
+    .tag-eco { background: var(--green); }
+    .tag-ipo { background: #7c3aed; }
     .event-minor { color: var(--text-muted); font-size: 14px; line-height: 1.8; }
-    .metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin: 16px 0; }
-    .metric-item { background: var(--bg-card); border-radius: var(--radius); padding: 12px; text-align: center; }
-    .metric-item .label { font-size: 12px; color: var(--text-muted); }
-    .metric-item .value { font-size: 18px; font-weight: 700; margin-top: 4px; }
-    .metric-item .change { font-size: 13px; margin-top: 2px; }
-    .change-down { color: var(--red); }
-    .change-up { color: var(--green); }
-    .section-divider { border: none; border-top: 1px solid var(--border); margin: 32px 0; }
-    .collapse-trigger { cursor: pointer; color: var(--text-muted); font-size: 13px; margin-top: 20px; }
-    .collapse-content { display: none; margin-top: 12px; }
-    .collapse-trigger:hover { color: var(--accent); }
-  </style>
+</style>
 </head>
 <body>
   <div class="wrapper">
@@ -48,9 +41,9 @@
 <div class="speed-box">
   <h3>⚡ 30秒速览</h3>
   <ul>
-    <li>🔴 美债30Y破5.1% + 伊朗升级 → BTC跌破$80K，短期不追多</li>
+    <li>🔴 美债30Y破5.1% + 伊朗升级 → BTC跌至$78,706，短期不追多</li>
     <li>🟢 BlackRock提走1,768 BTC + Bitmine增持$1.98亿ETH → 机构逆势建仓，中期看多</li>
-    <li>🟡 恐贪31（恐惧）→ 历史布局窗口，等宏观企稳再动手</li>
+    <li>🟡 恐贪31（恐惧）| 全网市值$2.71T | BTC.D 58.2% → 历史布局窗口，等企稳再动</li>
   </ul>
 </div>
 
@@ -58,133 +51,152 @@
 <h2>📋 今日行动</h2>
 <div class="action-do action-card">
   <strong>✅ 设置 BTC $75K 预警</strong>
-  <p>跌破此位可能加速至$70K，提前准备</p>
+  <p>跌破此位可能加速至$70K，提前准备抄底资金</p>
 </div>
 <div class="action-do action-card">
-  <strong>✅ ETH $2,100-2,200 观察建仓</strong>
-  <p>机构认可价值区，可小仓位布局</p>
+  <strong>✅ ETH $2,100-2,200 小仓位布局</strong>
+  <p>当前$2,216 | 机构在$2,200大额买入，认可价值区</p>
 </div>
 <div class="action-do action-card">
-  <strong>✅ HYPE $40-42 回调加仓</strong>
-  <p>Coinbase合作+CBRS产品创新，基本面强化</p>
+  <strong>✅ HYPE $38-40 回调加仓</strong>
+  <p>当前$41.84(-8.5%) | Coinbase合作+CBRS产品创新，基本面强化</p>
 </div>
 <div class="action-dont action-card">
   <strong>🚫 不追山寨币</strong>
-  <p>BTC Dominance 58.2%偏高，山寨跌更多</p>
+  <p>BTC.D 58.2%偏高，资金回流主流，山寨跌幅更大</p>
 </div>
 <div class="action-dont action-card">
   <strong>🚫 不开周末合约多单</strong>
-  <p>地缘风险可能升级，流动性薄</p>
+  <p>地缘风险可能周末升级，流动性薄</p>
 </div>
 <div class="action-dont action-card">
   <strong>🚫 不恐慌抛现货</strong>
-  <p>机构在买，抛售是送筹码</p>
+  <p>机构在买，恐慌抛售是送筹码</p>
 </div>
 
-<hr class="section-divider">
-<!-- 核心代币 -->
-<h2>💰 行情速览</h2>
-<div class="metric-grid">
-  <div class="metric-item">
-    <div class="label">BTC</div>
-    <div class="value">$79,063</div>
-    <div class="change change-down">-3.09%</div>
+<hr style="border:none;border-top:1px solid var(--border);margin:32px 0">
+<!-- 行情+资金面 -->
+<h2>💰 行情与资金面</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:16px 0">
+  <div style="background:var(--bg-card);border-radius:var(--radius);padding:12px;text-align:center">
+    <div style="font-size:12px;color:var(--text-muted)">BTC</div>
+    <div style="font-size:18px;font-weight:700;margin-top:4px">$78,706</div>
+    <div style="font-size:13px;color:var(--red)">-2.30%</div>
   </div>
-  <div class="metric-item">
-    <div class="label">ETH</div>
-    <div class="value">$2,226</div>
-    <div class="change change-down">-2.96%</div>
+  <div style="background:var(--bg-card);border-radius:var(--radius);padding:12px;text-align:center">
+    <div style="font-size:12px;color:var(--text-muted)">ETH</div>
+    <div style="font-size:18px;font-weight:700;margin-top:4px">$2,216</div>
+    <div style="font-size:13px;color:var(--red)">-1.77%</div>
   </div>
-  <div class="metric-item">
-    <div class="label">SOL</div>
-    <div class="value">$89.19</div>
-    <div class="change change-down">-3.57%</div>
+  <div style="background:var(--bg-card);border-radius:var(--radius);padding:12px;text-align:center">
+    <div style="font-size:12px;color:var(--text-muted)">SOL</div>
+    <div style="font-size:18px;font-weight:700;margin-top:4px">$88.03</div>
+    <div style="font-size:13px;color:var(--red)">-3.26%</div>
   </div>
-  <div class="metric-item">
-    <div class="label">HYPE</div>
-    <div class="value">$43.96</div>
-    <div class="change change-down">-2.79%</div>
+  <div style="background:var(--bg-card);border-radius:var(--radius);padding:12px;text-align:center">
+    <div style="font-size:12px;color:var(--text-muted)">HYPE</div>
+    <div style="font-size:18px;font-weight:700;margin-top:4px">$41.84</div>
+    <div style="font-size:13px;color:var(--red)">-8.48%</div>
   </div>
-  <div class="metric-item">
-    <div class="label">F&G</div>
-    <div class="value">31</div>
-    <div class="change change-down">恐惧</div>
+  <div style="background:var(--bg-card);border-radius:var(--radius);padding:12px;text-align:center">
+    <div style="font-size:12px;color:var(--text-muted)">F&G</div>
+    <div style="font-size:18px;font-weight:700;margin-top:4px">31</div>
+    <div style="font-size:13px;color:var(--red)">恐惧</div>
   </div>
-  <div class="metric-item">
-    <div class="label">BTC.D</div>
-    <div class="value">58.2%</div>
-    <div class="change">偏高</div>
+  <div style="background:var(--bg-card);border-radius:var(--radius);padding:12px;text-align:center">
+    <div style="font-size:12px;color:var(--text-muted)">总市值</div>
+    <div style="font-size:18px;font-weight:700;margin-top:4px">$2.71T</div>
+    <div style="font-size:13px;color:var(--text-muted)">BTC.D 58.2%</div>
   </div>
 </div>
 
-<hr class="section-divider">
+<div style="background:var(--bg-card);border-radius:var(--radius);padding:14px 18px;margin-top:12px">
+  <p style="font-size:14px;margin-bottom:8px"><strong>资金面信号：</strong></p>
+  <ul style="font-size:14px;line-height:2;padding-left:18px">
+    <li><strong>稳定币供给：</strong>USDT $189.7B（日-0.02%，月+2.3%）→ 场内资金稳定偏增</li>
+    <li><strong>BTC ETF：</strong>BlackRock单日提走1,768 BTC（$1.4亿）→ 机构续买</li>
+    <li><strong>ETH ETF：</strong>本周整体净流出$6,565万，连续5日流出</li>
+    <li><strong>资金费率：</strong>偏负，空头主导</li>
+  </ul>
+</div>
 
-<!-- 重点事件 Top 3 -->
-<h2>🔥 重点事件</h2>
+<hr style="border:none;border-top:1px solid var(--border);margin:32px 0">
+<!-- 重点事件 -->
+<h2>🔥 重点事件 Top 3</h2>
 <div class="event-highlight">
-  <span class="tag">机构</span><strong>BlackRock从Coinbase提走1,768 BTC（$1.4亿）</strong>
-  <p style="margin-top:6px;font-size:14px;color:var(--text-secondary)">减少交易所供给，大资金看多中期。回调是买入窗口。</p>
+  <span class="tag tag-inst">机构</span><strong>BlackRock从Coinbase提走1,768 BTC（$1.4亿）</strong>
+  <p style="margin-top:6px;font-size:14px;color:var(--text-secondary)">减少交易所供给，大资金看多中期。回调是买入窗口，不是逃跑信号。</p>
 </div>
 <div class="event-highlight">
-  <span class="tag">机构</span><strong>Bitmine增持89,026 ETH（$1.98亿）</strong>
-  <p style="margin-top:6px;font-size:14px;color:var(--text-secondary)">ETH $2,200触发机构大额买入，"ETH国库公司"模式延续。</p>
+  <span class="tag tag-inst">机构</span><strong>Bitmine增持89,026 ETH（$1.98亿）</strong>
+  <p style="margin-top:6px;font-size:14px;color:var(--text-secondary)">从Kraken/FalconX提至4个钱包。"ETH国库公司"模式延续，类似MicroStrategy之BTC。</p>
 </div>
 <div class="event-highlight">
-  <span class="tag">宏观</span><strong>30年美债收益率突破5.1%，创2007年新高</strong>
-  <p style="margin-top:6px;font-size:14px;color:var(--text-secondary)">市场交易"更高利率更久"，加密短期承压。沃什接任美联储主席，降息预期下调。</p>
+  <span class="tag tag-macro">宏观</span><strong>30年美债收益率突破5.1%，创2007年新高</strong>
+  <p style="margin-top:6px;font-size:14px;color:var(--text-secondary)">市场交易"更高利率更久"。沃什接任美联储主席，降息预期大幅下调。加密短期承压。</p>
 </div>
 
-<p class="event-minor" style="margin-top:16px"><strong>其余动态：</strong>美伊核谈判推迟+霍尔木兹海峡遇袭（油价$103） · SpaceX确认6/12上市（SPCX，$3500亿） · Hyperliquid收编USDH+CBRS盘前永续 · Circle ARC链发布 · BTC挖矿难度+3.12%至136.61T · 美中建立贸易投资委员会</p>
+<p class="event-minor" style="margin-top:16px"><strong>其余7条：</strong>美伊核谈判推迟+霍尔木兹遇袭（油价$103） · SpaceX确认6/12上市（$3500亿） · Hyperliquid收编USDH+CBRS盘前永续 · Circle ARC链发布 · BTC挖矿难度+3.12%至136.61T · 美中建立贸易投资委员会 · BTC ETF全市场单日净流出$2.9亿</p>
 
-<hr class="section-divider">
-<!-- 链上机会 -->
+<hr style="border:none;border-top:1px solid var(--border);margin:32px 0">
+
+<!-- 链上跟踪 -->
 <h2>🎯 今日跟踪</h2>
 <div class="event-highlight">
-  <span class="tag">ETH</span><strong>机构建仓信号 — $2,100-2,250区间</strong>
-  <p style="margin-top:6px;font-size:14px;color:var(--text-secondary)">Bitmine从Kraken/FalconX提至4个钱包。风险：宏观恶化可能拖至$1,800。</p>
+  <span class="tag tag-inst">ETH</span><strong>机构建仓信号 — $2,100-2,200区间布局</strong>
+  <p style="margin-top:6px;font-size:14px;color:var(--text-secondary)">Bitmine $1.98亿增持确认价值区。风险：宏观恶化可能拖至$1,800。</p>
 </div>
 <div class="event-highlight">
-  <span class="tag">HYPE</span><strong>生态扩张 — $40-42回调布局</strong>
-  <p style="margin-top:6px;font-size:14px;color:var(--text-secondary)">Coinbase合作+CBRS盘前永续走红。风险：从$59 ATH已回调25%+，需确认支撑。</p>
+  <span class="tag tag-eco">HYPE</span><strong>生态扩张 — 当前$41.84，$38-40可加仓</strong>
+  <p style="margin-top:6px;font-size:14px;color:var(--text-secondary)">Coinbase合作+CBRS盘前永续走红。今日-8.5%跌幅较大，接近加仓区间。风险：从$59 ATH已回调29%。</p>
 </div>
 
-<hr class="section-divider">
+<hr style="border:none;border-top:1px solid var(--border);margin:32px 0">
 
 <!-- 一级项目 -->
-<h2>🚀 值得关注的一级项目</h2>
+<h2>🚀 一级项目</h2>
 <div class="event-highlight">
-  <span class="tag">IPO</span><strong>SpaceX（SPCX）6月12日 Nasdaq</strong>
-  <p style="margin-top:6px;font-size:14px;color:var(--text-secondary)">估值$3500亿，星链+火箭双引擎。提前准备美股账户资金。</p>
+  <span class="tag tag-ipo">IPO</span><strong>SpaceX（SPCX）6月12日 Nasdaq</strong>
+  <p style="margin-top:6px;font-size:14px;color:var(--text-secondary)">估值$3500亿，星链+火箭双引擎。2026最大科技IPO。提前准备美股账户资金。</p>
 </div>
 <div class="event-highlight">
-  <span class="tag">基建</span><strong>Circle ARC链</strong>
-  <p style="margin-top:6px;font-size:14px;color:var(--text-secondary)">USDC统一执行层，Circle升级为基础设施。等主网时间表确认，利好CRCL。</p>
+  <span class="tag tag-eco">基建</span><strong>Circle ARC链 — USDC统一执行层</strong>
+  <p style="margin-top:6px;font-size:14px;color:var(--text-secondary)">支持跨链/支付/机构清算/AI Agent支付。Circle升级为基础设施层，利好CRCL中期。等主网时间表。</p>
 </div>
+<p class="event-minor" style="margin-top:12px"><strong>港股打新：</strong>本周HKEX有6872 TenNor(生物医药)、1511 UISEE(自动驾驶)、7688上海拓普(数控)、6871 Robotphoenix(机器人)招股中。周末休市，下周一确认申购价值。</p>
 
-<hr class="section-divider">
-
+<hr style="border:none;border-top:1px solid var(--border);margin:32px 0">
 <!-- 宏观 -->
 <h2>🌍 宏观环境</h2>
-<p style="font-size:15px;line-height:1.8"><strong>短期负面，中期中性偏正。</strong>美债飙升+美元五连涨压制加密估值，但机构逆势建仓（BlackRock/Bitmine）释放中期看多信号。地缘风险反而验证链上24/7市场价值。</p>
+<p style="font-size:15px;line-height:1.8"><strong>短期负面，中期中性偏正。</strong></p>
+<ul style="font-size:14px;line-height:2;padding-left:18px">
+  <li>美债30Y破5.1% + 美元五连涨 → 短期压制加密估值</li>
+  <li>机构逆势建仓（BlackRock/Bitmine）→ 中期看多信号明确</li>
+  <li>伊朗局势升级 + 油价$103 → 通胀预期上升，降息更远</li>
+  <li>美中建立贸易投资委员会 → 边际缓和，中期正面</li>
+</ul>
 <p class="event-minor" style="margin-top:12px"><strong>科技热点：</strong>SpaceX IPO · OpenAI接入银行账户 · 三星5万人罢工风险 · Musk $1190亿芯片工厂 · Core Scientific转型AI算力</p>
-<p class="event-minor" style="margin-top:8px"><strong>指标：</strong>S&P500创新高后抛售 · 美元五连涨 · 黄金冲高回落 · WTI $103 · VIX上升</p>
+<p class="event-minor" style="margin-top:8px"><strong>美股：</strong>S&P500创新高后周五抛售 · NASDAQ同步回调 · 美元指数五连涨创两月最大周涨幅</p>
 
-<hr class="section-divider">
+<hr style="border:none;border-top:1px solid var(--border);margin:32px 0">
 
 <!-- 风险反证 -->
-<h2>⚠️ 什么情况下主判断失效</h2>
-<ul style="font-size:14px;line-height:2">
-  <li><strong>伊朗实质军事冲突</strong> → 油价$120+，BTC可能破$70K，主判断撤回</li>
-  <li><strong>沃什上任即释放加息信号</strong> → 市场再跌10-15%</li>
+<h2>⚠️ 主判断失效条件</h2>
+<ul style="font-size:14px;line-height:2;padding-left:18px">
+  <li><strong>伊朗实质军事冲突</strong> → 霍尔木兹封锁，油价$120+，BTC可能破$70K</li>
+  <li><strong>沃什上任即释放加息信号</strong> → 市场再跌10-15%，主判断撤回</li>
 </ul>
 
-<!-- 数据来源（折叠） -->
-<p class="collapse-trigger" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">📎 数据来源与可信度 ▸</p>
-<div class="collapse-content">
-  <p class="event-minor">CoinGecko(高) · Alternative.me(高) · PANews(高) · BlockBeats(高) · Odaily(中高) · ZeroHedge(中/偏悲观) · Onchain Lens/Ember(高) · The Register(高) · HN(中) · HKEX(高)</p>
+<!-- 数据来源 -->
+<p style="cursor:pointer;color:var(--text-muted);font-size:13px;margin-top:24px" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">📎 数据来源与可信度 ▸</p>
+<div style="display:none;margin-top:12px">
+  <p class="event-minor">实时数据：CoinGecko API(高) · Alternative.me F&G(高) · DeFiLlama稳定币(高)<br>
+  新闻源：PANews(高) · BlockBeats(高) · Odaily(中高) · ZeroHedge(中/偏悲观)<br>
+  链上：Onchain Lens/Ember(高) · HKEX(高)<br>
+  科技：The Register(高) · Hacker News(中)</p>
 </div>
 
-<p style="margin-top:32px;font-size:13px;color:var(--text-muted);text-align:center"><em>本报告仅供参考，不构成投资建议。</em><br><strong>旺财🐕 | 链研观察 | 2026-05-16</strong></p>
+<p style="margin-top:32px;font-size:13px;color:var(--text-muted);text-align:center"><em>本报告仅供参考，不构成投资建议。</em><br><strong>旺财🐕 | 链研观察 | 2026-05-16 14:45 更新</strong></p>
 
       </div>
     </article>
