@@ -25,6 +25,7 @@ SECTION_MAP = {
     'launch': {'dir': 'launch', 'name': 'Crypto Launch & 融资'},
     'hkipo': {'dir': 'hkipo', 'name': '港股打新日报'},
     'stock': {'dir': 'stock', 'name': '股票投研'},
+    'gpt': {'dir': 'gpt', 'name': 'GPT每日简报'},
 }
 
 
@@ -99,7 +100,7 @@ def main():
     parser.add_argument('--part1', default='', help='Part1 区块链 HTML')
     parser.add_argument('--part2', default='', help='Part2 港股打新 HTML')
     parser.add_argument('--part3', default='', help='Part3 宏观科技 HTML')
-    parser.add_argument('--section', choices=['chain', 'launch', 'hkipo', 'stock'],
+    parser.add_argument('--section', choices=['chain', 'launch', 'hkipo', 'stock', 'gpt'],
                         default=None, help='Private section')
     parser.add_argument('--no-push', action='store_true', help='Skip git push')
     args = parser.parse_args()
