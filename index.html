@@ -75,8 +75,7 @@
 
       <!-- 链上雷达（私密） -->
       <div id="section-chain-radar" class="hidden">
-        <ul class="post-list">
-          <li class="post-item" style="text-align:center;color:var(--text-muted);padding:40px 0;">待填空</li>
+        <ul class="post-list" id="chain-radar-list">
         </ul>
       </div>
 
@@ -163,6 +162,7 @@
 
     // 加载私密板块（仅密钥用户）
     if (isOwner) {
+      loadPosts('/daily-brief/private/chain-radar/index.json', 'chain-radar-list', '/daily-brief/private/chain-radar/');
       loadPosts('/daily-brief/private/hkipo/index.json', 'hkipo-list', '/daily-brief/private/hkipo/');
       loadPosts('/daily-brief/private/stock/index.json', 'stock-list', '/daily-brief/private/stock/');
     }
