@@ -482,6 +482,30 @@ body {
 .stock-table .change-col { width: 10%; }
 .stock-table .judge-col { width: 60%; }
 
+.index-table {
+  max-width: 680px;
+}
+
+.index-table table {
+  table-layout: fixed;
+  min-width: 0;
+}
+
+.index-table .name-col { width: 46%; }
+.index-table .value-col { width: 27%; }
+.index-table .change-col { width: 27%; }
+
+.macro-table .name-col { width: 50%; }
+.macro-table .value-col { width: 25%; }
+.macro-table .change-col { width: 25%; }
+
+.index-table th,
+.index-table td {
+  line-height: 1.45;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 /* === Blockquote === */
 .article-body blockquote {
   border-left: 4px solid var(--accent);
@@ -609,6 +633,15 @@ body {
   .stock-table .price-col { width: 19%; }
   .stock-table .change-col { width: 17%; }
   .stock-table .judge-col { width: 41%; }
+  .index-table {
+    max-width: none;
+  }
+  .index-table table {
+    min-width: 0;
+  }
+  .index-table .name-col { width: 48%; }
+  .index-table .value-col { width: 26%; }
+  .index-table .change-col { width: 26%; }
 }
 
 .hidden { display: none !important; }
