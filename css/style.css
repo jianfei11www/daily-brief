@@ -424,6 +424,43 @@ body {
   gap: 8px;
 }
 
+/* === Balanced Tables === */
+.balance-table table {
+  table-layout: fixed;
+  min-width: 0;
+}
+
+.balance-table th,
+.balance-table td {
+  vertical-align: middle;
+  line-height: 1.65;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+.balance-table strong {
+  font-size: 15px;
+}
+
+.balance-table .money,
+.balance-table .term {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.etf-table .asset-col { width: 10%; }
+.etf-table .flow-col { width: 17%; }
+.etf-table .judge-col { width: 39%; }
+
+.sentiment-table .indicator-col { width: 34%; }
+.sentiment-table .value-col { width: 20%; }
+.sentiment-table .judge-col { width: 46%; }
+
+.stock-table .stock-col { width: 30%; }
+.stock-table .price-col { width: 20%; }
+.stock-table .change-col { width: 14%; }
+.stock-table .judge-col { width: 36%; }
+
 /* === Blockquote === */
 .article-body blockquote {
   border-left: 4px solid var(--accent);
@@ -514,6 +551,28 @@ body {
   .small-metric b {
     font-size: 16px;
   }
+  .balance-table th,
+  .balance-table td {
+    padding: 10px 8px;
+    font-size: 12px;
+  }
+  .balance-table strong {
+    font-size: 13px;
+  }
+  .balance-table .money,
+  .balance-table .term {
+    font-size: 11px;
+  }
+  .etf-table .asset-col { width: 11%; }
+  .etf-table .flow-col { width: 19%; }
+  .etf-table .judge-col { width: 32%; }
+  .sentiment-table .indicator-col { width: 36%; }
+  .sentiment-table .value-col { width: 20%; }
+  .sentiment-table .judge-col { width: 44%; }
+  .stock-table .stock-col { width: 30%; }
+  .stock-table .price-col { width: 20%; }
+  .stock-table .change-col { width: 16%; }
+  .stock-table .judge-col { width: 34%; }
 }
 
 .hidden { display: none !important; }
