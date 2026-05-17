@@ -499,8 +499,8 @@ body {
 .macro-table .value-col { width: 25%; }
 .macro-table .change-col { width: 25%; }
 
-.index-table th,
-.index-table td {
+.article-body .index-table th,
+.article-body .index-table td {
   line-height: 1.45;
   padding-top: 10px;
   padding-bottom: 10px;
