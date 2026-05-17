@@ -354,6 +354,28 @@ body {
   line-height: 1.75;
 }
 
+.brief-card .source-meta {
+  font-size: 12px !important;
+  line-height: 1.45;
+  color: var(--text-muted);
+  margin-top: 6px;
+  margin-bottom: 0;
+}
+
+.brief-card .source-meta strong,
+.brief-card .source-meta a {
+  color: var(--text-muted);
+}
+
+.brief-card .source-meta a {
+  text-decoration: none;
+}
+
+.brief-card .source-meta a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
 .brief-card p:hover {
   background: transparent;
 }
@@ -603,6 +625,10 @@ body {
   .secondary-card-list .brief-card p {
     font-size: 12px;
     line-height: 1.45;
+  }
+  .brief-card .source-meta {
+    font-size: 11px !important;
+    line-height: 1.35;
   }
   .metric-row {
     grid-template-columns: 58px 1fr;
