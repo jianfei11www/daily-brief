@@ -491,9 +491,9 @@ body {
   min-width: 0;
 }
 
-.index-table .name-col { width: 12%; }
-.index-table .value-col { width: 36%; }
-.index-table .change-col { width: 52%; }
+.index-table .name-col { width: 18%; }
+.index-table .value-col { width: 32%; }
+.index-table .change-col { width: 50%; }
 
 .macro-table .name-col { width: 50%; }
 .macro-table .value-col { width: 25%; }
@@ -504,6 +504,7 @@ body {
   line-height: 1.45;
   padding-top: 10px;
   padding-bottom: 10px;
+  text-align: center;
 }
 
 /* === Blockquote === */
@@ -639,9 +640,9 @@ body {
   .index-table table {
     min-width: 0;
   }
-  .index-table .name-col { width: 18%; }
-  .index-table .value-col { width: 34%; }
-  .index-table .change-col { width: 48%; }
+  .index-table .name-col { width: 27%; }
+  .index-table .value-col { width: 31%; }
+  .index-table .change-col { width: 42%; }
 }
 
 .hidden { display: none !important; }
