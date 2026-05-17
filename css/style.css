@@ -483,7 +483,9 @@ body {
 .stock-table .judge-col { width: 60%; }
 
 .index-table {
-  max-width: 680px;
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .index-table table {
@@ -491,9 +493,9 @@ body {
   min-width: 0;
 }
 
-.index-table .name-col { width: 18%; }
-.index-table .value-col { width: 32%; }
-.index-table .change-col { width: 50%; }
+.index-table .name-col { width: 22%; }
+.index-table .value-col { width: 39%; }
+.index-table .change-col { width: 39%; }
 
 .macro-table .name-col { width: 50%; }
 .macro-table .value-col { width: 25%; }
