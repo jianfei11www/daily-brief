@@ -556,6 +556,7 @@ body {
 /* === Color Classes === */
 .up { color: var(--green); font-weight: 700; }
 .down { color: var(--red); font-weight: 700; }
+.priority-title { color: var(--red) !important; }
 .important {
   color: var(--orange);
   font-weight: 700;
