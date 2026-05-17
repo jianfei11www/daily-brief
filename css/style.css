@@ -483,9 +483,8 @@ body {
 .stock-table .judge-col { width: 60%; }
 
 .index-table {
-  max-width: 540px;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
+  max-width: none;
 }
 
 .index-table table {
