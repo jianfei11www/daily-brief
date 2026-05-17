@@ -41,7 +41,7 @@
 </ul>
 <p>风险变量：若美股科技股继续走弱、恒生科技承压或券商孖展热度不足，港股打新应偏谨慎；若风险偏好修复且券商热度明显改善，再提高子页面项目优先级。</p>
 <p>细节入口：private/hk-us-ipo/20260517-hk-ipo.html</p>
-<p>来源：HKEX｜置信度：高</p>
+<p>来源：HKEX、uSMART、The Standard、IPOX、Infocast｜置信度：高</p>
 <h2>2. 美股重大事件</h2>
 <h3>Kraken 母公司 Payward 裁员约 150 人</h3>
 <p>事件说明：Payward 裁员被报道为 IPO 前组织优化线索，但当前样例未见 SEC 或公司官方文件确认上市进度。</p>
@@ -58,7 +58,7 @@
 <p>影响范围：IPO、金融科技、加密相关股票｜方向：中性｜时间维度：阶段性</p>
 <p>风险提示：缺官方文件、时间表和承销商信息，不能把裁员本身等同于上市进展。</p>
 <p>后续变量：查 SEC、公司 IR、Nasdaq / NYSE、Reuters / Bloomberg。</p>
-<p>待补说明：下一步查 SEC、公司 IR 或主流财经媒体是否确认 IPO 文件、交易所和承销安排。</p>
+<p>待补说明：Kraken/Payward 未提供可直接匹配的美股 ticker；需继续查公司 IR、SEC CIK、NYSE/Nasdaq 或主流财经确认。</p>
 <p>来源：Foresight News、PANews｜置信度：中</p>
 <h3>重大科技融资</h3>
 <p>本窗口无合格项目。</p>
@@ -69,7 +69,7 @@
 <p>影响范围：AI、ETF、主题产品｜方向：中性｜时间维度：短期</p>
 <p>风险提示：ETF 状态可能是申请、获批待上市或传闻，状态不同会显著改变判断。</p>
 <p>后续变量：查发行方公告、交易所产品页、SEC 文件和产品代码。</p>
-<p>待补说明：下一步查发行方、交易所或 SEC 文件确认产品代码、发行方和生效时间。</p>
+<p>待补说明：ETF 产品代码、发行方和生效文件未确认；需查发行方、交易所产品页和 SEC 文件。</p>
 <p>来源：PANews｜置信度：低</p>
 <h2>4. 美股指数</h2>
 <p>数据说明：截至 2026-05-15 美股收盘；来源 Stooq，后续需用 Yahoo Finance 或交易所数据交叉校验。</p>
@@ -81,36 +81,30 @@
 </table></div>
 <p>简要评述：三大指数均偏弱，周末版不能解读成实时行情；后续看 VIX、10Y 美债和 Nasdaq 是否修复。</p>
 <h2>5. 全球经济指标</h2>
-<p>数据说明：截至 2026-05-15 最近可用数据；来源 Stooq，10Y 美债和 VIX 待补。</p>
+<p>数据说明：截至最近可用交易日；来源 Yahoo Finance、U.S. Treasury、CBOE。</p>
 <div class="table-wrap"><table>
 <tr><th>指标</th><th>数值</th><th>涨跌</th><th>判断</th></tr>
 <tr><td>黄金</td><td>4,562</td><td>-1.99%</td><td>避险资产回落，需结合美元和实际利率判断。</td></tr>
 <tr><td>原油</td><td>105.42</td><td>+3.29%</td><td>油价上行可能增加通胀预期压力，对成长股估值不友好。</td></tr>
 <tr><td>美元指数</td><td>99.21</td><td>+0.38%</td><td>美元走强通常压制风险资产和港股流动性。</td></tr>
-<tr><td>10Y 美债</td><td>待补</td><td>待补</td><td>缺收益率口径，宏观压力判断可靠性下降。</td></tr>
-<tr><td>VIX</td><td>待补</td><td>待补</td><td>缺波动率口径，风险偏好判断需要保守。</td></tr>
+<tr><td>10Y 美债</td><td>4.59%</td><td>+0.12%</td><td>无风险利率和成长股估值压力核心指标。</td></tr>
+<tr><td>VIX</td><td>18.43</td><td>+6.78%</td><td>美股波动率和风险偏好核心指标。</td></tr>
 </table></div>
-<p>待补说明：</p>
-<ul>
-<li>10Y 美债：已查 Stooq 口径不稳定；下一步补 FRED、Treasury 或 Yahoo Finance。</li>
-<li>VIX：已查 Stooq 口径不稳定；下一步补 CBOE、Yahoo Finance 或 TradingView。</li>
-</ul>
-<p>简要评述：油价和美元偏强使宏观环境不算宽松；10Y 美债和 VIX 待补，因此不能做过度确定的风险偏好判断。</p>
+<p>简要评述：宏观项已优先接入 Treasury 与 CBOE 的一级数据；若任一源不可用，必须保留缺口说明。</p>
 <h2>6. A股 &amp; 港股</h2>
-<p>数据说明：截至 2026-05-15 A股/港股收盘；来源 Stooq，深证成指和恒生科技待补。</p>
+<p>数据说明：截至最近可用交易日；来源 Yahoo Finance chart 接口、Stooq 备用行情。</p>
 <div class="table-wrap"><table>
 <tr><th>指数</th><th>数值</th><th>涨跌</th><th>判断</th></tr>
 <tr><td>上证指数</td><td>4,135</td><td>-0.93%</td><td>A 股大盘偏弱，风险偏好不支持激进判断。</td></tr>
 <tr><td>深证成指</td><td>待补</td><td>待补</td><td>缺稳定口径，无法完整判断成长风格表现。</td></tr>
 <tr><td>恒生指数</td><td>25,963</td><td>-1.62%</td><td>港股主指数回落，打新情绪需谨慎。</td></tr>
-<tr><td>恒生科技指数</td><td>待补</td><td>待补</td><td>缺恒生科技口径，港股科技情绪判断需降置信度。</td></tr>
+<tr><td>恒生科技指数</td><td>4,941.14</td><td>-2.66%</td><td>港股科技和打新情绪关键参考。</td></tr>
 </table></div>
 <p>待补说明：</p>
 <ul>
 <li>深证成指：已查 Stooq 口径不稳定；下一步补交易所、Yahoo Finance 或东方财富口径。</li>
-<li>恒生科技指数：下一步补 HKEX、恒生指数公司、Yahoo Finance 或 TradingView。</li>
 </ul>
-<p>简要评述：A/H 股整体偏弱，且恒生科技待补，港股打新主页面应给出谨慎、需点进子页面复核的判断。</p>
+<p>简要评述：A/H 指数先用 Yahoo Finance 补齐自动化覆盖；投资级版本仍需 HKEX、恒生指数公司或终端口径复核。</p>
       </div>
     </article>
     <footer class="site-footer">
