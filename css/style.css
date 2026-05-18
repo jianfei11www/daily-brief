@@ -352,6 +352,12 @@ body {
   white-space: nowrap;
 }
 
+.event-title {
+  font-weight: 800;
+  font-size: 15px;
+  color: var(--text);
+}
+
 .compact-card-list {
   grid-template-columns: 1fr;
 }
