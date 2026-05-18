@@ -175,8 +175,8 @@ body {
 .article-body h2 {
   font-size: 20px;
   font-weight: 800;
-  margin-top: 48px;
-  margin-bottom: 20px;
+  margin-top: 34px;
+  margin-bottom: 14px;
   padding: 14px 20px;
   background: var(--bg-card);
   border-left: 4px solid var(--accent);
@@ -187,8 +187,8 @@ body {
 .article-body h3 {
   font-size: 17px;
   font-weight: 700;
-  margin-top: 32px;
-  margin-bottom: 14px;
+  margin-top: 22px;
+  margin-bottom: 10px;
   padding-bottom: 10px;
   border-bottom: 1px solid var(--border);
   color: var(--text);
@@ -389,6 +389,34 @@ body {
 }
 
 .brief-card .source-meta a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.article-body .source-meta {
+  padding: 4px 0;
+  margin: 8px 0 4px;
+  background: transparent;
+  border: none;
+  font-size: 11px;
+  line-height: 1.45;
+  color: var(--text-muted);
+}
+
+.article-body .source-meta:hover {
+  background: transparent;
+}
+
+.article-body .source-meta strong,
+.article-body .source-meta a {
+  color: var(--text-muted);
+}
+
+.article-body .source-meta a {
+  text-decoration: none;
+}
+
+.article-body .source-meta a:hover {
   color: var(--accent);
   text-decoration: underline;
 }
