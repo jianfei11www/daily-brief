@@ -511,6 +511,18 @@ body {
 .etf-table .asset-col { width: 10%; }
 .etf-table .flow-col { width: 17%; }
 .etf-table .judge-col { width: 39%; }
+.article-body .etf-table thead th {
+  padding: 9px 12px;
+}
+.article-body .etf-table tbody td {
+  padding: 9px 12px;
+}
+.article-body .stablecoin-table thead th {
+  padding: 9px 12px;
+}
+.article-body .stablecoin-table tbody td {
+  padding: 9px 12px;
+}
 
 .sentiment-table .indicator-col { width: 24%; }
 .sentiment-table .value-col { width: 22%; }
