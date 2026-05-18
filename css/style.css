@@ -358,9 +358,11 @@ body {
 }
 
 .event-list .exchange-bar {
-  margin-top: 12px;
-  padding-top: 14px;
+  margin-top: 16px;
+  padding-top: 16px;
   border-top: 1px solid var(--border);
+  background: rgba(5, 150, 105, 0.06);
+  border-color: rgba(5, 150, 105, 0.22);
 }
 
 @media (min-width: 601px) {
