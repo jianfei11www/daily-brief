@@ -184,6 +184,32 @@ body {
   color: var(--text);
 }
 
+/* === Section color accents (minimal + low-saturation) === */
+.article-body h2.section-core {
+  border-left-color: var(--accent);
+  background: rgba(37, 99, 235, 0.06);
+}
+
+.article-body h2.section-events {
+  border-left-color: var(--orange);
+  background: rgba(217, 119, 6, 0.06);
+}
+
+.article-body h2.section-opps {
+  border-left-color: #7c3aed;
+  background: rgba(124, 58, 237, 0.06);
+}
+
+.article-body h2.section-flows {
+  border-left-color: var(--green);
+  background: rgba(5, 150, 105, 0.06);
+}
+
+.article-body h2.section-prices {
+  border-left-color: rgba(37, 99, 235, 0.65);
+  background: rgba(37, 99, 235, 0.03);
+}
+
 .article-body h3 {
   font-size: 17px;
   font-weight: 700;
