@@ -340,8 +340,8 @@ body {
 }
 
 .event-list .brief-card p {
-  font-size: 13px;
-  line-height: 1.6;
+  font-size: 15px;
+  line-height: 1.7;
   margin-bottom: 0;
 }
 
@@ -349,13 +349,31 @@ body {
   color: var(--text-muted);
   font-size: 11px;
   margin-left: 6px;
-  white-space: nowrap;
 }
 
 .event-title {
   font-weight: 800;
   font-size: 15px;
   color: var(--text);
+}
+
+.event-list .exchange-bar {
+  margin-top: 12px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+@media (min-width: 601px) {
+  .inline-source { white-space: nowrap; }
+}
+
+@media (max-width: 600px) {
+  .inline-source {
+    display: block;
+    margin-left: 0;
+    margin-top: 4px;
+    white-space: normal;
+  }
 }
 
 .compact-card-list {
