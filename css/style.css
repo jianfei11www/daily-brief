@@ -511,6 +511,9 @@ body {
 .etf-table .asset-col { width: 10%; }
 .etf-table .flow-col { width: 17%; }
 .etf-table .judge-col { width: 39%; }
+.stablecoin-table .asset-col { width: 10%; }
+.stablecoin-table .flow-col { width: 17%; }
+.stablecoin-table .judge-col { width: 39%; }
 .article-body .etf-table thead th {
   padding: 9px 12px;
 }
