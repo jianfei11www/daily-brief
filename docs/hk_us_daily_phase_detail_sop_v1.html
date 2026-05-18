@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>港美股日报阶段细节SOP v1.1</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="/daily-brief/css/style.css?v=hk-us-v1">
+  <style>.article-body{line-height:1.55}.article-body h2{margin-top:30px;margin-bottom:12px;padding:14px 18px}.article-body h3{margin-top:18px;margin-bottom:6px}.article-body p{margin-bottom:4px;padding:4px 10px;line-height:1.55}.article-body .table-wrap{margin:12px 0 16px}.decision-cards{display:grid;gap:8px;margin:12px 0 20px}.decision-card{padding:12px 16px;border:1px solid #e2e5ea;border-radius:8px;background:#f7f8fa;font-size:15px;line-height:1.55}.decision-card strong{font-weight:800;margin-right:8px}.decision-card.hot strong{color:#dc2626}.article-body p.source-note{font-size:12px;color:#6b7280;padding:0 10px;margin-top:2px;margin-bottom:6px}.article-body p.source-note:hover{background:transparent}@media(max-width:640px){.article-body h2{margin-top:24px;margin-bottom:10px;padding:12px 14px}.article-body h3{margin-top:16px;margin-bottom:5px}.article-body p{padding:3px 8px;margin-bottom:3px}.decision-card{padding:10px 12px;font-size:14px;line-height:1.5}}</style>
+</head>
+<body>
+  <div class="wrapper">
+    <header class="site-header">
+      <h1><a href="/daily-brief/?key=7003">链研观察</a></h1>
+      <div class="subtitle">私密板块<span>·</span>仅限内部查看</div>
+    </header>
+    <article>
+      <div class="article-header">
+        <h2>港美股日报阶段细节SOP v1.1</h2>
+      </div>
+      <div class="article-body">
+<h1>港美股日报阶段细节执行 SOP v1.1</h1>
+<p>Status: phase detail SOP, pending merge into official documents.</p>
+<p>本文件整理从“今天决策摘要语气修正”开始，到“宏观大事件、产业热点、信源补齐、版面压缩”结束期间已经确认的细节规则。它的目标是：让任何执行者照着本文件逐项操作，都能生成一份语气正式、内容高度浓缩、能服务投资决策、不再回退旧格式的港美股日报。</p>
+<p>本文件暂不替代以下正式文档：</p>
+<ul>
+<li>`docs/hk_us_daily_sop_v1.md`</li>
+<li>`docs/hk_us_daily_homepage_execution_rules_v1.md`</li>
+<li>`docs/hk_us_daily_development_principles.md`</li>
+<li>`docs/hk_us_daily_development_sop_v1.md`</li>
+<li>`docs/hk_us_daily_test_plan_v1.md`</li>
+</ul>
+<p>正式合并前，凡涉及本文件列出的细节，以用户最新指令和本文件为优先参考。</p>
+<h2>0. 傻瓜执行总流程</h2>
+<p>执行者不需要自行设计流程，必须按以下顺序逐步执行。</p>
+<p>```text</p>
+<p>第 1 步：确认日期和输出文件</p>
+<p>第 2 步：收集宏观大事件和产业热点候选</p>
+<p>第 3 步：筛选高影响事件</p>
+<p>第 4 步：写今天决策摘要</p>
+<p>第 5 步：写港股打新首页</p>
+<p>第 6 步：写宏观大事件</p>
+<p>第 7 步：写产业热点与科技主线</p>
+<p>第 8 步：生成页面</p>
+<p>第 9 步：按检查清单逐项验收</p>
+<p>第 10 步：运行测试和质量门禁</p>
+<p>第 11 步：按固定版本流程推送</p>
+<p>第 12 步：用版本 URL 验证</p>
+<p>```</p>
+<p>任何一步不通过，不得跳到后一步。尤其是第 9-12 步，不允许因为“看起来差不多”而省略。</p>
+<h3>0.1 输入文件</h3>
+<p>默认输入文件：</p>
+<p>```text</p>
+<p>data/raw/YYYY-MM-DD.manual.json</p>
+<p>data/raw/YYYY-MM-DD.hk-ipo-details.json</p>
+<p>```</p>
+<p>如果当天没有对应文件，先创建或补齐原始数据，不得直接改最终 HTML 当成正式生产。</p>
+<h3>0.2 输出文件</h3>
+<p>默认输出文件：</p>
+<p>```text</p>
+<p>outputs/YYYY-MM-DD-stage-source-expanded.json</p>
+<p>outputs/YYYY-MM-DD-stage-source-expanded-hkipo.json</p>
+<p>outputs/YYYY-MM-DD-stage-analyzed.json</p>
+<p>outputs/YYYY-MM-DD-stage-quality-final.json</p>
+<p>outputs/YYYY-MM-DD-stage-hk-us-daily.html</p>
+<p>```</p>
+<p>不得随意改文件名。文件名改动会导致后续发布、日志和验证断链。</p>
+<h3>0.3 发布文件</h3>
+<p>发布目录固定为：</p>
+<p>```text</p>
+<p>/private/tmp/daily-brief-hk-us-publish-final-YYYYMMDD/private/hk-us-daily/YYYYMMDD-hk-us-daily.html</p>
+<p>```</p>
+<p>线上 URL 固定为：</p>
+<p>```text</p>
+<p>https://jianfei11www.github.io/daily-brief/private/hk-us-daily/YYYYMMDD-hk-us-daily.html?v=&lt;commit&gt;</p>
+<p>```</p>
+<p>`?v=&lt;commit&gt;` 必须使用本次推送后的真实 commit 短哈希，不得手写旧版本号，不得省略。</p>
+<h2>1. 总目标</h2>
+<p>港美股日报不是新闻罗列，也不是研究报告长文。它必须是一份高度压缩的投资决策简报。</p>
+<p>每个板块必须回答：</p>
+<ul>
+<li>今天发生了什么。</li>
+<li>对风险偏好、资产价格或投资方向有什么影响。</li>
+<li>接下来需要看什么变量。</li>
+<li>结论的来源和置信度是什么。</li>
+</ul>
+<p>不得出现：</p>
+<ul>
+<li>大段背景铺陈。</li>
+<li>口语化聊天表达。</li>
+<li>重复解释。</li>
+<li>没有动作含义的废话。</li>
+<li>只有信息、没有判断。</li>
+<li>只有判断、没有来源。</li>
+</ul>
+<h2>2. 全局语言标准</h2>
+<h3>2.1 语气必须正式</h3>
+<p>日报面向大众阅读，正文必须使用正式、规范、可公开发布的表达。</p>
+<p>禁止写法：</p>
+<p>```text</p>
+<p>宏观变量是今天最重要的确认项。</p>
+<p>这个需要先看看。</p>
+<p>这个事情很重要。</p>
+<p>现在不要抢结论。</p>
+<p>```</p>
+<p>推荐写法：</p>
+<p>```text</p>
+<p>宏观压力仍需验证。</p>
+<p>油价、10Y 美债、VIX 与美元指数仍对风险资产形成约束；若 VIX 回落且 10Y 美债下行，短线压力可下调。</p>
+<p>```</p>
+<h3>2.2 每句话必须有信息密度</h3>
+<p>每句话必须至少承担一种功能：</p>
+<ul>
+<li>给出结论。</li>
+<li>说明依据。</li>
+<li>给出交易变量。</li>
+<li>说明反向变量。</li>
+<li>标注来源和置信度。</li>
+</ul>
+<p>如果一句话删掉后不影响投资判断，就应该删除。</p>
+<p>必须删除的废话类型：</p>
+<p>```text</p>
+<p>新股和融资机会不强行升级。</p>
+<p>当前需要继续观察。</p>
+<p>后续再看情况。</p>
+<p>需要结合市场判断。</p>
+<p>主页面只适合做综合判断。</p>
+<p>```</p>
+<p>这些表达只有在后面紧跟明确变量、动作或来源时才允许保留。</p>
+<h2>3. `今天决策摘要` SOP</h2>
+<h3>3.1 职责</h3>
+<p>`今天决策摘要` 只负责全局投资判断，不负责展开港股打新、不负责讲项目排序、不负责重复后文事件。</p>
+<p>它回答三个问题：</p>
+<p>1. 今天整体风险偏好如何。</p>
+<p>2. 今天最重要的宏观或市场确认项是什么。</p>
+<p>3. 今天美股/宏观/科技主线覆盖是否足够形成判断。</p>
+<h3>3.2 输出数量</h3>
+<p>固定输出 3-4 条。</p>
+<p>默认 3 条：</p>
+<p>1. 总风险判断。</p>
+<p>2. 宏观压力判断。</p>
+<p>3. 主线覆盖判断。</p>
+<p>只有在确实存在高质量新增主线时，才允许第 4 条。</p>
+<p>禁止：</p>
+<ul>
+<li>输出状态表。</li>
+<li>输出 `今日动作 / 关键风险 / 后续观察` 长列表。</li>
+<li>在摘要里讲港股打新具体项目。</li>
+<li>使用“港股打新不在摘要里抢结论”这类自我解释句。</li>
+</ul>
+<h3>3.3 标准句式</h3>
+<p>每条使用：</p>
+<p>```text</p>
+<p>强结论短句。依据 + 动作含义。</p>
+<p>```</p>
+<p>合格示例：</p>
+<p>```text</p>
+<p>短线防守优先。风险偏好偏弱、宏观压力高，美股趋势和科技情绪同步偏弱；当前不适合追高成长股和港股高弹性方向。</p>
+<p>```</p>
+<p>```text</p>
+<p>宏观压力仍需验证。油价、10Y 美债、VIX 与美元指数仍对风险资产形成约束；若 VIX 回落且 10Y 美债下行，短线压力可下调。</p>
+<p>```</p>
+<p>```text</p>
+<p>宏观主线覆盖改善。本轮已纳入油价与利率扰动、美伊冲突升级风险及谈判条件变化；短线重点观察油价、VIX、10Y 美债与 Nasdaq 的联动。</p>
+<p>```</p>
+<p>不合格示例：</p>
+<p>```text</p>
+<p>宏观变量是今天最重要的确认项。</p>
+<p>```</p>
+<p>不合格原因：口语化、没有动作含义、没有说明变量如何影响判断。</p>
+<p>```text</p>
+<p>港股打新不在摘要里抢结论。今天先完成美股、宏观和港股科技情绪判断，再到港股打新板块看本轮项目优先级；具体项目排序和热度不放在总摘要里展开。</p>
+<p>```</p>
+<p>不合格原因：摘要下方马上就是港股打新，提前解释页面结构会打断阅读。</p>
+<h3>3.4 摘要禁用内容</h3>
+<p>`今天决策摘要` 禁止出现：</p>
+<ul>
+<li>港股打新具体项目名。</li>
+<li>港股打新排序。</li>
+<li>子页面说明。</li>
+<li>数据来源。</li>
+<li>置信度。</li>
+<li>大段后续观察。</li>
+<li>模板解释。</li>
+<li>“不强行升级”“不抢结论”等自我说明。</li>
+</ul>
+<h3>3.5 傻瓜操作步骤</h3>
+<p>写 `今天决策摘要` 时按下面顺序执行。</p>
+<p>#### 第 1 步：读取市场状态</p>
+<p>必须先看以下字段：</p>
+<p>```text</p>
+<p>market_state.risk_appetite</p>
+<p>market_state.macro_pressure</p>
+<p>market_state.equity_trend</p>
+<p>market_state.tech_sentiment</p>
+<p>market_state.hk_sentiment</p>
+<p>```</p>
+<p>如果这些字段缺失，先运行分析流程，不得凭感觉写摘要。</p>
+<p>#### 第 2 步：写第 1 条</p>
+<p>模板：</p>
+<p>```text</p>
+<p>短线防守优先。{风险偏好 + 宏观压力 + 美股/科技情绪}；{今日动作}。</p>
+<p>```</p>
+<p>今日动作只能写：</p>
+<ul>
+<li>控制追高。</li>
+<li>降低高弹性方向优先级。</li>
+<li>等待关键变量确认。</li>
+<li>谨慎参与。</li>
+</ul>
+<p>不得写：</p>
+<ul>
+<li>继续观察。</li>
+<li>看情况。</li>
+<li>不抢结论。</li>
+</ul>
+<p>#### 第 3 步：写第 2 条</p>
+<p>模板：</p>
+<p>```text</p>
+<p>宏观压力仍需验证。{油价/10Y美债/VIX/美元指数的状态}；若{反向变量}，{判断如何调整}。</p>
+<p>```</p>
+<p>必须至少出现两个宏观变量，例如：</p>
+<p>```text</p>
+<p>油价、10Y 美债、VIX、美元指数</p>
+<p>```</p>
+<p>不得写：</p>
+<p>```text</p>
+<p>宏观变量是今天最重要的确认项。</p>
+<p>```</p>
+<p>#### 第 4 步：写第 3 条</p>
+<p>模板：</p>
+<p>```text</p>
+<p>宏观主线覆盖改善。{已纳入的高影响事件类型}；短线重点观察{3-4 个变量}。</p>
+<p>```</p>
+<p>如果宏观大事件少于 2 条，不得写“覆盖改善”。改写为：</p>
+<p>```text</p>
+<p>宏观主线仍需补强。当前高影响事件覆盖不足；发布前需继续补充 Reuters/AP/CNBC/Bloomberg、金十、财联社及官方来源。</p>
+<p>```</p>
+<p>#### 第 5 步：决定是否写第 4 条</p>
+<p>只有满足以下任一条件才写第 4 条：</p>
+<ul>
+<li>产业热点出现高置信新主线。</li>
+<li>宏观大事件出现 3 条以上高影响事件。</li>
+<li>港美股有明确交易影响的监管、财报、政策或产业链事件。</li>
+</ul>
+<p>否则保持 3 条，不得为了凑数写废话。</p>
+<p>#### 第 6 步：删除摘要禁用内容</p>
+<p>写完后逐项搜索：</p>
+<p>```text</p>
+<p>新股和融资机会不强行升级</p>
+<p>港股打新不在摘要里抢结论</p>
+<p>宏观变量是今天最重要的确认项</p>
+<p>今日动作：</p>
+<p>关键风险：</p>
+<p>后续观察：</p>
+<p>```</p>
+<p>任何一个出现，必须删除或重写。</p>
+<h2>4. `1. 港股打新` SOP</h2>
+<h3>4.1 首页职责</h3>
+<p>港股打新首页只保留：</p>
+<p>1. 综合评述。</p>
+<p>2. 子页面入口。</p>
+<p>3. 来源与置信度。</p>
+<p>不得在首页展开：</p>
+<ul>
+<li>全量项目表。</li>
+<li>今日重点多条卡片。</li>
+<li>风险变量长段。</li>
+<li>项目级数据。</li>
+<li>孖展、入场费、一手中签率、暗盘、基石投资者详细表。</li>
+</ul>
+<p>这些全部放入港股打新子页面。</p>
+<h3>4.2 首页综合评述标准</h3>
+<p>综合评述必须能直接指导下一步动作。</p>
+<p>合格方向：</p>
+<p>```text</p>
+<p>综合判断：当前港股打新只选强热度、强主题项目：UISEE 是优先研究对象；上海拓数控和 Robot Phoenix 属于高热度博弈观察；TenNor 热度较弱，暂不作为主打申购方向。</p>
+<p>```</p>
+<p>不合格方向：</p>
+<p>```text</p>
+<p>综合判断：HKEX 披露项目仍有跟踪价值，主页面不展开全量名单。</p>
+<p>```</p>
+<p>不合格原因：没有告诉读者优先看谁、为什么、如何行动。</p>
+<h3>4.3 标题规则</h3>
+<p>页面已经有 `1. 港股打新`，板块内小标题只写：</p>
+<p>```text</p>
+<p>综合评述</p>
+<p>```</p>
+<p>不得写：</p>
+<p>```text</p>
+<p>港股打新综合评述</p>
+<p>```</p>
+<p>原因：重复标题，降低版面密度。</p>
+<h3>4.4 子页面入口</h3>
+<p>入口必须可点击，格式：</p>
+<p>```text</p>
+<p>细节入口：<a href="/daily-brief/private/hk-us-ipo/YYYYMMDD-hk-ipo.html">private/hk-us-ipo/YYYYMMDD-hk-ipo.html</a></p>
+<p>```</p>
+<p>发布后必须验证链接可打开。</p>
+<h3>4.5 傻瓜操作步骤</h3>
+<p>写 `1. 港股打新` 时只做三件事。</p>
+<p>#### 第 1 步：写综合评述</p>
+<p>格式固定：</p>
+<p>```text</p>
+<p>综合判断：{当前是否参与}；{优先研究对象}；{博弈观察对象}；{暂不主打对象}。</p>
+<p>```</p>
+<p>必须回答：</p>
+<ul>
+<li>谁优先研究。</li>
+<li>谁只能博弈观察。</li>
+<li>谁暂不主打。</li>
+<li>为什么。</li>
+</ul>
+<p>不得只写：</p>
+<p>```text</p>
+<p>可进入子页面跟踪。</p>
+<p>仍有研究价值。</p>
+<p>需要结合宏观判断。</p>
+<p>```</p>
+<p>#### 第 2 步：写细节入口</p>
+<p>格式固定：</p>
+<p>```text</p>
+<p>细节入口：<a href="/daily-brief/private/hk-us-ipo/YYYYMMDD-hk-ipo.html">private/hk-us-ipo/YYYYMMDD-hk-ipo.html</a></p>
+<p>```</p>
+<p>不得写成纯文本后无法点击。HTML 中必须渲染为链接。</p>
+<p>#### 第 3 步：写来源与置信度</p>
+<p>格式固定：</p>
+<p>```text</p>
+<p>来源：HKEX、uSMART、The Standard、IPOX、Infocast｜置信度：高</p>
+<p>```</p>
+<p>如果缺少 HKEX，置信度不得为高。</p>
+<p>#### 第 4 步：删除多余内容</p>
+<p>首页港股打新部分不得出现：</p>
+<p>```text</p>
+<p>今日重点：</p>
+<p>风险变量：</p>
+<p>优先关注：</p>
+<p>博弈观察：</p>
+<p>暂不主打：</p>
+<p>项目判断表</p>
+<p>券商孖展</p>
+<p>一手中签率</p>
+<p>暗盘</p>
+<p>基石投资者</p>
+<p>```</p>
+<p>这些内容只能放到子页面。</p>
+<h2>5. `2. 宏观大事件` SOP</h2>
+<h3>5.1 命名规则</h3>
+<p>第 2 部分必须命名为：</p>
+<p>```text</p>
+<p>2. 宏观大事件</p>
+<p>```</p>
+<p>不得再使用：</p>
+<p>```text</p>
+<p>2. 美股重大事件</p>
+<p>```</p>
+<p>原因：该板块已经覆盖油价、利率、VIX、美元、战争、停火、地缘政治等跨市场变量，不只影响美股。</p>
+<h3>5.2 入选范围</h3>
+<p>可入选：</p>
+<ul>
+<li>Fed、CPI、PCE、非农、美债、美元、VIX、黄金、原油。</li>
+<li>战争、停火、制裁、航运、能源供给。</li>
+<li>影响全球风险偏好的重大政策和监管事件。</li>
+<li>会映射到美股、港股、A/H 科技资产或风险资产的全球事件。</li>
+</ul>
+<p>不得入选：</p>
+<ul>
+<li>只有标题、没有市场影响的快讯。</li>
+<li>普通 crypto 二级市场涨跌。</li>
+<li>单纯个股涨跌。</li>
+<li>小公司低影响新闻。</li>
+<li>无来源确认的传闻。</li>
+</ul>
+<h3>5.3 固定格式</h3>
+<p>每条宏观大事件固定三段式：</p>
+<p>```text</p>
+<h3>标题</h3>
+<p>事件：一句话说明发生了什么。</p>
+<p>判断：一句话说明投资含义，可追加一句反向变量。</p>
+<p>来源：来源 A、来源 B｜置信度：高/中/低</p>
+<p>```</p>
+<p>不得使用旧格式：</p>
+<p>```text</p>
+<p>事件说明：...</p>
+<p>市场判断：...</p>
+<p>影响范围：...</p>
+<p>风险提示：...</p>
+<p>后续变量：...</p>
+<p>```</p>
+<h3>5.4 三段式写法标准</h3>
+<p>事件：</p>
+<ul>
+<li>只写事实。</li>
+<li>一句话。</li>
+<li>不写推论。</li>
+<li>不写背景长文。</li>
+</ul>
+<p>判断：</p>
+<ul>
+<li>先写影响方向。</li>
+<li>写清影响对象。</li>
+<li>写清反向变量。</li>
+<li>一般 1-2 句。</li>
+</ul>
+<p>来源：</p>
+<ul>
+<li>必须放在条目末尾。</li>
+<li>必须有置信度。</li>
+<li>快讯源不能单独支撑高置信结论。</li>
+</ul>
+<p>合格示例：</p>
+<p>```text</p>
+<h3>伊朗警告美国若再发起军事行动将面临进攻性回应</h3>
+<p>事件：伊朗警告美国若再军事行动，将面临进攻性回应。</p>
+<p>判断：美伊风险升级会推升油价和避险需求，压制科技股风险偏好。若谈判恢复且油价回落，冲击减弱。</p>
+<p>来源：金十数据、Xinhua｜置信度：高</p>
+<p>```</p>
+<p>不合格示例：</p>
+<p>```text</p>
+<p>事件说明：2026-05-17 金十数据重要事件与新华社均显示，伊朗军方称若美国再次发起军事行动，美国在地区内的军事资产及部队将面临新的进攻性回应。</p>
+<p>市场判断：该事件是油价、VIX 和美股风险偏好的高优先级变量：若军事行动升级，能源供给风险和避险需求可能上升，科技股和高估值资产容易受到风险溢价上行压制。</p>
+<p>```</p>
+<p>不合格原因：过长、标签过多、阅读成本高。</p>
+<h3>5.5 傻瓜操作步骤</h3>
+<p>写 `2. 宏观大事件` 时按下面步骤执行。</p>
+<p>#### 第 1 步：先建候选清单</p>
+<p>候选必须来自以下来源池：</p>
+<p>```text</p>
+<p>金十数据重要事件</p>
+<p>财联社电报</p>
+<p>Reuters</p>
+<p>AP</p>
+<p>CNBC</p>
+<p>Bloomberg</p>
+<p>Xinhua</p>
+<p>National Business Daily</p>
+<p>官方部门/监管/央行/交易所</p>
+<p>```</p>
+<p>每天至少检查：</p>
+<ul>
+<li>地缘政治。</li>
+<li>油价。</li>
+<li>10Y 美债。</li>
+<li>VIX。</li>
+<li>美元指数。</li>
+<li>Fed / CPI / PCE / 非农。</li>
+<li>重大监管和政策。</li>
+</ul>
+<p>#### 第 2 步：判断是否入选</p>
+<p>逐条问：</p>
+<p>```text</p>
+<p>它是否影响油价、美元、美债、VIX 或全球风险偏好？</p>
+<p>它是否影响美股、港股、A/H 科技或高估值资产？</p>
+<p>它是否有明确来源？</p>
+<p>它是否比普通新闻更重要？</p>
+<p>```</p>
+<p>四个问题至少三个为“是”，才能入选。</p>
+<p>#### 第 3 步：每条只写三段</p>
+<p>固定格式：</p>
+<p>```text</p>
+<p>事件：...</p>
+<p>判断：...</p>
+<p>来源：...｜置信度：...</p>
+<p>```</p>
+<p>不得新增第四段。</p>
+<p>#### 第 4 步：写 `事件：`</p>
+<p>规则：</p>
+<ul>
+<li>只写事实。</li>
+<li>一句话。</li>
+<li>30-60 个汉字为宜。</li>
+<li>不写影响。</li>
+<li>不写判断。</li>
+</ul>
+<p>模板：</p>
+<p>```text</p>
+<p>事件：{主体}称/披露/公布/警告/确认{事实}。</p>
+<p>```</p>
+<p>例：</p>
+<p>```text</p>
+<p>事件：伊朗警告美国若再军事行动，将面临进攻性回应。</p>
+<p>```</p>
+<p>#### 第 5 步：写 `判断：`</p>
+<p>规则：</p>
+<ul>
+<li>第一句写投资影响。</li>
+<li>第二句可写反向变量。</li>
+<li>不超过 2 句。</li>
+</ul>
+<p>模板：</p>
+<p>```text</p>
+<p>判断：{事件}会{推升/压制/改善/削弱}{油价/风险偏好/科技股/港股流动性}。若{反向变量}，{判断调整}。</p>
+<p>```</p>
+<p>例：</p>
+<p>```text</p>
+<p>判断：美伊风险升级会推升油价和避险需求，压制科技股风险偏好。若谈判恢复且油价回落，冲击减弱。</p>
+<p>```</p>
+<p>#### 第 6 步：写 `来源：`</p>
+<p>规则：</p>
+<ul>
+<li>至少 1 个主流财经或官方来源。</li>
+<li>快讯源 + 主流财经，可以高/中置信。</li>
+<li>只有快讯源，最多中置信。</li>
+<li>只有社媒或传闻，不得入正文。</li>
+</ul>
+<p>模板：</p>
+<p>```text</p>
+<p>来源：金十数据、Xinhua｜置信度：高</p>
+<p>```</p>
+<p>#### 第 7 步：发布前搜索禁用标签</p>
+<p>宏观大事件板块内不得出现：</p>
+<p>```text</p>
+<p>事件说明：</p>
+<p>市场判断：</p>
+<p>影响范围：</p>
+<p>风险提示：</p>
+<p>后续变量：</p>
+<p>结论：</p>
+<p>依据：</p>
+<p>观察：</p>
+<p>```</p>
+<p>出现任一项，必须重写。</p>
+<p>#### 第 8 步：数量检查</p>
+<p>正常交易日或周末试运行版，宏观大事件不应只有 1 条。</p>
+<p>如果只有 1 条：</p>
+<ul>
+<li>不能发布投资级版本。</li>
+<li>必须继续补源。</li>
+<li>至少检查金十、财联社、Reuters/AP/CNBC/Bloomberg、官方来源。</li>
+</ul>
+<h2>6. `3. 产业热点与科技主线` SOP</h2>
+<h3>6.1 板块定位</h3>
+<p>第 3 部分不再以 IPO / 融资为主轴，而是以产业主线为主轴。</p>
+<p>核心目标：</p>
+<ul>
+<li>识别 AI、半导体、算力、存储、云、机器人等产业主线。</li>
+<li>捕捉中美欧日韩产业链事件。</li>
+<li>解释事件如何映射到美股、港股、A/H 科技资产。</li>
+<li>辅助判断热点是否值得跟踪。</li>
+</ul>
+<h3>6.2 固定子模块</h3>
+<p>保留：</p>
+<p>1. 今日产业主线判断。</p>
+<p>2. AI / 半导体 / 算力链。</p>
+<p>3. 重点公司财报 / 指引 / 订单 / 资本开支。</p>
+<p>4. IPO / 融资 / 资本市场事件。</p>
+<p>不得恢复独立 ETF / 基金产品空模块。</p>
+<h3>6.3 今日产业主线判断</h3>
+<p>只保留一段综合判断。</p>
+<p>合格示例：</p>
+<p>```text</p>
+<p>DRAM 涨价验证 AI 存储链景气，A/H 半导体与美股存储链可跟踪；风险是 IPO 进度与存储周期反转。</p>
+<p>```</p>
+<p>不得重复具体条目的完整事件、判断、风险、后续变量。</p>
+<h3>6.4 产业热点条目格式</h3>
+<p>产业热点条目也使用三段式：</p>
+<p>```text</p>
+<p>事件：...</p>
+<p>判断：...</p>
+<p>来源：...｜置信度：...</p>
+<p>```</p>
+<p>合格示例：</p>
+<p>```text</p>
+<h3>长鑫科技科创板 IPO 申报稿披露一季度业绩高增</h3>
+<p>事件：长鑫科技申报稿披露一季度营收同比增 719.13%，净利润约 330.12 亿元。</p>
+<p>判断：DRAM 涨价验证 AI 存储链景气，半导体链情绪偏正面。若存储价格回落或审核不及预期。</p>
+<p>来源：财联社、CFi.CN、CNR｜置信度：高</p>
+<p>```</p>
+<h3>6.5 傻瓜操作步骤</h3>
+<p>写 `3. 产业热点与科技主线` 时按下面步骤执行。</p>
+<p>#### 第 1 步：先判断今天有没有产业主线</p>
+<p>必须检查：</p>
+<p>```text</p>
+<p>AI</p>
+<p>半导体</p>
+<p>算力</p>
+<p>存储 / DRAM / HBM</p>
+<p>云 / AI Capex</p>
+<p>机器人</p>
+<p>自动驾驶</p>
+<p>半导体设备</p>
+<p>重点公司财报 / 指引 / 订单 / 资本开支</p>
+<p>```</p>
+<p>如果没有高置信线索，写：</p>
+<p>```text</p>
+<p>本窗口未出现足够影响产业判断的新增线索。</p>
+<p>```</p>
+<p>不得强行填充低质量项目。</p>
+<p>#### 第 2 步：写今日产业主线判断</p>
+<p>只写一段。</p>
+<p>模板：</p>
+<p>```text</p>
+<p>{产业变量}验证{主线景气/压力}，{相关资产}可跟踪；风险是{反向变量}。</p>
+<p>```</p>
+<p>例：</p>
+<p>```text</p>
+<p>DRAM 涨价验证 AI 存储链景气，A/H 半导体与美股存储链可跟踪；风险是 IPO 进度与存储周期反转。</p>
+<p>```</p>
+<p>不得写三段：</p>
+<p>```text</p>
+<p>主线判断：</p>
+<p>关键风险：</p>
+<p>后续观察：</p>
+<p>```</p>
+<p>#### 第 3 步：写具体产业条目</p>
+<p>格式固定：</p>
+<p>```text</p>
+<h3>标题</h3>
+<p>事件：...</p>
+<p>判断：...</p>
+<p>来源：...｜置信度：...</p>
+<p>```</p>
+<p>不得出现：</p>
+<p>```text</p>
+<p>事件说明：</p>
+<p>市场判断：</p>
+<p>影响范围：</p>
+<p>风险提示：</p>
+<p>后续变量：</p>
+<p>```</p>
+<p>#### 第 4 步：处理空子模块</p>
+<p>如果 `重点公司财报 / 指引 / 订单 / 资本开支` 没有合格内容，写：</p>
+<p>```text</p>
+<p>本窗口未出现足够影响产业判断的重点公司财报、指引、订单或资本开支线索。</p>
+<p>```</p>
+<p>如果 `IPO / 融资 / 资本市场事件` 只有作为产业主线的一部分，写：</p>
+<p>```text</p>
+<p>已在上方产业主线中按实际影响呈现；IPO / 融资仅作为事件属性，不再单独占据主轴。</p>
+<p>```</p>
+<p>不得恢复 ETF / 基金产品空模块。</p>
+<h2>7. 信源 SOP</h2>
+<h3>7.1 宏观和产业热点必须全球核查</h3>
+<p>产业热点和宏观大事件不得只局限于美股信源。</p>
+<p>必须覆盖：</p>
+<ul>
+<li>中国：财联社、金十数据、证券时报、上交所、深交所、HKEX、中国证监会。</li>
+<li>美国：Reuters、AP、CNBC、Bloomberg、SEC EDGAR、Nasdaq、NYSE、公司 IR。</li>
+<li>欧洲：Financial Times、Euronext、ASML IR。</li>
+<li>日本：Nikkei Asia、JPX/TSE、Tokyo Electron IR。</li>
+<li>韩国：Yonhap、Korea Exchange、Samsung Electronics IR、SK hynix IR。</li>
+</ul>
+<h3>7.2 快讯源使用规则</h3>
+<p>金十数据、财联社电报等快讯源可以作为线索触发源。</p>
+<p>但：</p>
+<ul>
+<li>不得单独支撑高置信结论。</li>
+<li>必须尽量回查官方、公司 IR、交易所、SEC 或主流财经媒体。</li>
+<li>如果只有快讯源，置信度必须降级，并写明待确认变量。</li>
+</ul>
+<h3>7.3 信息源不足时不得发布投资级结论</h3>
+<p>如果宏观大事件只有 1 条，或者明显漏掉高影响事件：</p>
+<ul>
+<li>不得写“主线覆盖改善”。</li>
+<li>必须继续补源。</li>
+<li>质量检查应提示覆盖不足。</li>
+</ul>
+<h3>7.4 傻瓜补源步骤</h3>
+<p>当发现信息源不足时，按下面顺序补。</p>
+<p>#### 第 1 步：快讯源扫一遍</p>
+<p>检查：</p>
+<p>```text</p>
+<p>金十数据重要事件</p>
+<p>财联社电报</p>
+<p>```</p>
+<p>目标：发现当天高影响线索。</p>
+<p>注意：快讯源只负责发现，不负责最终定论。</p>
+<p>#### 第 2 步：国际主流源确认</p>
+<p>对每条宏观和产业线索，至少查一个：</p>
+<p>```text</p>
+<p>Reuters</p>
+<p>AP</p>
+<p>CNBC</p>
+<p>Bloomberg</p>
+<p>Financial Times</p>
+<p>Nikkei Asia</p>
+<p>Yonhap</p>
+<p>```</p>
+<p>如果查不到，不得直接删除线索；应降置信度或写待确认变量。</p>
+<p>#### 第 3 步：官方源回填</p>
+<p>按事件类型查：</p>
+<p>```text</p>
+<p>宏观：Fed、Treasury、BLS、BEA、CBOE</p>
+<p>监管：SEC、FTC、DOJ、FDA、交易所</p>
+<p>产业：公司 IR、交易所公告、招股书、财报</p>
+<p>港股：HKEX、券商打新工具、暗盘数据</p>
+<p>```</p>
+<p>#### 第 4 步：确认置信度</p>
+<p>置信度按以下规则：</p>
+<p>```text</p>
+<p>官方/公司 IR + 主流财经 = 高</p>
+<p>主流财经交叉确认 = 高或中</p>
+<p>快讯 + 主流财经 = 中或高，视事实清晰度决定</p>
+<p>只有快讯 = 中或低</p>
+<p>只有社媒/传闻 = 不入正文</p>
+<p>```</p>
+<p>#### 第 5 步：记录缺口</p>
+<p>如果仍缺源，必须在内部日志或质量结果中记录：</p>
+<p>```text</p>
+<p>缺什么源</p>
+<p>查过什么源</p>
+<p>下一步查什么</p>
+<p>是否影响发布</p>
+<p>```</p>
+<p>不得把“查不到”写成正文长段。</p>
+<h2>8. 版面密度 SOP</h2>
+<h3>8.1 整体密度目标</h3>
+<p>页面要像投资简报，不像长文章。</p>
+<p>要求：</p>
+<ul>
+<li>段落紧凑。</li>
+<li>条目之间区分清楚但不能拉太开。</li>
+<li>决策摘要卡片不能过高。</li>
+<li>h2/h3 上下间距不能像文章标题。</li>
+</ul>
+<h3>8.2 推荐样式参数</h3>
+<p>港美股日报私密页推荐：</p>
+<p>```css</p>
+<p>.article-body { line-height: 1.55; }</p>
+<p>.article-body h2 { margin-top: 30px; margin-bottom: 12px; }</p>
+<p>.article-body h3 { margin-top: 18px; margin-bottom: 6px; }</p>
+<p>.article-body p { margin-bottom: 4px; line-height: 1.55; }</p>
+<p>.decision-cards { gap: 8px; margin: 12px 0 20px; }</p>
+<p>.decision-card { padding: 12px 16px; line-height: 1.55; }</p>
+<p>```</p>
+<p>不得回退到：</p>
+<ul>
+<li>正文 `line-height: 1.9`。</li>
+<li>h2 顶部 `48px`。</li>
+<li>h3 顶部 `32px`。</li>
+<li>决策卡片 `line-height: 1.85`。</li>
+</ul>
+<h3>8.3 数据说明</h3>
+<p>数据说明只能作为弱化信息出现。</p>
+<p>要求：</p>
+<ul>
+<li>放在板块底部。</li>
+<li>字号小。</li>
+<li>颜色弱。</li>
+<li>不占主视觉。</li>
+</ul>
+<p>不得放在板块开头。</p>
+<h3>8.4 傻瓜版面检查步骤</h3>
+<p>生成 HTML 后，按肉眼检查和字符串检查双重执行。</p>
+<p>#### 第 1 步：检查决策摘要</p>
+<p>肉眼标准：</p>
+<ul>
+<li>三张卡片高度接近。</li>
+<li>每张卡片不超过两行半。</li>
+<li>卡片之间没有大块空白。</li>
+</ul>
+<p>如果卡片看起来像正文大段落，FAIL。</p>
+<p>#### 第 2 步：检查事件条目</p>
+<p>每个宏观大事件条目应呈现为：</p>
+<p>```text</p>
+<p>标题</p>
+<p>事件</p>
+<p>判断</p>
+<p>来源</p>
+<p>```</p>
+<p>标题和下一条标题之间应紧凑，但能分辨不同事件。</p>
+<p>#### 第 3 步：检查 CSS 参数</p>
+<p>HTML 中必须出现或等效覆盖：</p>
+<p>```text</p>
+<p>.article-body{line-height:1.55}</p>
+<p>.article-body h2{margin-top:30px;margin-bottom:12px</p>
+<p>.article-body h3{margin-top:18px;margin-bottom:6px</p>
+<p>.article-body p{margin-bottom:4px</p>
+<p>.decision-cards{gap:8px;margin:12px 0 20px}</p>
+<p>.decision-card{padding:12px 16px</p>
+<p>```</p>
+<p>如果页面仍使用全站默认：</p>
+<p>```text</p>
+<p>line-height:1.9</p>
+<p>h2 margin-top:48px</p>
+<p>h3 margin-top:32px</p>
+<p>decision-card line-height:1.85</p>
+<p>```</p>
+<p>必须修复后再发布。</p>
+<h2>9. 发布前傻瓜检查清单</h2>
+<p>生成后逐项检查。</p>
+<h3>9.1 结构检查</h3>
+<p>必须按顺序出现：</p>
+<p>```text</p>
+<p>今天决策摘要</p>
+<p>1. 港股打新</p>
+<p>2. 宏观大事件</p>
+<p>3. 产业热点与科技主线</p>
+<p>4. 美股指数</p>
+<p>5. 全球经济指标</p>
+<p>6. A股 &amp; 港股</p>
+<p>```</p>
+<p>如果出现 `2. 美股重大事件`，FAIL。</p>
+<h3>9.2 摘要检查</h3>
+<p>检查：</p>
+<ul>
+<li>是否 3-4 条。</li>
+<li>是否正式语气。</li>
+<li>是否没有港股打新项目排序。</li>
+<li>是否没有“新股和融资机会不强行升级”。</li>
+<li>是否没有“港股打新不在摘要里抢结论”。</li>
+<li>是否每条都有动作含义。</li>
+</ul>
+<h3>9.3 港股打新检查</h3>
+<p>检查：</p>
+<ul>
+<li>首页只有综合评述、细节入口、来源/置信度。</li>
+<li>子页面链接可点击。</li>
+<li>首页没有项目表。</li>
+<li>首页没有今日重点多卡片。</li>
+<li>首页没有长段风险变量。</li>
+</ul>
+<h3>9.4 宏观大事件检查</h3>
+<p>检查每条是否只有：</p>
+<p>```text</p>
+<p>事件：</p>
+<p>判断：</p>
+<p>来源：</p>
+<p>```</p>
+<p>如果出现以下任一项，FAIL：</p>
+<p>```text</p>
+<p>事件说明：</p>
+<p>市场判断：</p>
+<p>影响范围：</p>
+<p>风险提示：</p>
+<p>后续变量：</p>
+<p>结论：</p>
+<p>依据：</p>
+<p>观察：</p>
+<p>```</p>
+<h3>9.5 产业热点检查</h3>
+<p>检查：</p>
+<ul>
+<li>今日产业主线判断是否只有一段。</li>
+<li>具体条目是否三段式。</li>
+<li>是否没有独立 ETF 空模块。</li>
+<li>是否能看出产业链影响和反向变量。</li>
+</ul>
+<h3>9.6 信源检查</h3>
+<p>检查：</p>
+<ul>
+<li>宏观大事件不只依赖一条快讯。</li>
+<li>产业热点有主流财经或官方确认。</li>
+<li>金十/财联社作为快讯时，有二次确认或降置信度。</li>
+<li>全球产业链源池覆盖中美欧日韩。</li>
+</ul>
+<h3>9.7 版面检查</h3>
+<p>检查：</p>
+<ul>
+<li>决策摘要卡片不臃肿。</li>
+<li>段落之间没有大块空白。</li>
+<li>h2/h3 间距适合简报阅读。</li>
+<li>数据说明没有抢版面。</li>
+</ul>
+<h3>9.8 命令级检查</h3>
+<p>发布前必须执行以下命令。路径和文件名只替换日期，不得改结构。</p>
+<p>#### 第 1 步：生成收集文件</p>
+<p>```bash</p>
+<p>PYTHONPATH=src python3 -m hk_us_daily.cli collect data/raw/YYYY-MM-DD.manual.json outputs/YYYY-MM-DD-stage-source-expanded.json</p>
+<p>```</p>
+<p>成功标准：</p>
+<p>```text</p>
+<p>输出 outputs/YYYY-MM-DD-stage-source-expanded.json</p>
+<p>命令退出码为 0</p>
+<p>```</p>
+<p>#### 第 2 步：合并港股打新细节</p>
+<p>```bash</p>
+<p>PYTHONPATH=src python3 -m hk_us_daily.cli merge-hk-ipo outputs/YYYY-MM-DD-stage-source-expanded.json data/raw/YYYY-MM-DD.hk-ipo-details.json outputs/YYYY-MM-DD-stage-source-expanded-hkipo.json</p>
+<p>```</p>
+<p>成功标准：</p>
+<p>```text</p>
+<p>输出 outputs/YYYY-MM-DD-stage-source-expanded-hkipo.json</p>
+<p>命令退出码为 0</p>
+<p>```</p>
+<p>#### 第 3 步：分析</p>
+<p>```bash</p>
+<p>PYTHONPATH=src python3 -m hk_us_daily.cli analyze outputs/YYYY-MM-DD-stage-source-expanded-hkipo.json outputs/YYYY-MM-DD-stage-analyzed.json</p>
+<p>```</p>
+<p>成功标准：</p>
+<p>```text</p>
+<p>输出 outputs/YYYY-MM-DD-stage-analyzed.json</p>
+<p>命令退出码为 0</p>
+<p>```</p>
+<p>#### 第 4 步：质量门禁</p>
+<p>```bash</p>
+<p>PYTHONPATH=src python3 -m hk_us_daily.cli quality outputs/YYYY-MM-DD-stage-analyzed.json outputs/YYYY-MM-DD-stage-quality-final.json</p>
+<p>```</p>
+<p>成功标准：</p>
+<p>```text</p>
+<p>status = pass</p>
+<p>score &gt;= 85</p>
+<p>blocking_issues = []</p>
+<p>```</p>
+<p>失败处理：</p>
+<ul>
+<li>不得发布。</li>
+<li>先修阻塞问题。</li>
+<li>修完重新从第 1 步或相关步骤执行。</li>
+</ul>
+<p>#### 第 5 步：生成 HTML</p>
+<p>```bash</p>
+<p>PYTHONPATH=src python3 -m hk_us_daily.cli build outputs/YYYY-MM-DD-stage-analyzed.json outputs/YYYY-MM-DD-stage-hk-us-daily.html</p>
+<p>```</p>
+<p>成功标准：</p>
+<p>```text</p>
+<p>输出 outputs/YYYY-MM-DD-stage-hk-us-daily.html</p>
+<p>HTML 包含正确标题和栏目</p>
+<p>```</p>
+<p>#### 第 6 步：跑测试</p>
+<p>```bash</p>
+<p>PYTHONPYCACHEPREFIX=/private/tmp/hk-us-daily-pycache PYTHONPATH=src python3 -m unittest discover -s tests</p>
+<p>```</p>
+<p>成功标准：</p>
+<p>```text</p>
+<p>OK</p>
+<p>```</p>
+<p>#### 第 7 步：编译检查</p>
+<p>```bash</p>
+<p>PYTHONPYCACHEPREFIX=/private/tmp/hk-us-daily-pycache PYTHONPATH=src python3 -m compileall src tests</p>
+<p>```</p>
+<p>成功标准：</p>
+<p>```text</p>
+<p>无报错</p>
+<p>```</p>
+<p>#### 第 8 步：HTML 字符串检查</p>
+<p>至少检查：</p>
+<p>```bash</p>
+<p>rg -n &quot;&lt;h2&gt;2\\. 宏观大事件&lt;/h2&gt;|&lt;h2&gt;3\\. 产业热点与科技主线&lt;/h2&gt;|来源：|事件说明：|市场判断：|ETF / 基金产品|line-height:1\\.55&quot; outputs/YYYY-MM-DD-stage-hk-us-daily.html</p>
+<p>```</p>
+<p>合格标准：</p>
+<ul>
+<li>必须能搜到 `&lt;h2&gt;2. 宏观大事件&lt;/h2&gt;`。</li>
+<li>必须能搜到 `来源：`。</li>
+<li>必须能搜到 `line-height:1.55` 或等效压缩样式。</li>
+<li>不得搜到正文旧标签 `事件说明：`、`市场判断：`。</li>
+<li>不得出现空 `ETF / 基金产品` 模块。</li>
+</ul>
+<p>补充说明（避免回退旧格式）：</p>
+<ul>
+<li>`2. 宏观大事件` 与 `3. 产业热点与科技主线` 的条目为“一条化输出”（标题+事件+判断合并），不再强制出现 `事件：` / `判断：` 标签。</li>
+<li>若需要检查该两节是否仍含旧标签，必须用“分段区间检查”而不是全文搜：</li>
+</ul>
+<p>```bash</p>
+<p>NO_PROXY=&#x27;*&#x27; no_proxy=&#x27;*&#x27; awk &#x27;BEGIN{f=0} /&lt;h2&gt;3\\. 产业热点与科技主线&lt;\\//{f=1} f{print} /&lt;h2&gt;4\\. 美股指数&lt;\\//{exit}&#x27; outputs/YYYY-MM-DD-stage-hk-us-daily.html | rg -n &quot;事件：|判断：&quot; &amp;&amp; echo &quot;FAIL&quot; || echo &quot;OK&quot;</p>
+<p>```</p>
+<h2>10. 版本化推送标准</h2>
+<p>本节为强制规则。最后推送必须完全按照版本要求执行，不允许任何变更。</p>
+<h3>10.1 固定发布目录</h3>
+<p>发布仓库目录固定：</p>
+<p>```text</p>
+<p>/private/tmp/daily-brief-hk-us-publish-final-YYYYMMDD</p>
+<p>```</p>
+<p>发布目标文件固定：</p>
+<p>```text</p>
+<p>private/hk-us-daily/YYYYMMDD-hk-us-daily.html</p>
+<p>```</p>
+<p>不得变更：</p>
+<ul>
+<li>目录名。</li>
+<li>文件名。</li>
+<li>私密路径。</li>
+<li>日期格式。</li>
+<li>页面 URL 结构。</li>
+</ul>
+<h3>10.2 固定复制命令</h3>
+<p>复制命令固定：</p>
+<p>```bash</p>
+<p>cp outputs/YYYY-MM-DD-stage-hk-us-daily.html /private/tmp/daily-brief-hk-us-publish-final-YYYYMMDD/private/hk-us-daily/YYYYMMDD-hk-us-daily.html</p>
+<p>```</p>
+<p>只允许替换：</p>
+<ul>
+<li>`YYYY-MM-DD`</li>
+<li>`YYYYMMDD`</li>
+</ul>
+<p>不得复制到其它目录。</p>
+<h3>10.3 发布仓库推送前检查</h3>
+<p>进入发布仓库：</p>
+<p>```bash</p>
+<p>cd /private/tmp/daily-brief-hk-us-publish-final-YYYYMMDD</p>
+<p>```</p>
+<p>必须先执行：</p>
+<p>```bash</p>
+<p>git status --short</p>
+<p>git diff --stat</p>
+<p>git diff -- private/hk-us-daily/YYYYMMDD-hk-us-daily.html | sed -n &#x27;1,120p&#x27;</p>
+<p>```</p>
+<p>合格标准：</p>
+<ul>
+<li>只修改 `private/hk-us-daily/YYYYMMDD-hk-us-daily.html`。</li>
+<li>不得出现无关文件。</li>
+<li>diff 必须和本次目标一致。</li>
+</ul>
+<p>如果出现无关文件：</p>
+<ul>
+<li>不得提交。</li>
+<li>停止并说明。</li>
+<li>不得擅自删除或 reset。</li>
+</ul>
+<h3>10.4 固定推送命令</h3>
+<p>必须按以下顺序执行：</p>
+<p>```bash</p>
+<p>git pull --rebase --autostash origin main</p>
+<p>git add private/hk-us-daily/YYYYMMDD-hk-us-daily.html</p>
+<p>git commit -m &quot;&lt;固定提交信息&gt;&quot;</p>
+<p>git push origin main</p>
+<p>```</p>
+<p>提交信息必须描述本次唯一目标。</p>
+<p>示例：</p>
+<p>```text</p>
+<p>Tighten HK US daily layout spacing</p>
+<p>Rename macro events and compact event format</p>
+<p>```</p>
+<p>不得使用：</p>
+<p>```text</p>
+<p>update</p>
+<p>fix</p>
+<p>misc</p>
+<p>final</p>
+<p>test</p>
+<p>```</p>
+<h3>10.5 固定版本号规则</h3>
+<p>推送成功后必须读取真实 commit：</p>
+<p>```bash</p>
+<p>git rev-parse --short HEAD</p>
+<p>```</p>
+<p>线上链接必须使用该 commit：</p>
+<p>```text</p>
+<p>https://jianfei11www.github.io/daily-brief/private/hk-us-daily/YYYYMMDD-hk-us-daily.html?v=&lt;commit&gt;</p>
+<p>```</p>
+<p>不得：</p>
+<ul>
+<li>使用旧 commit。</li>
+<li>手写猜测版本号。</li>
+<li>省略 `?v=&lt;commit&gt;`。</li>
+<li>使用日期当版本号。</li>
+</ul>
+<h3>10.6 固定线上验证</h3>
+<p>优先验证 GitHub Pages：</p>
+<p>```bash</p>
+<p>curl --noproxy &#x27;*&#x27; -L --max-time 20 -sS &#x27;https://jianfei11www.github.io/daily-brief/private/hk-us-daily/YYYYMMDD-hk-us-daily.html?v=&lt;commit&gt;&#x27; | rg -n &quot;&lt;h2&gt;2\\. 宏观大事件&lt;/h2&gt;|事件：|判断：|line-height:1\\.55&quot;</p>
+<p>```</p>
+<p>如果 GitHub Pages 缓存或网络失败，必须验证 GitHub raw 主分支：</p>
+<p>```bash</p>
+<p>curl --noproxy &#x27;*&#x27; -L --max-time 20 -sS &#x27;https://raw.githubusercontent.com/jianfei11www/daily-brief/main/private/hk-us-daily/YYYYMMDD-hk-us-daily.html&#x27; | rg -n &quot;&lt;h2&gt;2\\. 宏观大事件&lt;/h2&gt;|事件：|判断：|line-height:1\\.55&quot;</p>
+<p>```</p>
+<p>合格标准：</p>
+<ul>
+<li>至少一个验证源能看到本次修改。</li>
+<li>如果 Pages 仍显示旧内容，但 raw 已更新，应说明 Pages 缓存未刷新。</li>
+<li>不得声称线上已生效，除非已经验证到页面或 raw 主分支包含修改。</li>
+</ul>
+<h3>10.7 发布失败处理</h3>
+<p>任何一步失败：</p>
+<ul>
+<li>停止。</li>
+<li>说明失败命令。</li>
+<li>说明失败原因。</li>
+<li>说明是否已提交、是否已推送。</li>
+<li>不得重复盲目推送。</li>
+<li>不得修改无关文件绕过失败。</li>
+</ul>
+<p>常见情况：</p>
+<p>```text</p>
+<p>git pull 失败：先说明远端同步问题。</p>
+<p>git commit 无变化：说明发布目录没有 diff。</p>
+<p>git push 失败：说明网络或权限问题。</p>
+<p>Pages 验证失败：再查 raw 主分支。</p>
+<p>raw 主分支也失败：不得说已上线。</p>
+<p>```</p>
+<h2>11. 自动化测试建议</h2>
+<p>应补充或保留以下断言：</p>
+<ul>
+<li>HTML 包含 `&lt;h2&gt;2. 宏观大事件&lt;/h2&gt;`。</li>
+<li>HTML 不包含 `&lt;h2&gt;2. 美股重大事件&lt;/h2&gt;`。</li>
+<li>宏观大事件条目包含 `事件：`、`判断：`、`来源：`。</li>
+<li>宏观大事件条目不包含 `事件说明：`、`市场判断：`、`影响范围：`、`风险提示：`、`后续变量：`。</li>
+<li>摘要区不包含港股打新项目名。</li>
+<li>摘要区不包含 `新股和融资机会不强行升级`。</li>
+<li>首页不包含 `ETF / 基金产品` 空模块。</li>
+<li>港股打新首页不包含完整项目表。</li>
+<li>页面内联样式覆盖简报密度参数。</li>
+<li>发布链接必须包含 `?v=&lt;commit&gt;`。</li>
+<li>发布目录只允许目标 HTML 发生变化。</li>
+</ul>
+<h2>12. 当前仍未完成事项</h2>
+<p>本 SOP 已覆盖本阶段页面细节，但以下仍是项目后续工作：</p>
+<p>1. 把全球产业热点源池接入真实抓取器。</p>
+<p>2. 对 Reuters、Bloomberg 等受限源建立可用替代验证路径。</p>
+<p>3. 建立宏观大事件候选池，避免当天只抓到 1 条重大事件。</p>
+<p>4. 把本文件规则拆分合并进正式四份文档。</p>
+<p>5. 为三段式格式和版面密度补更细的自动化测试。</p>
+<p>6. 把版本化推送标准写入正式发布检查文档。</p>
+<h2>13. 执行口诀</h2>
+<p>生成港美股日报时按以下口诀执行：</p>
+<p>```text</p>
+<p>摘要只讲全局，不讲打新项目。</p>
+<p>港股打新首页只给判断和入口。</p>
+<p>第二部分叫宏观大事件，不叫美股重大事件。</p>
+<p>宏观和产业条目只用事件、判断、来源三段式。</p>
+<p>产业热点按全球产业链找，不只看美股。</p>
+<p>快讯只触发，结论要确认。</p>
+<p>页面要像简报，不像长文。</p>
+<p>推送必须带真实 commit 版本号。</p>
+<p>没有验证，不算上线。</p>
+<p>```</p>
+      </div>
+    </article>
+    <footer class="site-footer">
+      <p>© 2026 链研观察 · 内容仅供参考，不构成投资建议</p>
+    </footer>
+  </div>
+</body>
+</html>
