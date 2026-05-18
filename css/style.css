@@ -361,8 +361,22 @@ body {
   margin-top: 16px;
   padding-top: 16px;
   border-top: 1px solid var(--border);
-  background: rgba(5, 150, 105, 0.06);
+  border-left: 4px solid var(--green);
+  background: var(--bg-card);
   border-color: rgba(5, 150, 105, 0.22);
+}
+
+.module-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--green);
+  background: var(--green-bg);
+  border: 1px solid rgba(5, 150, 105, 0.18);
+  padding: 2px 8px;
+  border-radius: 999px;
+  margin-right: 8px;
+  transform: translateY(-1px);
 }
 
 @media (min-width: 601px) {
