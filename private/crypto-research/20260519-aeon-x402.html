@@ -21,144 +21,218 @@
     <article>
       <div class="article-header">
         <div class="article-date">2026年05月19日 周二</div>
-        <h2>AEON 项目研报：AI Agent 经济结算层与 x402 协议</h2>
+        <h2>AEON 项目深度研报：AI Agent 经济结算层的先行者</h2>
       </div>
       <div class="article-body">
 
 <h2>一、核心结论</h2>
 
 <ol>
-<li><strong>AEON 与 TermiX 处于同一赛道（AI Agent 经济结算层），但切入点不同：</strong>AEON 偏"支付网络"（Agent 向真实商户支付），TermiX 偏"Job 清算所"（Agent 之间任务结算）。两者可能互补而非零和竞争。</li>
-<li><strong>YZi Labs 投资已获独立确认：</strong>2026 年 5 月 18 日 The Block 报道，AEON 完成 800 万美元 Pre-Seed 轮，YZi Labs 领投。此为独立信源交叉验证，可信度高于 TermiX 的未确认投资声明。</li>
-<li><strong>投资方阵容强于 TermiX：</strong>联合投资方包括 IDG Capital、HashKey Capital、Stanford Blockchain Builders Fund、Oak Grove Ventures，机构质量与多元化程度均高于 TermiX 已公开信息。</li>
-<li><strong>产品已上线但信息不透明：</strong>宣称首款 AI 支付产品已于 5 月上线，可接入全球超 5000 万家商户。但与 BNB Chain 合作的 x402 Facilitator 尚未见公开代码库（GitHub 账号创建于 2026 年 4 月，零公开仓库）。</li>
-<li><strong>综合判断：AEON 在机构背书层面显著优于 TermiX，但项目信息透明度极低。YZi Labs 同时押注两个"Agent 结算"项目，暗示该赛道为其重点布局方向。短期以跟踪为主，等待更多公开信息披露。</strong></li>
+<li><strong>AEON 是 YZi Labs 在 AI Agent 经济基础设施赛道中已确认的领投项目，其机构背书与参投方质量均优于已知竞品（包括 TermiX）。</strong>2026 年 5 月 18 日，AEON 宣布完成 $8M Pre-Seed 轮，领投方为 YZi Labs，联合 IDG Capital、HashKey Capital、Stanford Blockchain Builders Fund、Oak Grove Ventures、SevenX Ventures、Alchemy Ventures、Draper Dragon、Contribution Capital、Uphonest Capital 等参投。</li>
+<li><strong>AEON 与 TermiX 处于同一赛道但切入点不同：</strong>AEON 做 x402 支付协议原生实现，聚焦"Agent → 真实商户支付"场景；TermiX 做 AACP 协议，聚焦"Agent → Agent 任务清算"场景。两者短期非直接竞争，可能存在互补关系。</li>
+<li><strong>团队背景顶级但公开履历有限：</strong>创始团队成员来自 Binance、Chainlink、Google、HSBC 和 GrabPay 等机构，CEO 为 Eddie Li，联合创始人为 Leo Yiyang Li。但核心成员进一步的教育背景和具体过往履历的公开信息相对有限，这是评估执行能力时需留意的因素。</li>
+<li><strong>x402 协议是先发优势的核心来源：</strong>作为 Coinbase 最早的 x402 官方合作伙伴，AEON 将 HTTP 402 状态码改造为机器原生的支付通道，技术壁垒明确。与 ERC-8004 代理身份标准、Google AP2、MCP 协议的整合构成完整技术栈。</li>
+<li><strong>综合判断：AEON 在机构背书、赛道卡位和技术壁垒方面是当前 AI Agent 支付基础设施赛道中质量最高的项目之一，但产品采用率、监管合规和竞争格局仍是关键不确定因素。持续跟踪建议纳入核心观察清单。</strong></li>
 </ol>
 
 <h2>二、项目概览</h2>
 
 <table>
-<tr><td style="width:140px;"><strong>项目名称</strong></td><td>AEON</td></tr>
-<tr><td><strong>定位</strong></td><td>AI Agent 经济结算层（Agentic Economy Settlement Layer）</td></tr>
-<tr><td><strong>官方网站</strong></td><td>aeon.xyz（JS 渲染，静态抓取无内容）</td></tr>
+<tr><td style="width:180px;"><strong>项目名称</strong></td><td>AEON</td></tr>
+<tr><td><strong>定位</strong></td><td>AI Agent 经济结算层（Agentic Economy Settlement Layer）— "AI 经济时代的金融底座"</td></tr>
+<tr><td><strong>官方网站</strong></td><td>aeon.xyz</td></tr>
+<tr><td><strong>创立时间</strong></td><td>2024 年</td></tr>
+<tr><td><strong>总部</strong></td><td>香港</td></tr>
 <tr><td><strong>GitHub</strong></td><td>github.com/AeonProtocol（2026.04.27 创建，零公开仓库）</td></tr>
-<tr><td><strong>融资</strong></td><td>$8M Pre-Seed（2026.05.18 确认，The Block 报道）</td></tr>
+<tr><td><strong>融资</strong></td><td>$8M Pre-Seed（2026.05.18 确认，The Block 独立报道）</td></tr>
 <tr><td><strong>领投方</strong></td><td>YZi Labs（原 Binance Labs）</td></tr>
-<tr><td><strong>参投方</strong></td><td>IDG Capital、HashKey Capital、Stanford Blockchain Builders Fund、Oak Grove Ventures</td></tr>
-<tr><td><strong>核心协议</strong></td><td>x402（BNB Chain 原生）</td></tr>
-<tr><td><strong>产品状态</strong></td><td>AI 支付产品（2026 年 5 月上线）</td></tr>
-<tr><td><strong>关键合作</strong></td><td>BNB Chain × x402 Facilitator</td></tr>
+<tr><td><strong>参投方</strong></td><td>IDG Capital、HashKey Capital、Stanford Blockchain Builders Fund、Oak Grove Ventures、SevenX Ventures、Alchemy Ventures、Draper Dragon、Contribution Capital、Uphonest Capital</td></tr>
+<tr><td><strong>投后估值</strong></td><td>未披露</td></tr>
+<tr><td><strong>核心协议</strong></td><td>x402 协议（Coinbase 提出，AEON 为最早官方合作伙伴）</td></tr>
+<tr><td><strong>产品状态</strong></td><td>首款 AI 支付产品 2026 年 5 月上线</td></tr>
 </table>
 
-<h2>三、项目定位与叙事</h2>
+<h2>三、赛道背景与市场机遇</h2>
 
-<h3>3.1 解决的问题</h3>
-<p>AEON 的核心主张是：当前 AI Agent 虽然具备自主决策能力，但无法像人类一样完成"支付"这一经济闭环。Agent 不能自主刷卡、不能自己下单、不能独立完成资金结算。AEON 要构建的是 AI 经济的"Visa/Mastercard 支付层"，让 Agent 能够向全球商户发起真实支付。</p>
+<h3>3.1 AI Agent 经济的崛起</h3>
+<p>2026 年标志着 AI Agent 从辅助工具向独立市场参与者的结构性转变。AI 代理已不再是一个概念标签，而是正在发生的范式转移：自主 AI 代理开始独立持有资产、发现服务、执行链上支付，成为经济活动中的独立主体。Circle 近期推出的 Agent Stack、MoonPay 收购 Dawn Labs 进军 AI 代理工具领域等事件，均表明 AI Agent 经济已成为加密行业最受关注的主题之一。</p>
 
-<h3>3.2 核心技术：x402 协议</h3>
-<p>x402 是 BNB Chain 生态中新兴的 AI Agent 支付协议标准。根据已有公开信息：</p>
+<h3>3.2 传统支付体系的不适配</h3>
+<p>传统支付基础设施围绕人类用户设计，其身份验证（KYC）、人工审批、延迟结算（T+1 至 T+3）等环节已难以适应自动化软件的需求。AI 代理需要的是一种机器原生的支付通道——可编程、即时结算、低手续费、无需人工干预。这正是 AEON 所瞄准的核心痛点。</p>
+
+<h3>3.3 市场规模</h3>
 <ul>
-<li>x402 基于 BNB Chain 原生构建</li>
-<li>支持可验证交易（Verifiable Transactions）</li>
-<li>支持链上结算（On-chain Settlement）</li>
-<li>生成不可篡改收据（Immutable Receipts）</li>
-<li>AEON 的 x402 Facilitator 为生态服务商提供接入工具</li>
+<li>AI 代理市场已从 2024 年的 $5.25B 增长至 2025 年的 $7.84B，呈加速增长态势。</li>
+<li>AI 代理的使用量自 2025 年 1 月以来增长了 22 倍。</li>
+<li>行业预测显示，到 2027 年将有相当比例的电子商务交易由 AI 代理发起或执行。</li>
 </ul>
 
-<h3>3.3 与 TermiX/AACP 的关键区别</h3>
+<h2>四、技术架构与核心产品</h2>
+
+<h3>4.1 x402 协议：互联网原生的支付通道</h3>
+<p>x402 协议是 AEON 技术栈的核心。该协议最初由 Coinbase 提出，AEON 是其最早期的官方合作伙伴之一。x402 的精妙之处在于，它将 HTTP 标准中长期被忽视的「402 Payment Required」状态码改造为可编程的支付步骤：</p>
+<ol>
+<li>当 AI 代理尝试访问某个付费 API 或服务时，服务器返回 402 状态码</li>
+<li>代理据此自动触发稳定币支付</li>
+<li>支付完成后即可解锁访问权限</li>
+<li>全程无需人类介入</li>
+</ol>
+
+<h3>4.2 x402 Facilitator：增强型结算层</h3>
+<p>AEON 与 BNB Chain 合作推出的 x402 Facilitator 是 x402 协议的增强实现，原生部署在 BNB Chain 上。提供三大核心功能：</p>
+<ul>
+<li><strong>可验证交易：</strong>每笔支付由 AEON Facilitator 对负载真实性和授权合规性进行验证后才上链确认</li>
+<li><strong>链上结算：</strong>所有支付均在链上完成结算，确保完全透明可追溯</li>
+<li><strong>不可篡改收据：</strong>每笔交易生成包含代理唯一身份标识（遵循 ERC-8004 标准）的不可篡改凭证，创建防伪审计轨迹</li>
+</ul>
+
+<h3>4.3 技术协议整合</h3>
+<table>
+<tr><th style="width:140px;">协议/标准</th><th>功能</th></tr>
+<tr><td><strong>x402</strong></td><td>互联网原生支付通道，将 402 HTTP 状态码改造为链上支付步骤</td></tr>
+<tr><td><strong>ERC-8004</strong></td><td>AI Agent 去中心化身份与信誉标准，提供代理身份注册、信誉评分与验证</td></tr>
+<tr><td><strong>Google AP2</strong></td><td>AI 代理支付授权协议</td></tr>
+<tr><td><strong>MCP</strong></td><td>Model Context Protocol，AI 模型上下文交互协议</td></tr>
+</table>
+
+<p>AEON 的 Protocol Kernel x402 Stack 将支付指令封装进 HTTP 402 状态码，将结算逻辑嵌入每一个 API 请求或服务订阅中，确保 A2A（Agent-to-Agent）交易之间的实时清算。分布式 Trust Hub 以原子最终性验证交易负载，保证不可逆的结算。</p>
+
+<h3>4.4 AI 支付产品</h3>
+<p>2026 年 5 月，AEON 推出首款 AI 支付产品，声称支持 AI 代理连接全球超过 5000 万家实体商户。该产品通过集成各地支付标准（如菲律宾的 QR Ph、巴西的 Pix 等），已覆盖东南亚、非洲和拉丁美洲的零售场景，支持线上 API 支付与线下扫码支付的结合。</p>
+
+<h2>五、团队背景</h2>
+
+<p>AEON 的创始团队拥有深厚的行业积累，成员来自 Binance、Chainlink、Google、HSBC 和 GrabPay 等顶级机构，兼具 AI、区块链架构和现实世界支付的专业经验。</p>
+
+<ul>
+<li><strong>Eddie Li：</strong>CEO 兼联合创始人，公开代表 AEON 阐述项目愿景与战略方向</li>
+<li><strong>Leo Yiyang Li：</strong>联合创始人，负责项目的技术架构与产品方向</li>
+<li><strong>Mike Massari：</strong>团队成员，曾在 BNB Chain Demo Day 迪拜站活动中代表 AEON 进行项目路演，AEON 在该赛事中脱颖而出</li>
+</ul>
+
+<p style="color:var(--text-muted);">⚠️ 需注意：目前关于核心团队成员进一步的教育背景和具体过往履历的公开信息相对有限，这是评估团队执行能力时需留意的因素。</p>
+
+<h2>六、生态系统合作</h2>
+
+<table>
+<tr><td style="width:180px;"><strong>BNB Chain</strong></td><td>x402 Facilitator 原生部署；AEON 被选入 BNB Chain 第十季 Most Valuable Builder（MVB）计划，从 500+ 申请者中脱颖而出</td></tr>
+<tr><td><strong>Coinbase</strong></td><td>作为 x402 协议最早期的官方合作伙伴，参与协议标准制定与推广</td></tr>
+<tr><td><strong>Bitget Wallet</strong></td><td>2026 年 5 月达成合作，共同解锁 AI 代理无缝加密/DeFi 跨链应用</td></tr>
+<tr><td><strong>United Stables ($U)</strong></td><td>作为 BNB Chain 上 x402 AI 原生支付的结算资产</td></tr>
+</table>
+
+<p>此外，AEON 表示计划深化与 Coinbase 和 BNB Chain 等生态伙伴的合作。</p>
+
+<h2>七、发展路线图</h2>
+
+<table>
+<tr><td style="width:180px;"><strong>第一阶段（已完成）</strong></td><td>跨链基础设施和支付标准建设，包括 x402 Facilitator 部署、5000 万+商户接入</td></tr>
+<tr><td><strong>第二阶段（当前）</strong></td><td>信任与规模化，从支付验证演进到执行验证，扩展全球结算网络至新兴市场和传统金融通道</td></tr>
+<tr><td><strong>第三阶段（未来）</strong></td><td>全自主代理协作，建立原生 KYA（Know Your Agent）信用系统，提供全栈 AI 金融服务</td></tr>
+</table>
+
+<h2>八、竞争格局</h2>
+
+<h3>8.1 赛道竞品对比</h3>
+
+<table>
+<tr><th>项目</th><th>融资规模</th><th>投资方</th><th>核心定位</th></tr>
+<tr><td><strong>AEON</strong></td><td>$8M Pre-Seed</td><td>YZi Labs、IDG、HashKey 等</td><td>面向真实商户的 AI Agent 结算层，x402 协议原生实现</td></tr>
+<tr><td>Skyfire</td><td>$9.5M</td><td>a16z 等</td><td>AI 代理支付网络，KYA + 支付授权为核心</td></tr>
+<tr><td>Payman</td><td>$13.8M</td><td>Visa 等</td><td>人类与 AI 代理协作的支付市场</td></tr>
+<tr><td>Nevermined</td><td>未披露</td><td>—</td><td>一站式 AI 代理支付与变现基础设施</td></tr>
+<tr><td>Circle Agent Stack</td><td>内部产品</td><td>Circle 自研</td><td>Agent Wallets + Nanopayments + Agent Marketplace</td></tr>
+<tr><td><strong>TermiX (AACP)</strong></td><td>未公开</td><td>自称 YZi Labs</td><td>Agent 间任务清算协议，TEE + zkVM</td></tr>
+</table>
+
+<h3>8.2 AEON 核心差异化优势</h3>
+<ol>
+<li><strong>x402 协议的深度绑定与原生实现：</strong>作为 Coinbase 最早的 x402 合作伙伴，AEON 在该协议生态中具有先发优势。</li>
+<li><strong>5000 万+真实商户网络：</strong>竞品多聚焦于数字服务和 API 支付场景，AEON 是少数已打通实体零售商户的项目。</li>
+<li><strong>新兴市场切入策略：</strong>通过在东南亚、非洲和拉丁美洲的零售支付场景落地，避开了欧美市场的高监管门槛。</li>
+<li><strong>与 BNB Chain 的深度绑定：</strong>获得了交易所生态的系统性支持（MVB 计划入选）。</li>
+</ol>
+
+<h2>九、投资方分析</h2>
+
+<h3>9.1 参投方质量评估</h3>
+
+<table>
+<tr><td style="width:220px;"><strong>YZi Labs（领投）</strong></td><td>原 Binance Labs，加密行业最顶级孵化/投资机构之一。领投 AEON 确认了其对 AI Agent 经济赛道的系统性布局。</td></tr>
+<tr><td><strong>IDG Capital</strong></td><td>全球顶级 VC，加密投资组合包括 Coinbase、Ripple、Circle 等头部项目。</td></tr>
+<tr><td><strong>HashKey Capital</strong></td><td>亚洲顶级加密基金，香港持牌机构，深谙亚洲监管与市场环境。</td></tr>
+<tr><td><strong>Stanford Blockchain Builders Fund</strong></td><td>斯坦福区块链基金，学术背景背书，暗示团队与斯坦福存在关联。</td></tr>
+<tr><td><strong>Oak Grove Ventures</strong></td><td>专注 Web3 早期投资的硅谷方向基金。</td></tr>
+<tr><td><strong>SevenX Ventures</strong></td><td>亚洲活跃加密 VC，投资组合覆盖 DeFi、基础设施、AI。</td></tr>
+<tr><td><strong>Alchemy Ventures</strong></td><td>Alchemy（Web3 基础设施巨头）旗下基金，提供技术生态协同价值。</td></tr>
+<tr><td><strong>Draper Dragon</strong></td><td>硅谷老牌 VC，Tim Draper 相关，加密投资记录丰富。</td></tr>
+<tr><td><strong>Contribution Capital</strong></td><td>早期投资机构。</td></tr>
+<tr><td><strong>Uphonest Capital</strong></td><td>跨中美早期 VC，关注 AI 与前沿科技。</td></tr>
+</table>
+
+<h3>9.2 YZi Labs 的赛道布局判断</h3>
+<p>YZi Labs 同时投资 AEON（确认）和 TermiX（待确认），表明其对"AI Agent 经济基础设施"赛道进行系统性双向布局：</p>
+<ul>
+<li><strong>AEON（支付层）：</strong>解决"Agent 怎么花钱"——x402 协议原生实现 + 商户支付场景</li>
+<li><strong>TermiX（清算层）：</strong>解决"Agent 怎么结算"——AACP 协议 + Agent 间任务清算场景</li>
+</ul>
+<p>两者组合构成完整的 Agent 经济金融管道：支付 → 验证 → 清算 → 仲裁。这是典型的赛道系统性布局而非单一项目押注。</p>
+
+<h2>十、与 TermiX 的关联分析</h2>
+
 <table>
 <tr><th style="width:140px;">维度</th><th>AEON（x402）</th><th>TermiX（AACP）</th></tr>
 <tr><td><strong>核心场景</strong></td><td>Agent → 商户支付</td><td>Agent → Agent 任务结算</td></tr>
-<tr><td><strong>协议标准</strong></td><td>x402（BNB Chain 原生）</td><td>ERC-8004/8183（以太坊标准）</td></tr>
-<tr><td><strong>目标市场</strong></td><td>5000 万+ 真实商户支付</td><td>Agent 间商业协作与外包</td></tr>
+<tr><td><strong>协议标准</strong></td><td>x402（Coinbase 提出）</td><td>ERC-8004/8183（以太坊标准）</td></tr>
+<tr><td><strong>目标市场</strong></td><td>5000 万+ 真实商户</td><td>Agent 间商业协作与外包</td></tr>
 <tr><td><strong>信任模型</strong></td><td>链上验证 + 不可篡改收据</td><td>TEE + zkVM + 声誉系统</td></tr>
-<tr><td><strong>YZi Labs 确认</strong></td><td>✅ 独立信源确认</td><td>⚠️ 未独立确认</td></tr>
-<tr><td><strong>产品成熟度</strong></td><td>支付产品已上线（5 月）</td><td>测试网，0 交易量</td></tr>
+<tr><td><strong>YZi Labs 确认</strong></td><td>✅ The Block 独立报道</td><td>⚠️ 未独立确认</td></tr>
+<tr><td><strong>产品成熟度</strong></td><td>AI 支付产品已上线（2026.05）</td><td>测试网，0 交易量</td></tr>
 <tr><td><strong>融资规模</strong></td><td>$8M Pre-Seed</td><td>未公开</td></tr>
+<tr><td><strong>团队公开信息</strong></td><td>CEO/CTO 姓名公开，机构背景披露</td><td>不透明</td></tr>
 </table>
 
-<h2>四、投资方分析</h2>
+<h2>十一、风险因素</h2>
 
-<h3>4.1 YZi Labs 的投资逻辑</h3>
-<p>YZi Labs 同时投资 AEON 和 TermiX（待确认），表明其对"AI Agent 经济基础设施"赛道的系统性布局。两个项目的互补性显著：</p>
+<h3>11.1 行业早期风险（🔴）</h3>
+<p>AI Agent 经济仍处于极早期阶段。尽管代理使用量快速增长，但真正由 AI 代理自主发起并完成的支付占比仍然极低。整个赛道面临需求不确定性和市场教育成本。</p>
+
+<h3>11.2 信息透明度风险（🔴）</h3>
+<p>官网为 JS 渲染的单页应用，无法通过静态抓取获取内容。GitHub 零公开仓库。白皮书、文档、完整团队履历均未公开。产品 5000 万商户声称无第三方验证。</p>
+
+<h3>11.3 监管不确定性（🟡）</h3>
+<p>稳定币在现实商业场景中规模化面临 KYC/AML、税务处理、消费者保护等结构性障碍。AEON 选择切入新兴市场在一定程度上规避了部分监管压力，但随着业务规模扩大，合规问题仍将浮现。</p>
+
+<h3>11.4 竞争加剧（🟡）</h3>
+<p>Circle、Stripe（通过稳定币支付）、Visa/Mastercard 等传统支付巨头正在逐步布局 AI 代理支付领域，大型玩家入场可能对初创项目形成降维打击。</p>
+
+<h3>11.5 技术与执行风险（🟡）</h3>
 <ul>
-<li><strong>AEON（支付层）：</strong>解决"Agent 怎么花钱"</li>
-<li><strong>TermiX（清算层）：</strong>解决"Agent 怎么结算"</li>
-</ul>
-<p>两者结合构成完整的 Agent 经济金融管道：支付 → 验证 → 清算 → 仲裁。</p>
-
-<h3>4.2 参投方质量评估</h3>
-<table>
-<tr><td style="width:200px;"><strong>IDG Capital</strong></td><td>顶级 VC，加密投资组合包括 Coinbase、Ripple、Circle 等。参投 AEON 提供强有力的机构背书。</td></tr>
-<tr><td><strong>HashKey Capital</strong></td><td>亚洲顶级加密基金，香港持牌，深谙亚洲监管与市场。其参与降低项目的亚洲监管风险。</td></tr>
-<tr><td><strong>Stanford Blockchain Builders Fund</strong></td><td>斯坦福区块链基金，学术背景背书，暗示团队可能与斯坦福存在关联。</td></tr>
-<tr><td><strong>Oak Grove Ventures</strong></td><td>专注于 Web3 早期投资的基金，代表硅谷方向。</td></tr>
-</table>
-
-<h2>五、竞争格局</h2>
-
-<h3>5.1 赛道图谱</h3>
-<table>
-<tr><th>层级</th><th>项目</th><th>核心功能</th><th>状态</th></tr>
-<tr><td><strong>支付层</strong></td><td>AEON（x402）</td><td>Agent → 商户支付</td><td>Pre-Seed，产品刚上线</td></tr>
-<tr><td><strong>清算层</strong></td><td>TermiX（AACP）</td><td>Agent → Agent 任务结算</td><td>测试网，0 交易量</td></tr>
-<tr><td><strong>身份层</strong></td><td>ERC-8004 标准</td><td>Agent 身份与信誉</td><td>标准提案阶段</td></tr>
-<tr><td><strong>托管层</strong></td><td>ERC-8183 标准</td><td>Job 托管合约</td><td>标准提案阶段</td></tr>
-</table>
-
-<h3>5.2 赛道关键判断</h3>
-<ol>
-<li>x402 与 AACP 并非零和竞争：一个做支付、一个做清算，理论上可以互操作。</li>
-<li>BNB Chain 同时支持两个项目（x402 原生、AACP 迁移中），暗示 BNB 生态希望覆盖 Agent 经济全栈。</li>
-<li>YZi Labs 双向下注，降低单项目失败风险，同时构建赛道话语权。</li>
-</ol>
-
-<h2>六、风险评估</h2>
-
-<h3>6.1 高风险（🔴）</h3>
-<ol>
-<li><strong>信息透明度极低：</strong>官网为 JS 渲染的单页应用，无法通过静态抓取获取任何内容。GitHub 零公开仓库。白皮书、文档、团队信息均未公开。这是评估的最大障碍。</li>
-<li><strong>产品可验证性为零：</strong>宣称 AI 支付产品已上线、可接入 5000 万商户，但无公开 Demo、无链上数据、无第三方验证。这一声明需高度警惕。</li>
-<li><strong>GitHub 账号极新：</strong>2026 年 4 月 27 日创建，距今不足一个月。开发历史几乎为零，技术交付能力完全未知。</li>
-</ol>
-
-<h3>6.2 中等风险（🟡）</h3>
-<ol start="4">
-<li><strong>Pre-Seed 阶段估值不确定：</strong>$8M 在 Pre-Seed 轮中属于中上规模，但未公布估值与代币占比，无法判断机构入场价格。</li>
-<li><strong>赛道叙事过于前沿：</strong>"AI Agent 向 5000 万商户支付"在当前阶段属于高度超前叙事，实际需求验证可能需 2-3 年。</li>
-<li><strong>竞合关系不明：</strong>与 BNB Chain 的 x402 合作关系深度未知，AEON 是 x402 的唯一实现者还是多实现者之一？</li>
-</ol>
-
-<h2>七、关键信息来源</h2>
-
-<table>
-<tr><td style="width:200px;">融资确认</td><td>The Block 报道（2026.05.18）：「AEON raises $8 million led by YZi Labs」</td></tr>
-<tr><td>快讯来源</td><td>BlockBeats 快讯（2026.05.18）</td></tr>
-<tr><td>官方网站</td><td><a href="https://aeon.xyz" target="_blank">aeon.xyz</a>（JS 渲染，静态无内容）</td></tr>
-<tr><td>GitHub</td><td><a href="https://github.com/AeonProtocol" target="_blank">github.com/AeonProtocol</a>（零公开仓库，2026.04.27 创建）</td></tr>
-<tr><td>x402 竞品上下文</td><td>Binance 文章（2025.10.27）：「A Summary of the Latest Popular x402 Concept Projects in Various Ecosystems」</td></tr>
-</table>
-
-<h2>八、与 TermiX 的关联分析</h2>
-
-<p>综合 YZi Labs 的双向投资，AEON 与 TermiX 的关系可概括为：</p>
-<ul>
-<li><strong>赛道共生：</strong>两者均瞄准 AI Agent 经济基础设施，但切入不同层级（支付 vs 清算），短期不存在直接竞争。</li>
-<li><strong>投资方重叠：</strong>YZi Labs 是 AEON 的确认领投方，也是 TermiX 的声称投资方。如果 TermiX 投资被确认，YZi Labs 实质上在构建 Agent 经济全栈版图。</li>
-<li><strong>BNB Chain 生态绑定：</strong>两者均深度绑定 BNB Chain。AEON 使用 x402（BNB 原生），TermiX 部署于 BSC。BNB Chain 可能是 Agent 经济赛道基础设施之争的关键玩家。</li>
-<li><strong>信息不对称：</strong>AEON 有独立融资报道但无产品细节，TermiX 有完整文档但融资未确认。两者互补的信息缺口恰好构成该赛道的完整拼图。</li>
+<li>x402 协议尚处于早期推广阶段，协议标准可能演进或面临替代方案</li>
+<li>AI 代理支付涉及智能合约安全、代理身份伪造（prompt injection attacks、identity hijacking）等技术挑战</li>
+<li>$8M Pre-Seed 在加密基础设施赛道中属于中等水平，团队需在资金有限的情况下完成技术开发、商户拓展和生态建设</li>
 </ul>
 
-<h2>九、跟踪建议</h2>
+<h2>十二、投资亮点总结</h2>
 
-<ol>
-<li><strong>短期（1 个月）：</strong>等待 AEON 在融资 PR 后释放更多公开信息（官网更新、GitHub 开源、团队介绍）。这是评估项目质量的关键窗口。</li>
-<li><strong>中期（3 个月）：</strong>关注 x402 Facilitator 是否上线可验证的链上 Demo；追踪 BNB Chain 对 x402 生态的官方支持力度。</li>
-<li><strong>长期：</strong>如果 TermiX + AEON 被证实为 YZi Labs 的系统性赛道布局，两个项目都值得纳入深度跟踪。AEON 在支付场景有更大的 TAM（Total Addressable Market），但 TermiX 在协议设计上更完整。</li>
-<li><strong>关键触发点：</strong>YZi Labs 是否正式公开披露对 AEON 和/或 TermiX 的投资。这是两个项目从"声称"到"确认"的分水岭。</li>
-</ol>
+<table>
+<tr><th style="width:120px;">维度</th><th>评估</th></tr>
+<tr><td><strong>赛道</strong></td><td>AI Agent 经济基础设施，属于 2026 年加密领域最具确定性的叙事之一</td></tr>
+<tr><td><strong>技术</strong></td><td>x402 协议原生实现，ERC-8004 身份标准整合，技术壁垒明确</td></tr>
+<tr><td><strong>产品</strong></td><td>已有落地产品，5000 万+商户连接能力，非纯概念阶段</td></tr>
+<tr><td><strong>投资方</strong></td><td>YZi Labs 领投，IDG、HashKey、Stanford、Alchemy、Draper Dragon 等多方背书</td></tr>
+<tr><td><strong>生态</strong></td><td>与 BNB Chain、Coinbase、Bitget Wallet 深度合作，MVB 计划入选</td></tr>
+<tr><td><strong>团队</strong></td><td>Binance、Google、HSBC 等顶级机构背景，但具体履历细节有限</td></tr>
+<tr><td><strong>风险</strong></td><td>行业早期、监管不确定、竞争加剧、信息透明度低、执行能力待验证</td></tr>
+</table>
 
-<p style="color:var(--text-muted);margin-top:40px;font-size:0.9em;">⚠️ 免责声明：本报告基于公开信息与独立分析，仅供内部研究参考。项目处于极早期 Pre-Seed 阶段，信息透明度极低，投资风险极高。请独立判断并严格控制仓位。</p>
+<h2>十三、结论</h2>
+
+<p>AEON 处于 AI Agent 经济与加密支付基础设施的交叉点上，这是一个兼具想象空间和实际需求的新兴赛道。项目在技术选型（x402 协议）、生态合作（BNB Chain + Coinbase）和落地场景（5000 万+实体商户）方面形成了初步的差异化优势，且获得了以 YZi Labs 为代表的头部投资机构系统性背书。</p>
+
+<p>然而，AI Agent 支付赛道整体仍处于概念验证向规模化过渡的阶段，AEON 需要在监管框架尚不明朗、竞争格局日趋激烈的环境中，证明其产品能够真正捕获 AI 代理自主支付的实际需求。对于关注 AI 与加密融合方向的投资者和行业观察者而言，AEON 是一个值得持续跟踪的早期项目，但需密切关注其产品实际采用率、后续融资进展以及团队执行力的兑现情况。</p>
+
+<p style="color:var(--text-muted);margin-top:40px;font-size:0.9em;">⚠️ 免责声明：本报告基于公开信息与独立分析，仅供内部研究参考。项目处于极早期 Pre-Seed 阶段，信息透明度有限，投资风险极高。请独立判断并严格控制仓位。</p>
 
       </div>
     </article>
