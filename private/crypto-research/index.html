@@ -19,7 +19,18 @@
     </header>
 
     <main>
-      <ul class="post-list" id="research-list"></ul>
+      <ul class="post-list">
+        <li class="post-item">
+          <div class="post-date">2026年05月19日 周二</div>
+          <div class="post-title"><a href="20260519-aeon-x402.html?key=7003">AEON 项目深度研报：AI Agent 经济结算层的先行者</a></div>
+          <div class="post-desc">$8M YZi Labs 领投 Pre-Seed · x402 支付协议 · 10 家参投方 · 5000万+商户 · 与 TermiX 竞合分析</div>
+        </li>
+        <li class="post-item">
+          <div class="post-date">2026年05月19日 周二</div>
+          <div class="post-title"><a href="20260518-termix-aacp.html?key=7003">TermiX（AACP）项目研报：AI Agent 经济清算协议</a></div>
+          <div class="post-desc">TEE + zkVM 技术架构 · ERC-8004/8183 标准 · BSC 测试网 · 路线图 · 风险评估</div>
+        </li>
+      </ul>
     </main>
 
     <footer class="site-footer">
@@ -27,30 +38,5 @@
       <p style="margin-top:4px;"><a href="/daily-brief/?key=7003">← 返回首页</a></p>
     </footer>
   </div>
-
-  <script>
-    fetch('/daily-brief/private/crypto-research/index.json')
-      .then(function(r) { return r.json(); })
-      .then(function(posts) {
-        var list = document.getElementById('research-list');
-        if (!posts.length) {
-          list.innerHTML = '<li class="post-item" style="text-align:center;color:var(--text-muted);padding:40px 0;">暂无内容，等待更新 🐕</li>';
-          return;
-        }
-        posts.forEach(function(p) {
-          var date = new Date(p.date);
-          var dateStr = date.toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' });
-          var li = document.createElement('li');
-          li.className = 'post-item';
-          li.innerHTML = '<div class="post-date">' + dateStr + '</div>' +
-            '<div class="post-title"><a href="/daily-brief/private/crypto-research/' + p.slug + '.html?key=7003">' + p.title + '</a></div>' +
-            '<div class="post-desc">' + p.desc + '</div>';
-          list.appendChild(li);
-        });
-      })
-      .catch(function() {
-        document.getElementById('research-list').innerHTML = '<li class="post-item" style="text-align:center;color:var(--text-muted);padding:40px 0;">加载失败，请稍后重试</li>';
-      });
-  </script>
 </body>
 </html>
