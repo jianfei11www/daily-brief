@@ -11,18 +11,46 @@
   <div class="wrapper">
     <header class="site-header">
       <h1><a href="/daily-brief/?key=7003">链研观察</a></h1>
-      <div class="subtitle">私密板块 · 项目研报与一级机会</div>
-    </header>
-    <article>
-      <div class="article-body">
-        <h1>加密投研</h1>
-        <p>待填空。</p>
+      <div class="subtitle">
+        私密板块
+        <span>·</span>
+        加密投研
       </div>
-    </article>
+    </header>
+
+    <main>
+      <ul class="post-list" id="research-list"></ul>
+    </main>
+
     <footer class="site-footer">
       <p>© 2026 链研观察 · 内容仅供参考，不构成投资建议</p>
       <p style="margin-top:4px;"><a href="/daily-brief/?key=7003">← 返回首页</a></p>
     </footer>
   </div>
+
+  <script>
+    fetch('/daily-brief/private/crypto-research/index.json')
+      .then(function(r) { return r.json(); })
+      .then(function(posts) {
+        var list = document.getElementById('research-list');
+        if (!posts.length) {
+          list.innerHTML = '<li class="post-item" style="text-align:center;color:var(--text-muted);padding:40px 0;">暂无内容，等待更新 🐕</li>';
+          return;
+        }
+        posts.forEach(function(p) {
+          var date = new Date(p.date);
+          var dateStr = date.toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' });
+          var li = document.createElement('li');
+          li.className = 'post-item';
+          li.innerHTML = '<div class="post-date">' + dateStr + '</div>' +
+            '<div class="post-title"><a href="/daily-brief/private/crypto-research/' + p.slug + '.html?key=7003">' + p.title + '</a></div>' +
+            '<div class="post-desc">' + p.desc + '</div>';
+          list.appendChild(li);
+        });
+      })
+      .catch(function() {
+        document.getElementById('research-list').innerHTML = '<li class="post-item" style="text-align:center;color:var(--text-muted);padding:40px 0;">加载失败，请稍后重试</li>';
+      });
+  </script>
 </body>
 </html>

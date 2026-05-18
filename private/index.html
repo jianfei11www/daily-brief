@@ -80,6 +80,11 @@
           <h3>📈 股票投研</h3>
           <p>美股 / 港股 / 行业公司研究 · 完整投研报告归档</p>
         </a>
+        <a class="section-card" href="/daily-brief/private/crypto-research/" id="crypto-link">
+          <span class="badge">🔒 私密</span>
+          <h3>⛓️ 加密投研</h3>
+          <p>区块链项目深度分析 · 一级机会 · 代币经济 · 风险评估</p>
+        </a>
       </div>
     </main>
 
@@ -91,7 +96,7 @@
 
   <script>
     // Load latest posts for each section
-    ['chain', 'launch', 'hkipo', 'stock'].forEach(section => {
+    ['chain', 'launch', 'hkipo', 'stock', 'crypto-research'].forEach(section => {
       fetch(`/daily-brief/private/${section}/index.json`)
         .then(r => r.json())
         .then(posts => {

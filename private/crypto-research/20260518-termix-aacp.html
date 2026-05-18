@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TermiX（AACP）项目研报 — 链研观察</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="/daily-brief/css/style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <header class="site-header">
+      <h1><a href="/daily-brief/?key=7003">链研观察</a></h1>
+      <div class="subtitle">
+        私密板块
+        <span>·</span>
+        仅限内部查看
+      </div>
+    </header>
+
+    <article>
+      <div class="article-header">
+        <div class="article-date">2026年05月19日 周二</div>
+        <h2>TermiX（AACP）项目研报：AI Agent 经济清算协议</h2>
+      </div>
+      <div class="article-body">
+
+<h2>一、核心结论</h2>
+
+<ol>
+<li><strong>项目定位明确，叙事卡位精准：</strong>TermiX 试图成为"AI Agent 世界的 DTCC（中央清算所）"，通过 AACP 协议实现 Agent 间自主商业协作、验证与结算。叙事层次高于同类 Agent 项目。</li>
+<li><strong>技术方案完整，但产品仍处于极早期：</strong>协议架构覆盖 TEE + zkVM 安全执行、自动化验证、去中心化评估与仲裁四大模块，白皮书已开源。但当前仅部署于 BSC 测试网，链上交易量与 Agent 数量均为零，产品未验证。</li>
+<li><strong>投资方 YZi Labs（原 Binance Labs）的背书尚未独立确认：</strong>官方及社媒材料中提及 YZi Labs 投资，但在公开数据库与独立信源中未检索到交叉验证。需进一步确认。</li>
+<li><strong>代币尚未发行，TGE 时间表不明：</strong>截至 2026 年 5 月，项目未公布代币经济模型。根据路线图，主网预计 2027 Q1 上线，代币发行可能在此之前。</li>
+<li><strong>综合判断：叙事层面具有 Alpha 潜力，执行层面需持续跟踪。当前阶段适合归入观察清单，不建议重仓参与。</strong></li>
+</ol>
+
+<h2>二、项目概览</h2>
+
+<table>
+<tr><td style="width:140px;"><strong>项目名称</strong></td><td>TermiX（协议名称：AACP — Agent Autonomous Commerce Protocol）</td></tr>
+<tr><td><strong>官方网站</strong></td><td>termix.ai</td></tr>
+<tr><td><strong>文档</strong></td><td>docs.termix.ai</td></tr>
+<tr><td><strong>GitHub</strong></td><td>github.com/TermiX-official</td></tr>
+<tr><td><strong>白皮书</strong></td><td>已开源（CC BY-SA 4.0），GitHub 可查</td></tr>
+<tr><td><strong>当前网络</strong></td><td>BSC 测试网；计划迁移至 Base + BSC 主网</td></tr>
+<tr><td><strong>代币状态</strong></td><td>未发行，无 TGE 时间表</td></tr>
+<tr><td><strong>产品状态</strong></td><td>测试网，0 交易量，0 Agent</td></tr>
+<tr><td><strong>社媒</strong></td><td>Medium @TermiX_AI（386 关注者）；Twitter @termix_ai</td></tr>
+</table>
+
+<h2>三、项目定位与叙事</h2>
+
+<h3>3.1 解决的问题</h3>
+<p>当前 AI Agent 在生产力层面已有突破性进展，但 Agent 之间的商业协作面临三个根本问题：</p>
+<ul>
+<li><strong>信任缺失：</strong>Agent A 雇佣 Agent B 执行任务，无法确认 B 是否真正完成工作。</li>
+<li><strong>结算障碍：</strong>Agent 之间的支付需要人工审批或中心化托管，无法实现自主清算。</li>
+<li><strong>声誉孤岛：</strong>Agent 在一个平台积累的信誉无法移植到其他生态。</li>
+</ul>
+
+<h3>3.2 解决方案</h3>
+<p>TermiX 提出 AACP 协议，定义四个核心行业标准：</p>
+<ol>
+<li><strong>安全执行标准：</strong>TEE（Intel SGX / AMD SEV）硬件隔离 + zkVM（SP1 / RISC Zero）数学证明，确保 Agent 私钥不暴露、执行过程可验证。</li>
+<li><strong>自动化验证模块标准：</strong>通过 LogicHash 将商业需求转化为可编程验证逻辑，实现"交付即结算"。</li>
+<li><strong>去中心化评估者网络：</strong>多节点交叉验证，基于博弈论分配评估任务，不依赖单一中央裁判。</li>
+<li><strong>去中心化仲裁标准：</strong>链上 VRF 随机选取仲裁员，commit-reveal 投票机制，Slashing 惩罚作弊。</li>
+</ol>
+
+<h3>3.3 叙事层次</h3>
+<p>与普通 Agent 平台（如 Autonolas、Fetch.ai）不同，TermiX 的叙事站在更高维度——它不做 Agent 本身，而是做 Agent 之间的<strong>清算基础设施</strong>。类比：</p>
+<ul>
+<li>传统金融：Visa / Mastercard 是支付网络，DTCC 是清算所</li>
+<li>Agent 经济：Autonolas / Fetch.ai 是"Agent 服务市场"，TermiX 想做"Agent 经济 DTCC"</li>
+</ul>
+
+<h2>四、技术架构</h2>
+
+<h3>4.1 四层架构</h3>
+<table>
+<tr><td style="width:140px;"><strong>应用层</strong></td><td>CryptoClaw — 面向用户的 Agent 执行终端，已集成近百个 Crypto Skills</td></tr>
+<tr><td><strong>协议层</strong></td><td>AACP — Job 生命周期管理、验证策略、争议解决、激励机制</td></tr>
+<tr><td><strong>执行层</strong></td><td>TEE（Intel SGX / AWS Nitro）+ zkVM（SP1 / RISC Zero）</td></tr>
+<tr><td><strong>资产层</strong></td><td>ERC-8183 Job 托管合约 + ERC-8004 Agent NFT（身份与信誉）</td></tr>
+</table>
+
+<h3>4.2 四种验证等级</h3>
+<table>
+<tr><td style="width:80px;"><strong>L0</strong></td><td>人工信任模式，仅消耗 Gas</td></tr>
+<tr><td><strong>L1</strong></td><td>TEE 硬件信任，仅消耗 Gas</td></tr>
+<tr><td><strong>L2</strong></td><td>zkVM 数学信任，约 200K Gas</td></tr>
+<tr><td><strong>L3</strong></td><td>TEE + zkVM 双重验证，约 200K Gas</td></tr>
+</table>
+
+<h3>4.3 四种协议角色</h3>
+<table>
+<tr><td style="width:100px;"><strong>Client（客户）</strong></td><td>发布 Job、设定预算与截止时间、以 USDC 注资托管合约</td></tr>
+<tr><td><strong>Provider（服务商）</strong></td><td>执行任务逻辑，提交交付物，获得 95% 的 Job 预算</td></tr>
+<tr><td><strong>Evaluator（评估者）</strong></td><td>运行验证脚本，判定交付物是否合格，获得 3–4% 评估费用</td></tr>
+<tr><td><strong>Arbitrator（仲裁员）</strong></td><td>争议时的最终裁决，通过 commit-reveal 投票，获得争议押金分成</td></tr>
+</table>
+
+<h3>4.4 质押经济模型</h3>
+<p>所有参与者维持一个持久 USDC 质押池：</p>
+<ul>
+<li>Client：Job 预算 × 5% 锁定</li>
+<li>Provider：Job 预算 × 10%（可因高验证等级获得最高 30% 折扣）</li>
+<li>Evaluator：Job 预算 × 10%</li>
+<li>Arbitrator：固定 10 USDC / 每次争议</li>
+<li>声誉系数（0–100）降低锁定：声誉越高，所需质押越少</li>
+<li>作弊惩罚：Slashing 从锁定余额扣除，初犯罚 60%，三犯及以上罚 100%</li>
+</ul>
+
+<h2>五、发展阶段与路线图</h2>
+
+<h3>5.1 历史演变</h3>
+<table>
+<tr><td style="width:120px;">2024 年 7 月</td><td>以"AI 驱动的 Web3 操作系统"概念启动</td></tr>
+<tr><td>2024 年 8 月</td><td>在 Solana 推出 TermiX Blink（对话式 DeFi 交互）</td></tr>
+<tr><td>2024 年 10 月</td><td>集成 Google AP2（Agent Payments Protocol），迁移至 BNB Chain</td></tr>
+<tr><td>2025 年 1 月</td><td>推出 "Early Bird" 量化交易机器人</td></tr>
+<tr><td>2026 年 3 月</td><td>AACP 白皮书发布，定位大幅升级为 Agent 清算协议</td></tr>
+<tr><td>2026 年 5 月</td><td>与 AGNT Hub 合作，联合 BNB Chain 推出 "Signal Zero" 量化交易活动</td></tr>
+</table>
+
+<h3>5.2 官方路线图</h3>
+<table>
+<tr><td style="width:100px;"><strong>2026 Q2</strong></td><td>质押池 + 信誉系统上线 Base Sepolia 测试网</td></tr>
+<tr><td><strong>2026 Q3</strong></td><td>zkVM + TEE 链上验证，Base 主网</td></tr>
+<tr><td><strong>2026 Q4</strong></td><td>争议解决 + 仲裁池</td></tr>
+<tr><td><strong>2027 Q1</strong></td><td>Base + BSC 全面主网部署</td></tr>
+</table>
+
+<h2>六、竞品分析</h2>
+
+<table>
+<tr><th>维度</th><th>TermiX/AACP</th><th>Autonolas</th><th>Fetch.ai</th><th>Spectral</th></tr>
+<tr><td><strong>定位</strong></td><td>Agent 清算协议</td><td>Agent 服务网络</td><td>Agent 经济平台</td><td>Agent 创建平台</td></tr>
+<tr><td><strong>核心差异</strong></td><td>TEE+zkVM+清算</td><td>链下服务协调</td><td>多Agent框架+AI</td><td>zkML验证</td></tr>
+<tr><td><strong>代币</strong></td><td>未发行</td><td>OLAS（已发）</td><td>FET（已发）</td><td>SPEC（已发）</td></tr>
+<tr><td><strong>市值</strong></td><td>N/A</td><td>~$300M</td><td>~$1.5B</td><td>~$80M</td></tr>
+<tr><td><strong>投资方</strong></td><td>自称YZi Labs/BNB Chain</td><td>True Ventures</td><td>DWF Labs/Outlier</td><td>Polychain/Galaxy</td></tr>
+</table>
+
+<p><strong>关键观察：</strong>TermiX 的"清算基础设施"定位与现有 Agent 平台并非零和竞争，而是互补关系。如果 Agent 经济叙事成立，清算层有可能成为核心价值捕获点。但未发币状态使其暂时无法进行市值对标。</p>
+
+<h2>七、风险评估</h2>
+
+<h3>7.1 高风险（🔴）</h3>
+<ol>
+<li><strong>YZi Labs 投资未独立验证：</strong>项目宣称 YZi Labs（原 Binance Labs）投资，但在公开投资公告数据库、YZi Labs 官网及独立信源中未检索到交叉确认。此为关键前提，需优先核实。</li>
+<li><strong>产品处于原型阶段：</strong>app.termix.ai 显示总交易量 $0、Agent 注册数 0、Job 数 0。协议架构虽完整，但无实际使用数据验证。</li>
+<li><strong>团队背景不透明：</strong>未在官网、白皮书、GitHub 中找到核心团队成员的实名信息、过往经历与行业背景。</li>
+<li><strong>叙事依赖性：</strong>项目的全部价值建立于"AI Agent 经济"这一尚未被市场大规模验证的叙事之上。若赛道遇冷，项目将面临叙事溢价归零风险。</li>
+</ol>
+
+<h3>7.2 中等风险（🟡）</h3>
+<ol start="5">
+<li><strong>竞品密集，先发劣势：</strong>Autonolas、Fetch.ai 已拥有代币流动性与社区生态，TermiX 起步明显晚于对手。</li>
+<li><strong>执行周期长：</strong>路线图跨越至 2027 Q1，期间团队执行力、资金储备、技术难度均为变量。</li>
+<li><strong>代币经济模型未定：</strong>无代币即无估值锚点，无法进行投资回报测算。</li>
+</ol>
+
+<h2>八、关键数据与信息来源</h2>
+
+<table>
+<tr><td style="width:180px;">官方网站</td><td><a href="https://termix.ai" target="_blank">termix.ai</a></td></tr>
+<tr><td>应用面板</td><td><a href="https://app.termix.ai" target="_blank">app.termix.ai</a>（当前交易量 $0，Agent 数 0）</td></tr>
+<tr><td>技术文档</td><td><a href="https://docs.termix.ai" target="_blank">docs.termix.ai</a></td></tr>
+<tr><td>白皮书</td><td><a href="https://github.com/TermiX-official/aacp-whitepaper" target="_blank">github.com/TermiX-official/aacp-whitepaper</a></td></tr>
+<tr><td>实现代码</td><td><a href="https://github.com/TermiX-official/cryptoclaw" target="_blank">github.com/TermiX-official/cryptoclaw</a>（CryptoClaw）</td></tr>
+<tr><td>Medium</td><td><a href="https://medium.com/@TermiX_AI" target="_blank">medium.com/@TermiX_AI</a>（386 关注者）</td></tr>
+<tr><td>最新进展</td><td>2026.05.16 — AGNT Hub × TermiX × BNB Chain "Signal Zero" 活动</td></tr>
+<tr><td>关键里程碑</td><td>2025.10 — 集成 Google Agent Payments Protocol（AP2）</td></tr>
+</table>
+
+<h2>九、跟踪建议</h2>
+
+<ol>
+<li><strong>短期（1-3 个月）：</strong>确认 YZi Labs 投资真实性；观察 Base Sepolia 测试网是否如期上线质押与信誉功能。</li>
+<li><strong>中期（3-6 个月）：</strong>关注主网迁移后链上 Agent / Job 增长数据；监控 TGE 公告与代币经济模型披露。</li>
+<li><strong>长期（6-12 个月）：</strong>若主网数据健康、代币经济模型合理、赛道持续获得市场关注，可考虑在 TGE 前后评估参与时机。</li>
+</ol>
+
+<p style="color:var(--text-muted);margin-top:40px;font-size:0.9em;">⚠️ 免责声明：本报告仅供内部研究参考，不构成任何投资建议。项目仍处于极早期阶段，存在重大不确定性，请独立判断并控制风险。</p>
+
+      </div>
+    </article>
+
+    <footer class="site-footer">
+      <p>© 2026 链研观察 · 内容仅供参考，不构成投资建议</p>
+      <p style="margin-top:4px;"><a href="/daily-brief/?key=7003">← 返回首页</a></p>
+    </footer>
+  </div>
+</body>
+</html>
