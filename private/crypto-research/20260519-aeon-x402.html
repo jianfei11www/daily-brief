@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AEON 项目研报：AI Agent 经济结算层 — 链研观察</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="/daily-brief/css/style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <header class="site-header">
+      <h1><a href="/daily-brief/?key=7003">链研观察</a></h1>
+      <div class="subtitle">
+        私密板块
+        <span>·</span>
+        仅限内部查看
+      </div>
+    </header>
+
+    <article>
+      <div class="article-header">
+        <div class="article-date">2026年05月19日 周二</div>
+        <h2>AEON 项目研报：AI Agent 经济结算层与 x402 协议</h2>
+      </div>
+      <div class="article-body">
+
+<h2>一、核心结论</h2>
+
+<ol>
+<li><strong>AEON 与 TermiX 处于同一赛道（AI Agent 经济结算层），但切入点不同：</strong>AEON 偏"支付网络"（Agent 向真实商户支付），TermiX 偏"Job 清算所"（Agent 之间任务结算）。两者可能互补而非零和竞争。</li>
+<li><strong>YZi Labs 投资已获独立确认：</strong>2026 年 5 月 18 日 The Block 报道，AEON 完成 800 万美元 Pre-Seed 轮，YZi Labs 领投。此为独立信源交叉验证，可信度高于 TermiX 的未确认投资声明。</li>
+<li><strong>投资方阵容强于 TermiX：</strong>联合投资方包括 IDG Capital、HashKey Capital、Stanford Blockchain Builders Fund、Oak Grove Ventures，机构质量与多元化程度均高于 TermiX 已公开信息。</li>
+<li><strong>产品已上线但信息不透明：</strong>宣称首款 AI 支付产品已于 5 月上线，可接入全球超 5000 万家商户。但与 BNB Chain 合作的 x402 Facilitator 尚未见公开代码库（GitHub 账号创建于 2026 年 4 月，零公开仓库）。</li>
+<li><strong>综合判断：AEON 在机构背书层面显著优于 TermiX，但项目信息透明度极低。YZi Labs 同时押注两个"Agent 结算"项目，暗示该赛道为其重点布局方向。短期以跟踪为主，等待更多公开信息披露。</strong></li>
+</ol>
+
+<h2>二、项目概览</h2>
+
+<table>
+<tr><td style="width:140px;"><strong>项目名称</strong></td><td>AEON</td></tr>
+<tr><td><strong>定位</strong></td><td>AI Agent 经济结算层（Agentic Economy Settlement Layer）</td></tr>
+<tr><td><strong>官方网站</strong></td><td>aeon.xyz（JS 渲染，静态抓取无内容）</td></tr>
+<tr><td><strong>GitHub</strong></td><td>github.com/AeonProtocol（2026.04.27 创建，零公开仓库）</td></tr>
+<tr><td><strong>融资</strong></td><td>$8M Pre-Seed（2026.05.18 确认，The Block 报道）</td></tr>
+<tr><td><strong>领投方</strong></td><td>YZi Labs（原 Binance Labs）</td></tr>
+<tr><td><strong>参投方</strong></td><td>IDG Capital、HashKey Capital、Stanford Blockchain Builders Fund、Oak Grove Ventures</td></tr>
+<tr><td><strong>核心协议</strong></td><td>x402（BNB Chain 原生）</td></tr>
+<tr><td><strong>产品状态</strong></td><td>AI 支付产品（2026 年 5 月上线）</td></tr>
+<tr><td><strong>关键合作</strong></td><td>BNB Chain × x402 Facilitator</td></tr>
+</table>
+
+<h2>三、项目定位与叙事</h2>
+
+<h3>3.1 解决的问题</h3>
+<p>AEON 的核心主张是：当前 AI Agent 虽然具备自主决策能力，但无法像人类一样完成"支付"这一经济闭环。Agent 不能自主刷卡、不能自己下单、不能独立完成资金结算。AEON 要构建的是 AI 经济的"Visa/Mastercard 支付层"，让 Agent 能够向全球商户发起真实支付。</p>
+
+<h3>3.2 核心技术：x402 协议</h3>
+<p>x402 是 BNB Chain 生态中新兴的 AI Agent 支付协议标准。根据已有公开信息：</p>
+<ul>
+<li>x402 基于 BNB Chain 原生构建</li>
+<li>支持可验证交易（Verifiable Transactions）</li>
+<li>支持链上结算（On-chain Settlement）</li>
+<li>生成不可篡改收据（Immutable Receipts）</li>
+<li>AEON 的 x402 Facilitator 为生态服务商提供接入工具</li>
+</ul>
+
+<h3>3.3 与 TermiX/AACP 的关键区别</h3>
+<table>
+<tr><th style="width:140px;">维度</th><th>AEON（x402）</th><th>TermiX（AACP）</th></tr>
+<tr><td><strong>核心场景</strong></td><td>Agent → 商户支付</td><td>Agent → Agent 任务结算</td></tr>
+<tr><td><strong>协议标准</strong></td><td>x402（BNB Chain 原生）</td><td>ERC-8004/8183（以太坊标准）</td></tr>
+<tr><td><strong>目标市场</strong></td><td>5000 万+ 真实商户支付</td><td>Agent 间商业协作与外包</td></tr>
+<tr><td><strong>信任模型</strong></td><td>链上验证 + 不可篡改收据</td><td>TEE + zkVM + 声誉系统</td></tr>
+<tr><td><strong>YZi Labs 确认</strong></td><td>✅ 独立信源确认</td><td>⚠️ 未独立确认</td></tr>
+<tr><td><strong>产品成熟度</strong></td><td>支付产品已上线（5 月）</td><td>测试网，0 交易量</td></tr>
+<tr><td><strong>融资规模</strong></td><td>$8M Pre-Seed</td><td>未公开</td></tr>
+</table>
+
+<h2>四、投资方分析</h2>
+
+<h3>4.1 YZi Labs 的投资逻辑</h3>
+<p>YZi Labs 同时投资 AEON 和 TermiX（待确认），表明其对"AI Agent 经济基础设施"赛道的系统性布局。两个项目的互补性显著：</p>
+<ul>
+<li><strong>AEON（支付层）：</strong>解决"Agent 怎么花钱"</li>
+<li><strong>TermiX（清算层）：</strong>解决"Agent 怎么结算"</li>
+</ul>
+<p>两者结合构成完整的 Agent 经济金融管道：支付 → 验证 → 清算 → 仲裁。</p>
+
+<h3>4.2 参投方质量评估</h3>
+<table>
+<tr><td style="width:200px;"><strong>IDG Capital</strong></td><td>顶级 VC，加密投资组合包括 Coinbase、Ripple、Circle 等。参投 AEON 提供强有力的机构背书。</td></tr>
+<tr><td><strong>HashKey Capital</strong></td><td>亚洲顶级加密基金，香港持牌，深谙亚洲监管与市场。其参与降低项目的亚洲监管风险。</td></tr>
+<tr><td><strong>Stanford Blockchain Builders Fund</strong></td><td>斯坦福区块链基金，学术背景背书，暗示团队可能与斯坦福存在关联。</td></tr>
+<tr><td><strong>Oak Grove Ventures</strong></td><td>专注于 Web3 早期投资的基金，代表硅谷方向。</td></tr>
+</table>
+
+<h2>五、竞争格局</h2>
+
+<h3>5.1 赛道图谱</h3>
+<table>
+<tr><th>层级</th><th>项目</th><th>核心功能</th><th>状态</th></tr>
+<tr><td><strong>支付层</strong></td><td>AEON（x402）</td><td>Agent → 商户支付</td><td>Pre-Seed，产品刚上线</td></tr>
+<tr><td><strong>清算层</strong></td><td>TermiX（AACP）</td><td>Agent → Agent 任务结算</td><td>测试网，0 交易量</td></tr>
+<tr><td><strong>身份层</strong></td><td>ERC-8004 标准</td><td>Agent 身份与信誉</td><td>标准提案阶段</td></tr>
+<tr><td><strong>托管层</strong></td><td>ERC-8183 标准</td><td>Job 托管合约</td><td>标准提案阶段</td></tr>
+</table>
+
+<h3>5.2 赛道关键判断</h3>
+<ol>
+<li>x402 与 AACP 并非零和竞争：一个做支付、一个做清算，理论上可以互操作。</li>
+<li>BNB Chain 同时支持两个项目（x402 原生、AACP 迁移中），暗示 BNB 生态希望覆盖 Agent 经济全栈。</li>
+<li>YZi Labs 双向下注，降低单项目失败风险，同时构建赛道话语权。</li>
+</ol>
+
+<h2>六、风险评估</h2>
+
+<h3>6.1 高风险（🔴）</h3>
+<ol>
+<li><strong>信息透明度极低：</strong>官网为 JS 渲染的单页应用，无法通过静态抓取获取任何内容。GitHub 零公开仓库。白皮书、文档、团队信息均未公开。这是评估的最大障碍。</li>
+<li><strong>产品可验证性为零：</strong>宣称 AI 支付产品已上线、可接入 5000 万商户，但无公开 Demo、无链上数据、无第三方验证。这一声明需高度警惕。</li>
+<li><strong>GitHub 账号极新：</strong>2026 年 4 月 27 日创建，距今不足一个月。开发历史几乎为零，技术交付能力完全未知。</li>
+</ol>
+
+<h3>6.2 中等风险（🟡）</h3>
+<ol start="4">
+<li><strong>Pre-Seed 阶段估值不确定：</strong>$8M 在 Pre-Seed 轮中属于中上规模，但未公布估值与代币占比，无法判断机构入场价格。</li>
+<li><strong>赛道叙事过于前沿：</strong>"AI Agent 向 5000 万商户支付"在当前阶段属于高度超前叙事，实际需求验证可能需 2-3 年。</li>
+<li><strong>竞合关系不明：</strong>与 BNB Chain 的 x402 合作关系深度未知，AEON 是 x402 的唯一实现者还是多实现者之一？</li>
+</ol>
+
+<h2>七、关键信息来源</h2>
+
+<table>
+<tr><td style="width:200px;">融资确认</td><td>The Block 报道（2026.05.18）：「AEON raises $8 million led by YZi Labs」</td></tr>
+<tr><td>快讯来源</td><td>BlockBeats 快讯（2026.05.18）</td></tr>
+<tr><td>官方网站</td><td><a href="https://aeon.xyz" target="_blank">aeon.xyz</a>（JS 渲染，静态无内容）</td></tr>
+<tr><td>GitHub</td><td><a href="https://github.com/AeonProtocol" target="_blank">github.com/AeonProtocol</a>（零公开仓库，2026.04.27 创建）</td></tr>
+<tr><td>x402 竞品上下文</td><td>Binance 文章（2025.10.27）：「A Summary of the Latest Popular x402 Concept Projects in Various Ecosystems」</td></tr>
+</table>
+
+<h2>八、与 TermiX 的关联分析</h2>
+
+<p>综合 YZi Labs 的双向投资，AEON 与 TermiX 的关系可概括为：</p>
+<ul>
+<li><strong>赛道共生：</strong>两者均瞄准 AI Agent 经济基础设施，但切入不同层级（支付 vs 清算），短期不存在直接竞争。</li>
+<li><strong>投资方重叠：</strong>YZi Labs 是 AEON 的确认领投方，也是 TermiX 的声称投资方。如果 TermiX 投资被确认，YZi Labs 实质上在构建 Agent 经济全栈版图。</li>
+<li><strong>BNB Chain 生态绑定：</strong>两者均深度绑定 BNB Chain。AEON 使用 x402（BNB 原生），TermiX 部署于 BSC。BNB Chain 可能是 Agent 经济赛道基础设施之争的关键玩家。</li>
+<li><strong>信息不对称：</strong>AEON 有独立融资报道但无产品细节，TermiX 有完整文档但融资未确认。两者互补的信息缺口恰好构成该赛道的完整拼图。</li>
+</ul>
+
+<h2>九、跟踪建议</h2>
+
+<ol>
+<li><strong>短期（1 个月）：</strong>等待 AEON 在融资 PR 后释放更多公开信息（官网更新、GitHub 开源、团队介绍）。这是评估项目质量的关键窗口。</li>
+<li><strong>中期（3 个月）：</strong>关注 x402 Facilitator 是否上线可验证的链上 Demo；追踪 BNB Chain 对 x402 生态的官方支持力度。</li>
+<li><strong>长期：</strong>如果 TermiX + AEON 被证实为 YZi Labs 的系统性赛道布局，两个项目都值得纳入深度跟踪。AEON 在支付场景有更大的 TAM（Total Addressable Market），但 TermiX 在协议设计上更完整。</li>
+<li><strong>关键触发点：</strong>YZi Labs 是否正式公开披露对 AEON 和/或 TermiX 的投资。这是两个项目从"声称"到"确认"的分水岭。</li>
+</ol>
+
+<p style="color:var(--text-muted);margin-top:40px;font-size:0.9em;">⚠️ 免责声明：本报告基于公开信息与独立分析，仅供内部研究参考。项目处于极早期 Pre-Seed 阶段，信息透明度极低，投资风险极高。请独立判断并严格控制仓位。</p>
+
+      </div>
+    </article>
+
+    <footer class="site-footer">
+      <p>© 2026 链研观察 · 内容仅供参考，不构成投资建议</p>
+      <p style="margin-top:4px;"><a href="/daily-brief/?key=7003">← 返回首页</a></p>
+    </footer>
+  </div>
+</body>
+</html>
