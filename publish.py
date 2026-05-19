@@ -53,7 +53,10 @@ def format_date(date_str):
     try:
         dt = datetime.strptime(date_str, '%Y-%m-%d')
         weekdays = ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
-        return f"{dt.strftime('%Y年%m月%d日')} {weekdays[dt.weekday()]}"
+        # Avoid locale-dependent strftime behavior with non-ASCII literals.
+        # Some environments return empty strings for formats like '%Y年%m月%d日'.
+        date_cn = f"{dt.year}年{dt.month:02d}月{dt.day:02d}日"
+        return f"{date_cn} {weekdays[dt.weekday()]}"
     except:
         return date_str
 
