@@ -371,12 +371,6 @@ body {
   margin-bottom: 0;
 }
 
-.inline-source {
-  color: var(--text-muted);
-  font-size: 11px;
-  margin-left: 6px;
-}
-
 .event-title {
   font-weight: 800;
   font-size: 15px;
@@ -403,19 +397,6 @@ body {
   border-radius: 999px;
   margin-right: 8px;
   transform: translateY(-1px);
-}
-
-@media (min-width: 601px) {
-  .inline-source { white-space: nowrap; }
-}
-
-@media (max-width: 600px) {
-  .inline-source {
-    display: block;
-    margin-left: 0;
-    margin-top: 4px;
-    white-space: normal;
-  }
 }
 
 .compact-card-list {
