@@ -613,12 +613,12 @@ body {
   font-size: 12px;
 }
 
-.etf-table .asset-col { width: 10%; }
-.etf-table .flow-col { width: 17%; }
-.etf-table .judge-col { width: 39%; }
-.stablecoin-table .asset-col { width: 10%; }
-.stablecoin-table .flow-col { width: 17%; }
-.stablecoin-table .judge-col { width: 39%; }
+.etf-table .asset-col { width: 8%; }
+.etf-table .flow-col { width: 14%; }
+.etf-table .judge-col { width: 50%; }
+.stablecoin-table .asset-col { width: 8%; }
+.stablecoin-table .flow-col { width: 14%; }
+.stablecoin-table .judge-col { width: 50%; }
 .article-body .etf-table thead th {
   padding: 9px 12px;
 }
