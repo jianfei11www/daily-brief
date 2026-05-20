@@ -449,10 +449,11 @@ body {
 }
 
 .section-note {
-  margin: -10px 0 8px;
+  margin: -12px 0 4px;
   color: var(--text-muted);
-  font-size: 11px;
-  line-height: 1.35;
+  font-size: 9px;
+  font-style: italic;
+  line-height: 1.2;
 }
 
 .brief-card .source-meta {
