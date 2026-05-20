@@ -789,9 +789,34 @@ body {
   .balance-table .term {
     font-size: 11px;
   }
-  .etf-table .asset-col { width: 11%; }
-  .etf-table .flow-col { width: 19%; }
-  .etf-table .judge-col { width: 32%; }
+  .etf-table table,
+  .stablecoin-table table {
+    min-width: 0;
+    table-layout: fixed;
+  }
+  .etf-table .asset-col { width: 8%; }
+  .etf-table .flow-col { width: 14%; }
+  .etf-table .judge-col { width: 50%; }
+  .stablecoin-table .asset-col { width: 9%; }
+  .stablecoin-table .flow-col { width: 15%; }
+  .stablecoin-table .judge-col { width: 46%; }
+  .article-body .etf-table thead th,
+  .article-body .etf-table tbody td,
+  .article-body .stablecoin-table thead th,
+  .article-body .stablecoin-table tbody td {
+    padding: 8px 4px;
+    font-size: 11px;
+    line-height: 1.45;
+    text-align: center;
+  }
+  .article-body .etf-table tbody td:last-child,
+  .article-body .stablecoin-table tbody td:last-child {
+    font-size: 11px;
+    line-height: 1.55;
+    text-align: left;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
   .sentiment-table .indicator-col { width: 26%; }
   .sentiment-table .value-col { width: 22%; }
   .sentiment-table .judge-col { width: 52%; }
