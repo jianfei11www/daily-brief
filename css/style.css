@@ -821,9 +821,9 @@ body {
     min-width: 0;
     table-layout: fixed;
   }
-  .sentiment-table .indicator-col { width: 26%; }
+  .sentiment-table .indicator-col { width: 31%; }
   .sentiment-table .value-col { width: 19%; }
-  .sentiment-table .judge-col { width: 55%; }
+  .sentiment-table .judge-col { width: 50%; }
   .article-body .sentiment-table thead th,
   .article-body .sentiment-table tbody td {
     padding: 8px 5px;
