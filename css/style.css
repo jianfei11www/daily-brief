@@ -449,7 +449,7 @@ body {
 }
 
 .article-body p.section-note {
-  margin: -12px 0 8px !important;
+  margin: 10px 0 16px !important;
   padding: 0 !important;
   background: transparent !important;
   color: var(--text-muted);
