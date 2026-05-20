@@ -394,14 +394,6 @@ body {
   border-color: rgba(5, 150, 105, 0.22);
 }
 
-.event-list .exchange-heat {
-  margin-top: 8px;
-  padding-top: 12px;
-  border-left-color: var(--accent);
-  border-color: rgba(37, 99, 235, 0.18);
-  background: #f8fafc;
-}
-
 .module-tag {
   display: inline-block;
   font-size: 11px;
