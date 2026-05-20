@@ -651,9 +651,10 @@ body {
   min-width: 0;
 }
 
-.index-table .name-col { width: 22%; }
-.index-table .value-col { width: 39%; }
-.index-table .change-col { width: 39%; }
+.index-table .name-col { width: 20%; }
+.index-table .value-col { width: 28%; }
+.index-table .change-col { width: 22%; }
+.index-table .fdv-col { width: 30%; }
 
 .macro-table .name-col { width: 50%; }
 .macro-table .value-col { width: 25%; }
@@ -851,9 +852,10 @@ body {
   .index-table table {
     min-width: 0;
   }
-  .index-table .name-col { width: 27%; }
-  .index-table .value-col { width: 31%; }
-  .index-table .change-col { width: 42%; }
+  .index-table .name-col { width: 24%; }
+  .index-table .value-col { width: 27%; }
+  .index-table .change-col { width: 21%; }
+  .index-table .fdv-col { width: 28%; }
 }
 
 .hidden { display: none !important; }
