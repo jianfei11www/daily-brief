@@ -794,12 +794,12 @@ body {
     min-width: 0;
     table-layout: fixed;
   }
-  .etf-table .asset-col { width: 8%; }
-  .etf-table .flow-col { width: 14%; }
-  .etf-table .judge-col { width: 50%; }
-  .stablecoin-table .asset-col { width: 9%; }
-  .stablecoin-table .flow-col { width: 15%; }
-  .stablecoin-table .judge-col { width: 46%; }
+  .etf-table .asset-col,
+  .stablecoin-table .asset-col { width: 8.5%; }
+  .etf-table .flow-col,
+  .stablecoin-table .flow-col { width: 14.5%; }
+  .etf-table .judge-col,
+  .stablecoin-table .judge-col { width: 48%; }
   .article-body .etf-table thead th,
   .article-body .etf-table tbody td,
   .article-body .stablecoin-table thead th,
