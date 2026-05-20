@@ -655,32 +655,6 @@ body {
 .index-table .value-col { width: 39%; }
 .index-table .change-col { width: 39%; }
 
-.token-observation {
-  margin: 12px 0 12px;
-}
-
-.token-observation p {
-  padding: 0;
-  margin: 0 0 8px;
-}
-
-.token-observation ul {
-  margin: 0;
-}
-
-.article-body .token-observation li {
-  padding: 6px 0;
-  margin-bottom: 2px;
-  background: transparent;
-  border: 0;
-  border-radius: 0;
-  line-height: 1.55;
-}
-
-.article-body .token-observation li:hover {
-  border-color: transparent;
-}
-
 .macro-table .name-col { width: 50%; }
 .macro-table .value-col { width: 25%; }
 .macro-table .change-col { width: 25%; }
@@ -880,18 +854,6 @@ body {
   .index-table .name-col { width: 27%; }
   .index-table .value-col { width: 31%; }
   .index-table .change-col { width: 42%; }
-  .token-observation {
-    margin: 10px 0;
-  }
-  .article-body .token-observation p {
-    font-size: 13px;
-    padding: 0;
-  }
-  .article-body .token-observation li {
-    font-size: 12px;
-    line-height: 1.45;
-    padding: 5px 0;
-  }
 }
 
 .hidden { display: none !important; }
