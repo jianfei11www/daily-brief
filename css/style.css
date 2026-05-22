@@ -470,6 +470,18 @@ body {
   line-height: 2 !important;
 }
 
+.article-body p.strategy-note {
+  margin: 4px 0 22px;
+  padding: 10px 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
 .brief-card .source-meta {
   font-size: 12px !important;
   line-height: 1.45;
