@@ -479,6 +479,7 @@ body {
   border-radius: var(--radius);
   color: var(--text);
   font-size: 14px;
+  font-weight: 700;
   line-height: 1.75;
 }
 
