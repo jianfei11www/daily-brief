@@ -475,16 +475,17 @@ body {
   padding: 12px 16px;
   background: #eef5ff;
   border: 1px solid #bfdbfe;
-  border-left: 5px solid var(--accent);
+  border-left: 6px solid #2563eb;
   border-radius: var(--radius);
   color: var(--text);
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.75;
 }
 
 .article-body p.strategy-note strong {
-  color: var(--accent);
+  color: #1d4ed8;
+  font-weight: 900;
 }
 
 .brief-card .source-meta {
