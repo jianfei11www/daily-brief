@@ -297,6 +297,8 @@
 
       const conclusionItems = Array.from(body.querySelectorAll(":scope > ul:first-of-type > li"));
       if (conclusionItems.length < 6) return;
+      const conclusionList = conclusionItems[0].parentElement;
+      [1, 3, 4, 0, 2, 5].forEach((index) => conclusionList.appendChild(conclusionItems[index]));
 
       function collectSection(headingClass) {
         const heading = body.querySelector(`:scope > h2.${headingClass}`);
