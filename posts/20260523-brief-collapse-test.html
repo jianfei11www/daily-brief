@@ -24,53 +24,52 @@
       background: #f8fbff;
     }
 
-    .conclusion-detail {
-      margin-top: 10px;
+    .full-detail {
+      margin: 18px 0 28px;
       border: 1px solid #e2e5ea;
       border-radius: 8px;
       background: #fff;
       overflow: hidden;
     }
 
-    .conclusion-detail[open] {
+    .full-detail[open] {
       box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
     }
 
-    .conclusion-detail > summary {
+    .full-detail > summary {
       list-style: none;
       cursor: pointer;
-      padding: 7px 10px;
+      padding: 13px 16px;
       background: #eef5ff;
       color: #2563eb;
-      font-size: 12px;
-      font-weight: 700;
-      line-height: 1.45;
+      font-size: 15px;
+      font-weight: 800;
+      line-height: 1.5;
     }
 
-    .conclusion-detail > summary::-webkit-details-marker {
+    .full-detail > summary::-webkit-details-marker {
       display: none;
     }
 
-    .conclusion-detail > summary::after {
+    .full-detail > summary::after {
       content: "＋";
       float: right;
       color: #2563eb;
       font-weight: 900;
     }
 
-    .conclusion-detail[open] > summary::after {
+    .full-detail[open] > summary::after {
       content: "－";
     }
 
-    .conclusion-content {
-      padding: 12px 12px 14px;
+    .full-detail-content {
+      padding: 4px 16px 18px;
       border-top: 1px solid #dbeafe;
       background: #fff;
     }
 
-    .conclusion-content h3,
-    .conclusion-content h4 {
-      margin-top: 12px;
+    .full-detail-content > h2:first-child {
+      margin-top: 16px;
     }
 
     @media (max-width: 640px) {
@@ -79,8 +78,13 @@
         font-size: 12px;
       }
 
-      .conclusion-content {
-        padding: 8px 8px 10px;
+      .full-detail > summary {
+        padding: 11px 12px;
+        font-size: 14px;
+      }
+
+      .full-detail-content {
+        padding: 2px 10px 14px;
       }
     }
   </style>
@@ -99,7 +103,7 @@
         <div class="article-date">2026年05月23日 周六</div>
         <h2>加密市场每日决策简报 | 2026年5月23日 星期六 09:00 CST</h2>
       </div>
-      <div class="test-banner">交互折叠测试页：正式日报内容保持不变，仅测试“每条核心结论下方直接展开对应正文”的阅读方式。</div>
+      <div class="test-banner">交互折叠测试页：正式日报内容保持不变，仅测试“核心结论后整体展开完整明细”的阅读方式。</div>
       <div class="article-body">
         <h2 class="section-core">一、今日核心结论</h2>
 <ul>
@@ -308,93 +312,27 @@
         conclusionList.appendChild(item);
       });
 
-      function collectSection(headingClass) {
-        const heading = body.querySelector(`:scope > h2.${headingClass}`);
-        const nodes = [];
-        if (!heading) return nodes;
-        let node = heading.nextSibling;
-        while (node && !(node.nodeType === 1 && node.matches("h2"))) {
-          const next = node.nextSibling;
-          nodes.push(node);
-          node.remove();
-          node = next;
-        }
-        heading.remove();
-        return nodes;
+      const strategyNote = body.querySelector(":scope > p.strategy-note");
+      const firstDetailHeading = body.querySelector(":scope > h2:not(.section-core)");
+      if (!strategyNote || !firstDetailHeading) return;
+
+      const details = document.createElement("details");
+      details.className = "full-detail";
+      const summary = document.createElement("summary");
+      summary.textContent = "展开完整明细内容";
+      const content = document.createElement("div");
+      content.className = "full-detail-content";
+
+      let node = firstDetailHeading;
+      while (node) {
+        const next = node.nextSibling;
+        content.appendChild(node);
+        node = next;
       }
 
-      function appendNodes(target, nodes) {
-        nodes.forEach((node) => target.appendChild(node));
-      }
-
-      function makeGroup(title, nodes) {
-        const details = document.createElement("details");
-        details.className = "conclusion-detail";
-        const summary = document.createElement("summary");
-        summary.textContent = title;
-        const content = document.createElement("div");
-        content.className = "conclusion-content";
-        appendNodes(content, nodes);
-        details.appendChild(summary);
-        details.appendChild(content);
-        return details;
-      }
-
-      function takeByHead(nodes, headText) {
-        const out = [];
-        const start = nodes.findIndex((node) => node.nodeType === 1 && node.matches("h3") && node.textContent.includes(headText));
-        if (start === -1) return out;
-        let i = start;
-        while (i < nodes.length) {
-          const node = nodes[i];
-          if (i !== start && node.nodeType === 1 && node.matches("h3")) break;
-          out.push(node);
-          i += 1;
-        }
-        return out;
-      }
-
-      const events = collectSection("section-events");
-      const opps = collectSection("section-opps");
-      const flows = collectSection("section-flows");
-      const prices = collectSection("section-prices");
-
-      const eventList = events.find((node) => node.nodeType === 1 && node.classList.contains("event-list"));
-      const eventCards = eventList ? Array.from(eventList.children) : [];
-      const exchangeCards = eventCards.filter((card) => card.classList.contains("exchange-bar"));
-      const newsCards = eventCards.filter((card) => !card.classList.contains("exchange-bar"));
-
-      const fundsNodes = [
-        ...takeByHead(flows, "加密 ETF"),
-        ...takeByHead(flows, "稳定币资金")
-      ];
-      const sentimentNodes = takeByHead(flows, "市场情绪");
-
-      const oppIntro = opps.filter((node) => node.nodeType === 1 && !node.matches("h3") && !node.classList.contains("brief-card-list"));
-      const focusNodes = takeByHead(opps, "今日重点项目");
-      const watchNodes = takeByHead(opps, "观察池线索");
-      const institutionNodes = takeByHead(opps, "主要机构投资风向");
-
-      const newsList = document.createElement("div");
-      newsList.className = "brief-card-list event-list";
-      appendNodes(newsList, newsCards);
-
-      const exchangeList = document.createElement("div");
-      exchangeList.className = "brief-card-list event-list";
-      appendNodes(exchangeList, exchangeCards);
-
-      const groups = [
-        makeGroup("展开资金主线：ETF 与稳定币资金", fundsNodes),
-        makeGroup("展开重要新闻：加密大事件", [newsList]),
-        makeGroup("展开市场情绪：情绪、BTC 市占率与溢价", sentimentNodes),
-        makeGroup("展开一级项目：重点项目与观察池", [...oppIntro, ...focusNodes, ...watchNodes]),
-        makeGroup("展开交易所与机构风向", [exchangeList, ...institutionNodes]),
-        makeGroup("展开核心代币行情", prices)
-      ];
-
-      groups.forEach((group, index) => {
-        conclusionItems[index].appendChild(group);
-      });
+      details.appendChild(summary);
+      details.appendChild(content);
+      strategyNote.insertAdjacentElement("afterend", details);
     })();
   </script>
 </body>
