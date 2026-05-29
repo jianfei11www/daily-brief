@@ -4,26 +4,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>港美股日报归档</title>
+  <style>
+    :root { --ink:#1f2433; --muted:#747b8b; --line:#dfe4ed; --bg:#f7f8fb; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #fff; color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif; }
+    main { max-width: 1080px; margin: 0 auto; padding: 40px 24px 72px; }
+    .rule { height: 2px; background: var(--line); margin: 0 0 48px; }
+    h1 { margin: 0 0 42px; font-size: 32px; line-height: 1.2; font-weight: 700; letter-spacing: 0; }
+    .post-list { display: grid; gap: 12px; }
+    .post-card { display: block; padding: 20px 24px; min-height: 116px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); color: inherit; text-decoration: none; }
+    .post-card:hover { border-color: #9bb8ff; background: #f4f7ff; }
+    .post-card strong { display: block; margin-bottom: 14px; font-size: 23px; line-height: 1.25; font-weight: 700; }
+    .post-card span { display: block; color: var(--muted); font-size: 17px; line-height: 1.5; }
+    @media (max-width: 640px) { main { padding: 28px 14px 48px; } h1 { font-size: 28px; margin-bottom: 28px; } .post-card { padding: 18px; } }
+  </style>
 </head>
 <body>
   <main>
+    <div class="rule"></div>
     <h1>港美股日报归档</h1>
-    <ul>
-      <li><a href="20260529-hk-us-daily.html">港美股日报 2026-05-29</a></li>
-      <li><a href="20260528-hk-us-daily.html">港美股日报 | 2026-05-28（科技版）08:45 CST</a></li>
-      <li><a href="20260527-hk-us-daily.html">港美股日报 | 2026-05-27（科技版）08:45 CST</a></li>
-      <li><a href="20260526-hk-us-daily.html">港美股日报 | 2026-05-26（科技版）08:45 CST</a></li>
-      <li><a href="20260525-hk-us-daily.html">港美股日报 | 2026-05-25（科技版）08:45 CST</a></li>
-      <li><a href="20260524-hk-us-daily.html">港美股日报 | 2026-05-24（科技版）08:45 CST</a></li>
-      <li><a href="20260523-hk-us-daily.html">港美股日报 | 2026-05-23（科技版）08:45 CST</a></li>
-      <li><a href="20260522-hk-us-daily.html">港美股日报 | 2026-05-22（科技版）08:45 CST</a></li>
-      <li><a href="20260521-hk-us-daily.html">港美股日报 | 2026-05-21（科技版）08:45 CST</a></li>
-      <li><a href="20260520-hk-us-daily.html">港美股日报 | 2026-05-20（科技版）08:45 CST</a></li>
-      <li><a href="20260519-hk-us-daily.html">港美股日报 | 2026-05-19（科技版）17:00 CST</a></li>
-      <li><a href="20260518-1300-hk-us-daily.html">港美股日报 2026-05-18（13:00 CST）</a></li>
-      <li><a href="20260518-hk-us-daily.html">港美股日报 2026-05-18</a></li>
-      <li><a href="20260517-hk-us-daily.html">港美股日报 2026-05-17</a></li>
-    </ul>
+    <section class="post-list">
+        <a class="post-card" href="20260529-hk-us-daily.html"><strong>港美股日报 2026-05-29</strong><span>科技版港美股日报 — 2026-05-29</span></a>
+        <a class="post-card" href="20260528-hk-us-daily.html"><strong>港美股日报 | 2026-05-28（科技版）08:45 CST</strong><span>科技版港美股日报 — 2026-05-28</span></a>
+        <a class="post-card" href="20260527-hk-us-daily.html"><strong>港美股日报 | 2026-05-27（科技版）08:45 CST</strong><span>科技版港美股日报 — 2026-05-27</span></a>
+        <a class="post-card" href="20260526-hk-us-daily.html"><strong>港美股日报 | 2026-05-26（科技版）08:45 CST</strong><span>科技版港美股日报 — 2026-05-26</span></a>
+        <a class="post-card" href="20260525-hk-us-daily.html"><strong>港美股日报 | 2026-05-25（科技版）08:45 CST</strong><span>科技版港美股日报 — 2026-05-25</span></a>
+        <a class="post-card" href="20260524-hk-us-daily.html"><strong>港美股日报 | 2026-05-24（科技版）08:45 CST</strong><span>科技版港美股日报 — 2026-05-24</span></a>
+        <a class="post-card" href="20260523-hk-us-daily.html"><strong>港美股日报 | 2026-05-23（科技版）08:45 CST</strong><span>科技版港美股日报 — 2026-05-23</span></a>
+        <a class="post-card" href="20260522-hk-us-daily.html"><strong>港美股日报 | 2026-05-22（科技版）08:45 CST</strong><span>科技版港美股日报 — 2026-05-22</span></a>
+        <a class="post-card" href="20260521-hk-us-daily.html"><strong>港美股日报 | 2026-05-21（科技版）08:45 CST</strong><span>科技版港美股日报 — 2026-05-21</span></a>
+        <a class="post-card" href="20260520-hk-us-daily.html"><strong>港美股日报 | 2026-05-20（科技版）08:45 CST</strong><span>科技版港美股日报 — 2026-05-20</span></a>
+        <a class="post-card" href="20260519-hk-us-daily.html"><strong>港美股日报 | 2026-05-19（科技版）17:00 CST</strong><span>科技版港美股日报 — 2026-05-19</span></a>
+        <a class="post-card" href="20260518-1300-hk-us-daily.html"><strong>港美股日报 2026-05-18（13:00 CST）</strong><span>科技版港美股日报 — 2026-05-18</span></a>
+        <a class="post-card" href="20260518-hk-us-daily.html"><strong>港美股日报 2026-05-18</strong><span>科技版港美股日报 — 2026-05-18</span></a>
+        <a class="post-card" href="20260517-hk-us-daily.html"><strong>港美股日报 2026-05-17</strong><span>科技版港美股日报 — 2026-05-17</span></a>
+    </section>
   </main>
 </body>
 </html>
