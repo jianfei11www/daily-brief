@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="560" viewBox="0 0 1080 560">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="72" y="23" fill="#111827" font-size="21" font-weight="800">DRAM 日线K线支撑压力图</text>
+<text x="862" y="42" fill="#374151" font-size="15" text-anchor="end">最新价 64.67</text>
+<line x1="72" y1="34" x2="72" y2="340" stroke="#d1d5db"/>
+<line x1="72" y1="340" x2="862" y2="340" stroke="#d1d5db"/>
+<line x1="72" y1="340.0" x2="862" y2="340.0" stroke="#f3f4f6"/>
+<text x="8" y="345.0" fill="#4b5563" font-size="14">44.00</text>
+<line x1="72" y1="263.5" x2="862" y2="263.5" stroke="#f3f4f6"/>
+<text x="8" y="268.5" fill="#4b5563" font-size="14">53.20</text>
+<line x1="72" y1="187.0" x2="862" y2="187.0" stroke="#f3f4f6"/>
+<text x="8" y="192.0" fill="#4b5563" font-size="14">62.39</text>
+<line x1="72" y1="110.5" x2="862" y2="110.5" stroke="#f3f4f6"/>
+<text x="8" y="115.5" fill="#4b5563" font-size="14">71.58</text>
+<line x1="72" y1="34.0" x2="862" y2="34.0" stroke="#f3f4f6"/>
+<text x="8" y="39.0" fill="#4b5563" font-size="14">80.77</text>
+<line x1="72.0" y1="274.4" x2="72.0" y2="306.0" stroke="#dc2626" stroke-width="1"/><rect x="67.5" y="279.8" width="9.0" height="12.2" fill="#dc2626" opacity="0.82" rx="1"/>
+<line x1="102.4" y1="281.4" x2="102.4" y2="318.9" stroke="#16a34a" stroke-width="1"/><rect x="97.9" y="290.0" width="9.0" height="1.8" fill="#16a34a" opacity="0.82" rx="1"/>
+<line x1="132.8" y1="273.0" x2="132.8" y2="306.9" stroke="#16a34a" stroke-width="1"/><rect x="128.3" y="275.7" width="9.0" height="14.5" fill="#16a34a" opacity="0.82" rx="1"/>
+<line x1="163.2" y1="246.4" x2="163.2" y2="280.9" stroke="#16a34a" stroke-width="1"/><rect x="158.7" y="250.0" width="9.0" height="25.7" fill="#16a34a" opacity="0.82" rx="1"/>
+<line x1="193.5" y1="249.6" x2="193.5" y2="268.5" stroke="#dc2626" stroke-width="1"/><rect x="189.0" y="250.0" width="9.0" height="18.2" fill="#dc2626" opacity="0.82" rx="1"/>
+<line x1="223.9" y1="239.7" x2="223.9" y2="286.5" stroke="#16a34a" stroke-width="1"/><rect x="219.4" y="254.2" width="9.0" height="13.8" fill="#16a34a" opacity="0.82" rx="1"/>
+<line x1="254.3" y1="239.3" x2="254.3" y2="255.9" stroke="#16a34a" stroke-width="1"/><rect x="249.8" y="245.4" width="9.0" height="8.7" fill="#16a34a" opacity="0.82" rx="1"/>
+<line x1="284.7" y1="218.3" x2="284.7" y2="247.6" stroke="#16a34a" stroke-width="1"/><rect x="280.2" y="236.0" width="9.0" height="9.3" fill="#16a34a" opacity="0.82" rx="1"/>
+<line x1="315.1" y1="179.4" x2="315.1" y2="251.2" stroke="#16a34a" stroke-width="1"/><rect x="310.6" y="188.5" width="9.0" height="47.5" fill="#16a34a" opacity="0.82" rx="1"/>
+<line x1="345.5" y1="176.1" x2="345.5" y2="214.5" stroke="#dc2626" stroke-width="1"/><rect x="341.0" y="188.5" width="9.0" height="21.5" fill="#dc2626" opacity="0.82" rx="1"/>
+<line x1="375.8" y1="175.6" x2="375.8" y2="228.2" stroke="#16a34a" stroke-width="1"/><rect x="371.3" y="181.5" width="9.0" height="28.6" fill="#16a34a" opacity="0.82" rx="1"/>
+<line x1="406.2" y1="170.6" x2="406.2" y2="193.9" stroke="#16a34a" stroke-width="1"/><rect x="401.7" y="179.3" width="9.0" height="2.0" fill="#16a34a" opacity="0.82" rx="1"/>
+<line x1="436.6" y1="157.2" x2="436.6" y2="182.7" stroke="#16a34a" stroke-width="1"/><rect x="432.1" y="158.6" width="9.0" height="20.7" fill="#16a34a" opacity="0.82" rx="1"/>
+<line x1="467.0" y1="144.6" x2="467.0" y2="163.4" stroke="#16a34a" stroke-width="1"/><rect x="462.5" y="155.8" width="9.0" height="2.7" fill="#16a34a" opacity="0.82" rx="1"/>
+<line x1="497.4" y1="131.3" x2="497.4" y2="170.6" stroke="#16a34a" stroke-width="1"/><rect x="492.9" y="138.6" width="9.0" height="17.1" fill="#16a34a" opacity="0.82" rx="1"/>
+<line x1="527.8" y1="122.1" x2="527.8" y2="161.8" stroke="#16a34a" stroke-width="1"/><rect x="523.3" y="128.2" width="9.0" height="10.7" fill="#16a34a" opacity="0.82" rx="1"/>
+<line x1="558.2" y1="121.0" x2="558.2" y2="153.6" stroke="#dc2626" stroke-width="1"/><rect x="553.7" y="128.1" width="9.0" height="22.9" fill="#dc2626" opacity="0.82" rx="1"/>
+<line x1="588.5" y1="140.2" x2="588.5" y2="180.4" stroke="#dc2626" stroke-width="1"/><rect x="584.0" y="151.1" width="9.0" height="27.9" fill="#dc2626" opacity="0.82" rx="1"/>
+<line x1="618.9" y1="172.5" x2="618.9" y2="261.3" stroke="#dc2626" stroke-width="1"/><rect x="614.4" y="179.0" width="9.0" height="65.9" fill="#dc2626" opacity="0.82" rx="1"/>
+<line x1="649.3" y1="236.3" x2="649.3" y2="269.2" stroke="#16a34a" stroke-width="1"/><rect x="644.8" y="242.4" width="9.0" height="2.6" fill="#16a34a" opacity="0.82" rx="1"/>
+<line x1="679.7" y1="208.3" x2="679.7" y2="248.5" stroke="#16a34a" stroke-width="1"/><rect x="675.2" y="236.4" width="9.0" height="6.1" fill="#16a34a" opacity="0.82" rx="1"/>
+<line x1="710.1" y1="193.0" x2="710.1" y2="240.0" stroke="#16a34a" stroke-width="1"/><rect x="705.6" y="199.4" width="9.0" height="37.0" fill="#16a34a" opacity="0.82" rx="1"/>
+<line x1="740.5" y1="171.9" x2="740.5" y2="244.7" stroke="#dc2626" stroke-width="1"/><rect x="736.0" y="199.4" width="9.0" height="9.7" fill="#dc2626" opacity="0.82" rx="1"/>
+<line x1="770.8" y1="194.0" x2="770.8" y2="243.6" stroke="#dc2626" stroke-width="1"/><rect x="766.3" y="209.0" width="9.0" height="27.5" fill="#dc2626" opacity="0.82" rx="1"/>
+<line x1="801.2" y1="151.2" x2="801.2" y2="238.6" stroke="#16a34a" stroke-width="1"/><rect x="796.7" y="156.7" width="9.0" height="79.5" fill="#16a34a" opacity="0.82" rx="1"/>
+<line x1="831.6" y1="155.4" x2="831.6" y2="188.0" stroke="#dc2626" stroke-width="1"/><rect x="827.1" y="156.8" width="9.0" height="3.1" fill="#dc2626" opacity="0.82" rx="1"/>
+<line x1="862.0" y1="159.0" x2="862.0" y2="169.1" stroke="#dc2626" stroke-width="1"/><rect x="857.5" y="159.7" width="9.0" height="8.2" fill="#dc2626" opacity="0.82" rx="1"/>
+<line x1="72" y1="235.7" x2="862" y2="235.7" stroke="#16a34a" stroke-width="1.8" stroke-dasharray="6 4" /><rect x="874" y="215.7" width="166" height="23" rx="5" fill="#ffffff" stroke="#16a34a" opacity="0.97"/><text x="881" y="231.7" fill="#16a34a" font-size="15" font-weight="700">支撑 56.53</text>
+<line x1="72" y1="55.1" x2="862" y2="55.1" stroke="#dc2626" stroke-width="1.8" stroke-dasharray="6 4" /><rect x="874" y="35.1" width="166" height="23" rx="5" fill="#ffffff" stroke="#dc2626" opacity="0.97"/><text x="881" y="51.1" fill="#dc2626" font-size="15" font-weight="700">压力 78.23</text>
+<line x1="72" y1="168.0" x2="862" y2="168.0" stroke="#111827" stroke-width="1.8" stroke-dasharray="2 2" /><rect x="874" y="148.0" width="166" height="23" rx="5" fill="#ffffff" stroke="#111827" opacity="0.97"/><text x="881" y="164.0" fill="#111827" font-size="15" font-weight="700">现价 64.67</text>
+<text x="72" y="396" fill="#16a34a" font-size="14" font-weight="700">日线做多计划</text><rect x="72" y="404" width="790" height="48" rx="6" fill="#f9fafb" stroke="#e5e7eb"/><line x1="94" y1="412" x2="840" y2="412" stroke="#16a34a" stroke-width="3"/><circle cx="132.0" cy="412" r="5" fill="#16a34a"/><text x="132.0" y="434" fill="#374151" font-size="12" text-anchor="middle">入场 止跌/突破回踩</text><circle cx="451.2" cy="412" r="5" fill="#16a34a"/><text x="451.2" y="434" fill="#374151" font-size="12" text-anchor="middle">止损 56.53</text><circle cx="712.0" cy="412" r="5" fill="#16a34a"/><text x="712.0" y="434" fill="#374151" font-size="12" text-anchor="middle">目标一 78.23</text><circle cx="814.0" cy="412" r="5" fill="#16a34a"/><text x="814.0" y="434" fill="#374151" font-size="12" text-anchor="middle">目标二 86.37</text>
+<text x="72" y="482" fill="#dc2626" font-size="14" font-weight="700">日线做空计划</text><rect x="72" y="490" width="790" height="48" rx="6" fill="#f9fafb" stroke="#e5e7eb"/><line x1="94" y1="498" x2="840" y2="498" stroke="#dc2626" stroke-width="3"/><circle cx="132.0" cy="498" r="5" fill="#dc2626"/><text x="132.0" y="520" fill="#374151" font-size="12" text-anchor="middle">入场 反弹承压/破位回抽</text><circle cx="451.2" cy="498" r="5" fill="#dc2626"/><text x="451.2" y="520" fill="#374151" font-size="12" text-anchor="middle">止损 78.23</text><circle cx="712.0" cy="498" r="5" fill="#dc2626"/><text x="712.0" y="520" fill="#374151" font-size="12" text-anchor="middle">目标一 56.53</text><circle cx="814.0" cy="498" r="5" fill="#dc2626"/><text x="814.0" y="520" fill="#374151" font-size="12" text-anchor="middle">目标二 51.11</text>
+</svg>
