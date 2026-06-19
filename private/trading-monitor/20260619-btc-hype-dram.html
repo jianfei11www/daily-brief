@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>主流币交易日报：BTC / HYPE / DRAM · 20260619 — 链研观察</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="/daily-brief/css/style.css">
+  <style>
+    .report-panel, .asset-section { border-top: 1px solid var(--border); padding-top: 22px; margin-top: 24px; }
+    .summary-table { display: grid; gap: 10px; }
+    .summary-row { display: grid; grid-template-columns: 150px 1fr; gap: 12px; align-items: start; padding: 10px 0; border-bottom: 1px solid #eef2f7; }
+    .summary-row span, .plan-row span { color: var(--text-muted); font-size: 13px; }
+    .summary-row strong { font-size: 15px; line-height: 1.55; }
+    .clean-list { padding-left: 1.1rem; }
+    .clean-list li { margin: 8px 0; line-height: 1.6; }
+    .asset-brief { background: #f8fafc; border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; }
+    .asset-brief p { margin: 6px 0; }
+    .plan-table { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 14px 0 18px; }
+    .plan-row { border: 1px solid var(--border); border-radius: 8px; padding: 12px; background: #fff; }
+    .plan-row.full { grid-column: 1 / -1; background: #f8fafc; }
+    .plan-row.long { border-left: 4px solid #16a34a; }
+    .plan-row.short { border-left: 4px solid #dc2626; }
+    .plan-row p { margin: 6px 0 0; line-height: 1.55; }
+    .chart-grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
+    .chart-card { border: 1px solid var(--border); border-radius: 8px; padding: 10px; background: #fff; margin: 0; }
+    .chart-card img { width: 100%; height: auto; display: block; }
+    .chart-card figcaption { color: var(--text-muted); font-size: 13px; margin-top: 8px; }
+    code { background: #f3f4f6; border-radius: 4px; padding: 1px 4px; }
+    @media (max-width: 760px) {
+      .summary-row, .plan-table { grid-template-columns: 1fr; }
+      .plan-row.full { grid-column: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header class="site-header">
+      <h1><a href="/daily-brief/private/trading-monitor/">主流币交易</a></h1>
+      <div class="subtitle">BTC / HYPE / DRAM · 日报 · 盘中更新 · 只做研究建议，不自动下单</div>
+    </header>
+    <article>
+      <div class="article-body">
+<h1>主流币交易日报：BTC / HYPE / DRAM</h1>
+<section class="report-panel summary-panel">
+  <h2>市场总判断</h2>
+  <div class="summary-table">
+<div class="summary-row"><span>市场状态</span><strong>偏防守：先保现金，不适合重仓进攻。</strong></div>
+<div class="summary-row"><span>HYPE/BTC</span><strong>接近 BTC，日线相对 -0.27%</strong></div>
+<div class="summary-row"><span>资金面</span><strong>BTC 占比 58.08%；USDT 7日变化 -6.64亿；USDC 7日变化 -1.25亿。</strong></div>
+<div class="summary-row"><span>Hyperliquid</span><strong>TVL 60.06亿；24小时手续费 3.1百万；24小时成交 2.15亿。</strong></div>
+<div class="summary-row"><span>BTC ETF</span><strong>官方接口已接，当前读取失败（API key 无效或无对应权限）。</strong></div>
+  </div>
+</section>
+<section class="report-panel">
+  <h2>资金及情绪</h2>
+  <ul class="clean-list">
+<li>ETF：BTC ETF：官方接口已接，当前 CoinGlass 读取失败（API key 无效或无对应权限）；ETH ETF：官方接口已接，当前 CoinGlass 读取失败（API key 无效或无对应权限）；HYPE ETF：官方接口已接，当前 CoinGlass 读取失败（API key 无效或无对应权限）。</li>
+<li>稳定币：USDT 1日 -3.47亿，30日 -35.83亿，总量 1858.88亿；USDC 1日 -1.30亿，30日 -21.64亿，总量 748.79亿。</li>
+<li>情绪：F&amp;G 14/100，极度恐惧；BTC Dominance 58.08%；Coinbase/Binance 溢价 -0.08%。</li>
+<li>估值参考：BTC 200日均线 77,009，现价偏离 -18.34%；AHR999 读取失败（API key 无效或无对应权限）。</li>
+<li>交易含义：ETF/稳定币/情绪三者没有同步修复时，BTC 反弹先按修复看；HYPE 即使相对强，也优先等日内触发位，不追高。</li>
+  </ul>
+</section>
+<section class="report-panel">
+  <h2>免费市场数据</h2>
+  <ul class="clean-list">
+<li>BTC：资金费率 0.0060%；OI 9.9万；多空账户比 1.94；强平读取失败（HTTP Error 400: Bad Request）</li>
+<li>HYPE：资金费率 0.0016%；OI 20.4百万；24h成交 10.57亿；溢价 0.1270%</li>
+<li>DRAM：资金费率 0.0820%；OI 72.3万；多空账户比 3.05；强平读取失败（HTTP Error 400: Bad Request）</li>
+<li>免费源说明：BTC/DRAM 使用 Binance Futures 公开接口；HYPE 使用 Hyperliquid 官方公开接口；Hyperliquid TVL/手续费/成交量使用 DefiLlama。</li>
+  </ul>
+</section>
+<section class="report-panel">
+  <h2>DRAM 美股芯片映射</h2>
+  <ul class="clean-list">
+<li>底层相对强弱：缺底层行情：不能确认美股端强弱，DRAM 永续只能按短线技术执行。</li>
+<li>核心持仓确认：缺核心持仓行情：不能确认 MU/SNDK/WDC/STX 是否同步。</li>
+<li>永续拥挤度：高：资金费率高 0.0820%；多头极拥挤 3.05，不追多，只等回踩或看冲高回落。</li>
+<li>技术高低：高：日线 RSI 81.5，偏过热。</li>
+<li>判定阈值：强于 SMH/SOXX/QQQ 均值 +1.5%以上算强，低于 -1.5%以上算弱；核心持仓 3/4 同涨超 1% 才算底层确认；资金费率 ≥0.03% 或多空比 ≥3 算过热。</li>
+<li>当前原始项：Micron 缺 yfinance；SanDisk 缺 yfinance；Western Digital 缺 yfinance；Seagate 缺 yfinance；SMH 缺 yfinance；SOXX 缺 yfinance；QQQ 缺 yfinance。</li>
+<li>动作：底层缺数据时，不给中线强判断；只按 Binance DRAMUSDT 永续日线/小时线触发。若底层强弱恢复且拥挤度不高，才允许提高仓位。</li>
+  </ul>
+</section>
+<section class="asset-section">
+  <h2>BTC</h2>
+  <div class="asset-brief">
+    <p><strong>结论：</strong>做空观察/减仓；优先看空/降风险。宏观中性，资金偏空，技术偏空。</p>
+    <p><strong>仓位：</strong>观察仓；HYPE/山寨自动降级；现金 80%+</p>
+  </div>
+  <div class="plan-table">
+    <div class="plan-row full"><span>当前日线计划</span><p>反弹至 67,973.72 附近承压，或跌破 59,830.32 后回抽不站回；止损 67,973.72；目标 59,830.32 / 57,794.47。</p></div>
+    <div class="plan-row long"><span>日线做多</span><p>59,830.32 附近止跌，或放量突破 67,973.72 后回踩确认；止损 59,830.32；目标 67,973.72 / 71,027.50。</p></div>
+    <div class="plan-row short"><span>日线做空</span><p>反弹至 67,973.72 附近承压，或跌破 59,830.32 后回抽不站回；止损 67,973.72；目标 59,830.32 / 57,794.47。</p></div>
+    <div class="plan-row long"><span>日内小时做多</span><p>62,182.31 附近止跌，或突破 64,053.74 后 1 小时回踩不破；止损 62,182.31；目标 64,053.74 / 64,521.60。</p></div>
+    <div class="plan-row short"><span>日内小时做空</span><p>64,053.74 附近冲高承压，或跌破 62,182.31 后 1 小时回抽不上；止损 64,053.74；目标 62,182.31 / 61,714.46。</p></div>
+  </div>
+  <div class="chart-grid">
+    <figure class="chart-card"><img src="/daily-brief/private/trading-monitor/assets/20260619-btc-hype-dram/20260619-080311-BTC-1d.svg" alt="BTC 日线K线图"><figcaption>BTC 日线K线图</figcaption></figure><figure class="chart-card"><img src="/daily-brief/private/trading-monitor/assets/20260619-btc-hype-dram/20260619-080311-BTC-1h.svg" alt="BTC 小时线K线图"><figcaption>BTC 小时线K线图</figcaption></figure>
+  </div>
+</section>
+<section class="asset-section">
+  <h2>HYPE</h2>
+  <div class="asset-brief">
+    <p><strong>结论：</strong>观望/降仓；观望。宏观中性，资金偏空，技术偏多。</p>
+    <p><strong>仓位：</strong>观察仓；HYPE/山寨自动降级；现金 80%+</p>
+  </div>
+  <div class="plan-table">
+    <div class="plan-row full"><span>当前日线计划</span><p>等待触发，不新开仓。</p></div>
+    <div class="plan-row long"><span>日线做多</span><p>59.52 附近止跌，或放量突破 82.46 后回踩确认；止损 59.52；目标 82.46 / 91.07。</p></div>
+    <div class="plan-row short"><span>日线做空</span><p>反弹至 82.46 附近承压，或跌破 59.52 后回抽不站回；止损 82.46；目标 59.52 / 53.78。</p></div>
+    <div class="plan-row long"><span>日内小时做多</span><p>66.04 附近止跌，或突破 71.60 后 1 小时回踩不破；止损 66.04；目标 71.60 / 72.99。</p></div>
+    <div class="plan-row short"><span>日内小时做空</span><p>71.60 附近冲高承压，或跌破 66.04 后 1 小时回抽不上；止损 71.60；目标 66.04 / 64.65。</p></div>
+  </div>
+  <div class="chart-grid">
+    <figure class="chart-card"><img src="/daily-brief/private/trading-monitor/assets/20260619-btc-hype-dram/20260619-080311-HYPE-1d.svg" alt="HYPE 日线K线图"><figcaption>HYPE 日线K线图</figcaption></figure><figure class="chart-card"><img src="/daily-brief/private/trading-monitor/assets/20260619-btc-hype-dram/20260619-080311-HYPE-1h.svg" alt="HYPE 小时线K线图"><figcaption>HYPE 小时线K线图</figcaption></figure>
+  </div>
+</section>
+<section class="asset-section">
+  <h2>DRAM</h2>
+  <div class="asset-brief">
+    <p><strong>结论：</strong>持有但不追高；观望。宏观中性，资金中性，技术中性。</p>
+    <p><strong>仓位：</strong>0%-5%，防合约端踩踏</p>
+  </div>
+  <div class="plan-table">
+    <div class="plan-row full"><span>当前日线计划</span><p>71.08 附近止跌，或放量突破 91.26 后回踩确认；止损 71.08；目标 91.26 / 98.82。</p></div>
+    <div class="plan-row long"><span>日线做多</span><p>71.08 附近止跌，或放量突破 91.26 后回踩确认；止损 71.08；目标 91.26 / 98.82。</p></div>
+    <div class="plan-row short"><span>日线做空</span><p>反弹至 91.26 附近承压，或跌破 71.08 后回抽不站回；止损 91.26；目标 71.08 / 66.04。</p></div>
+    <div class="plan-row long"><span>日内小时做多</span><p>77.29 附近止跌，或突破 80.89 后 1 小时回踩不破；止损 77.29；目标 80.89 / 81.79。</p></div>
+    <div class="plan-row short"><span>日内小时做空</span><p>80.89 附近冲高承压，或跌破 77.29 后 1 小时回抽不上；止损 80.89；目标 77.29 / 76.39。</p></div>
+  </div>
+  <div class="chart-grid">
+    <figure class="chart-card"><img src="/daily-brief/private/trading-monitor/assets/20260619-btc-hype-dram/20260619-080311-DRAM-1d.svg" alt="DRAM 日线K线图"><figcaption>DRAM 日线K线图</figcaption></figure><figure class="chart-card"><img src="/daily-brief/private/trading-monitor/assets/20260619-btc-hype-dram/20260619-080311-DRAM-1h.svg" alt="DRAM 小时线K线图"><figcaption>DRAM 小时线K线图</figcaption></figure>
+  </div>
+</section>
+<section class="report-panel">
+  <h2>预警</h2>
+  <ul class="clean-list">
+<li>BTC：BTC 进入回调/破位结构，HYPE 和辅助标的自动降仓。</li>
+<li>DRAM：DRAM 永续 RSI 过热，需防合约端追高踩踏。</li>
+  </ul>
+</section>
+<section class="report-panel">
+  <h2>数据源状态</h2>
+  <ul class="clean-list">
+<li>已配置付费源：8 个；未配置：3 个。</li>
+<li>Coinglass：BTC 清算读取失败（API key 无效或无对应权限）；HYPE 清算读取失败（API key 无效或无对应权限）。</li>
+<li>已接入免费源：行情公开源、链上公开源、宏观行情、新闻订阅。</li>
+<li>已定位但需权限：BTC ETF 净流、BTC 清算地图、BTC 交易所净流、HYPE 解锁、HYPE Hyperliquid 鲸鱼；CoinGlass 状态：已配置 key。</li>
+<li>需确认官方地址：HYPE 回购/销毁/Assistance Fund 链上地址；确认后可用 Dune 或链上 API 做每日变化。</li>
+  </ul>
+</section>
+      </div>
+    </article>
+    <footer class="site-footer">
+      <p>© 2026 链研观察 · 内容仅供参考，不构成投资建议</p>
+      <p style="margin-top:4px;"><a href="/daily-brief/private/trading-monitor/">← 返回主流币交易</a></p>
+    </footer>
+  </div>
+</body>
+</html>
