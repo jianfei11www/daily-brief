@@ -880,6 +880,23 @@ body {
 .up { color: var(--green); font-weight: 700; }
 .down { color: var(--red); font-weight: 700; }
 .priority-title { color: var(--red) !important; }
+.priority-title::before {
+  content: "★";
+  display: inline-block;
+  margin-right: 0.35em;
+  color: var(--red);
+  font-size: 0.82em;
+  vertical-align: 0.06em;
+}
+.key-impact {
+  color: var(--red) !important;
+  background: var(--red-bg);
+  font-weight: 700;
+  padding: 0.04em 0.18em;
+  border-radius: 3px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
 .important {
   color: var(--orange);
   font-weight: 700;
