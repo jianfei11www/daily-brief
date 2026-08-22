@@ -21,11 +21,12 @@
 }
 
 .decision-preview .report-generated-at {
-  padding: 20px 0 8px;
+  margin: 6px 0 0;
+  padding: 0;
   color: #747b89;
   font-size: 13px;
   line-height: 1.4;
-  text-align: right;
+  text-align: center;
 }
 
 .decision-preview .article-header {
@@ -608,10 +609,6 @@
 @media (max-width: 720px) {
   .decision-preview .wrapper {
     padding: 0 15px;
-  }
-
-  .decision-preview .report-generated-at {
-    padding-top: 16px;
   }
 
   .decision-preview .article-header h2 {
