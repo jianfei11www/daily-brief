@@ -6,7 +6,7 @@
   <title>加密市场每日决策简报 | 2026年8月22日</title>
   <meta name="description" content="加密市场每日决策简报">
   <link rel="stylesheet" href="/daily-brief/css/style.css?v=key-impact-v1-exchange-split-v1-20260822">
-  <link rel="stylesheet" href="/daily-brief/css/crypto-decision-preview.css?v=20260822-23">
+  <link rel="stylesheet" href="/daily-brief/css/crypto-decision-preview.css?v=20260822-24">
 </head>
 <body class="decision-preview">
   <div class="wrapper">
@@ -29,8 +29,8 @@
               <div class="signal-item signal-onchain"><span class="signal-label">链上：</span><span class="signal-value">无合格新项目</span></div>
             </div>
 
-            <ul>
-              <li><strong class="priority-title risk-signal">1. 重要新闻：韩国准备加强打击未注册加密平台，美国相关法案的推进时间也越来越紧。</strong>简单说，交易所、托管平台和跨境业务接下来仍可能受到政策变化影响，<span class="key-impact risk-signal">短期监管风险仍然偏高</span>，相关资产的价格也更容易出现波动。</li>
+            <ul class="adaptive-core-list">
+              <li><strong class="priority-title risk-signal">1. 重要新闻：韩国准备加强打击未注册加密平台，美国相关法案的推进时间也越来越紧。</strong>交易所、托管平台和跨境业务接下来仍可能受到政策变化影响，<span class="key-impact risk-signal">短期监管风险仍然偏高</span>，相关资产的价格也更容易出现波动。</li>
               <li><strong>2. 一级与链上项目：一级无新增可参与项目，链上无新增合格项目。</strong>两条机会线均保持空仓等待。</li>
               <li><strong>3. 交易所与机构风向：今日无新增重大变化。</strong>今日无新币上线，也无新增 Binance Alpha 上线，另无新增主要机构投资披露。</li>
               <li><strong class="priority-title positive-signal">4. 资金主线：BTC、ETH ETF继续净流入，稳定币分化，重点链资金同步回升。</strong>BTC ETF 最近确认交易日净流入约 <span class="key-impact positive-signal">$517M</span>，ETH ETF 净流入约 <span class="key-impact positive-signal">$189M</span>；USDT 收缩、USDC 扩张。ETH、SOL、BSC、Base、HYPE L1 等公链近7日 TVL 均回升，其中 HYPE L1 增速领先；短线风险回补，中线看资金增量，长期看监管与机构增量。</li>
@@ -195,5 +195,32 @@
     </article>
     <footer class="site-footer"><p>© 2026 链研观察 · 内容仅供参考，不构成投资建议</p><p style="margin-top:4px;"><a href="/daily-brief/">← 返回首页</a></p></footer>
   </div>
+  <script>
+    (() => {
+      const items = Array.from(document.querySelectorAll(".adaptive-core-list > li"));
+      let frame;
+
+      const updateCoreItemLayout = () => {
+        window.cancelAnimationFrame(frame);
+        items.forEach((item) => item.classList.remove("core-item-long"));
+        frame = window.requestAnimationFrame(() => {
+          items.forEach((item) => {
+            const style = window.getComputedStyle(item);
+            const lineHeight = Number.parseFloat(style.lineHeight);
+            const verticalPadding = Number.parseFloat(style.paddingTop) + Number.parseFloat(style.paddingBottom);
+            const contentHeight = item.scrollHeight - verticalPadding;
+            item.classList.toggle("core-item-long", contentHeight > lineHeight * 1.35);
+          });
+        });
+      };
+
+      window.addEventListener("resize", updateCoreItemLayout, { passive: true });
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(updateCoreItemLayout);
+      } else {
+        updateCoreItemLayout();
+      }
+    })();
+  </script>
 </body>
 </html>
