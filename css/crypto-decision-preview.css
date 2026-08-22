@@ -4,9 +4,9 @@
   --preview-line: #e1e5eb;
   --preview-red: #b5473c;
   --preview-green: #067a57;
-  --preview-up: #4f73b5;
+  --preview-up: #3f73c6;
   --preview-down: #b5473c;
-  --preview-positive: #4f73b5;
+  --preview-positive: #3f73c6;
   --preview-risk: #b5473c;
   --preview-summary-ink: #685c76;
   --preview-summary-bg: #f3f1f7;
@@ -357,7 +357,7 @@
 }
 
 .decision-preview .event-exchanges {
-  background: rgba(255, 248, 239, 0.42);
+  background: rgba(255, 251, 246, 0.3);
 }
 
 .decision-preview .event-subsection-title {
@@ -394,7 +394,7 @@
   padding: 10px 16px 11px;
   border: 0;
   border-radius: 0;
-  background: rgba(255, 255, 255, 0.62);
+  background: rgba(255, 255, 255, 0.88);
   text-align: left;
 }
 
@@ -420,7 +420,7 @@
   margin: 0;
   padding: 6px 16px 0;
   border: 0;
-  background: rgba(255, 248, 239, 0.92);
+  background: rgba(255, 252, 248, 0.96);
 }
 
 .decision-preview .report-section-events .report-section-content {
