@@ -53,8 +53,7 @@
 .decision-preview .article-body h2 {
   margin: 0;
   padding: 7px 14px;
-  border-left-width: 2px;
-  border-left-color: var(--preview-blue);
+  border-left: 0;
   border-radius: 0;
   background: transparent;
 }
@@ -100,7 +99,7 @@
 }
 
 .decision-preview .report-section > h2 {
-  border-left-color: var(--section-accent);
+  border-bottom: 1px solid var(--section-border);
   text-align: center;
 }
 
