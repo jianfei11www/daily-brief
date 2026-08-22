@@ -164,6 +164,12 @@
   border-bottom: 0;
 }
 
+.decision-preview .report-section-core .report-section-content > ul > li > strong:first-child {
+  display: block;
+  margin-bottom: 3px;
+  line-height: 1.5;
+}
+
 .decision-preview .strategy-note {
   margin-top: 0;
   margin-bottom: 0 !important;
