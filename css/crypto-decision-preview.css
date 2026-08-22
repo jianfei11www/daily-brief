@@ -507,6 +507,9 @@
 }
 
 .decision-preview .status-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   min-height: 96px;
   padding: 12px;
   border: 1px solid var(--section-border);
