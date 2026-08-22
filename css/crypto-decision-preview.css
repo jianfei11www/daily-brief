@@ -123,7 +123,7 @@
 
 .decision-preview .report-section > h2 {
   border-bottom: 1px solid var(--section-border);
-  text-align: center;
+  text-align: left;
 }
 
 .decision-preview .report-section-content {
@@ -180,6 +180,10 @@
   font-size: 15px !important;
   font-weight: 400 !important;
   line-height: 1.68 !important;
+}
+
+.decision-preview .article-body p.strategy-note {
+  border-left: 1px solid var(--section-border);
 }
 
 .decision-preview .strategy-note strong {
@@ -626,18 +630,6 @@
   font-weight: 400;
 }
 
-.decision-preview .preview-badge {
-  display: inline-block;
-  margin-bottom: 6px;
-  padding: 2px 7px;
-  border: 1px solid #f0b6b0;
-  border-radius: 4px;
-  color: var(--preview-red);
-  background: #fff7f6;
-  font-size: 12px;
-  font-weight: 700;
-}
-
 @media (max-width: 720px) {
   .decision-preview .wrapper {
     padding: 0 15px;
@@ -734,11 +726,28 @@
   }
 
   .decision-preview .main-asset-table table,
-  .decision-preview .theme-asset-table table {
+  .decision-preview .theme-asset-table table,
+  .decision-preview .stock-decision-table table {
     min-width: 700px;
   }
 
-  .decision-preview .stock-decision-table table {
-    min-width: 600px;
-  }
+  .decision-preview .main-asset-table .asset-col,
+  .decision-preview .theme-asset-table .asset-col,
+  .decision-preview .stock-decision-table .asset-col { width: 9%; }
+
+  .decision-preview .main-asset-table .price-col,
+  .decision-preview .theme-asset-table .price-col,
+  .decision-preview .stock-decision-table .price-col { width: 12%; }
+
+  .decision-preview .main-asset-table .change-col,
+  .decision-preview .theme-asset-table .change-col,
+  .decision-preview .stock-decision-table .change-col { width: 9%; }
+
+  .decision-preview .main-asset-table .cap-col,
+  .decision-preview .theme-asset-table .cap-col,
+  .decision-preview .stock-decision-table .cap-col { width: 10%; }
+
+  .decision-preview .main-asset-table .judge-col,
+  .decision-preview .theme-asset-table .judge-col,
+  .decision-preview .stock-decision-table .judge-col { width: 51%; }
 }
