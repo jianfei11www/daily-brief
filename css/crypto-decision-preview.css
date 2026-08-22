@@ -5,6 +5,8 @@
   --preview-red: #d92d20;
   --preview-green: #067a57;
   --preview-orange: #b45309;
+  --preview-blue: #2563eb;
+  --preview-blue-soft: #f4f7fc;
 }
 
 .decision-preview .wrapper {
@@ -34,6 +36,18 @@
   margin-top: 22px;
   margin-bottom: 9px;
   padding: 10px 15px;
+  border-left-width: 2px;
+  border-left-color: var(--preview-blue);
+  background: var(--preview-blue-soft);
+}
+
+.decision-preview .article-body h2.section-core,
+.decision-preview .article-body h2.section-events,
+.decision-preview .article-body h2.section-opps,
+.decision-preview .article-body h2.section-flows,
+.decision-preview .article-body h2.section-prices {
+  border-left-color: var(--preview-blue);
+  background: var(--preview-blue-soft);
 }
 
 .decision-preview .article-body h3 {
@@ -67,6 +81,8 @@
 .decision-preview .strategy-note {
   margin-top: 9px;
   padding: 10px 12px !important;
+  border: 1px solid #cbdcf7 !important;
+  background: #f3f7fd !important;
 }
 
 .decision-preview .full-detail {
@@ -153,106 +169,128 @@
   white-space: nowrap;
 }
 
+.decision-preview .sentiment-decision-table td:nth-child(3) {
+  white-space: normal;
+}
+
 .decision-preview .data-table td:last-child {
   padding-left: 14px;
   text-align: left;
 }
 
-.decision-preview .etf-decision-table .asset-col { width: 12%; }
+.decision-preview .etf-decision-table .asset-col { width: 16%; }
 .decision-preview .etf-decision-table .flow-col { width: 18%; }
-.decision-preview .etf-decision-table .judge-col { width: 52%; }
+.decision-preview .etf-decision-table .judge-col { width: 48%; }
 
-.decision-preview .stable-decision-table .asset-col { width: 12%; }
+.decision-preview .stable-decision-table .asset-col { width: 16%; }
 .decision-preview .stable-decision-table .flow-col { width: 18%; }
-.decision-preview .stable-decision-table .judge-col { width: 52%; }
+.decision-preview .stable-decision-table .judge-col { width: 48%; }
 
-.decision-preview .chain-decision-table .chain-col { width: 17%; }
+.decision-preview .chain-decision-table .chain-col { width: 16%; }
 .decision-preview .chain-decision-table .tvl-col { width: 20%; }
-.decision-preview .chain-decision-table .judge-col { width: 63%; }
+.decision-preview .chain-decision-table .trend-col { width: 16%; }
+.decision-preview .chain-decision-table .judge-col { width: 48%; }
 
-.decision-preview .sentiment-decision-table .indicator-col { width: 25%; }
-.decision-preview .sentiment-decision-table .value-col { width: 18%; }
-.decision-preview .sentiment-decision-table .judge-col { width: 57%; }
+.decision-preview .sentiment-decision-table .indicator-col { width: 24%; }
+.decision-preview .sentiment-decision-table .value-col { width: 16%; }
+.decision-preview .sentiment-decision-table .trend-col { width: 12%; }
+.decision-preview .sentiment-decision-table .judge-col { width: 48%; }
 
-.decision-preview .main-asset-table .asset-col { width: 10%; }
-.decision-preview .main-asset-table .price-col { width: 15%; }
-.decision-preview .main-asset-table .change-col { width: 10%; }
-.decision-preview .main-asset-table .volume-col { width: 15%; }
-.decision-preview .main-asset-table .judge-col { width: 40%; }
+.decision-preview .main-asset-table .asset-col,
+.decision-preview .theme-asset-table .asset-col,
+.decision-preview .stock-decision-table .asset-col { width: 10%; }
 
-.decision-preview .theme-asset-table .asset-col { width: 10%; }
-.decision-preview .theme-asset-table .price-col { width: 15%; }
-.decision-preview .theme-asset-table .change-col { width: 10%; }
-.decision-preview .theme-asset-table .theme-col { width: 20%; }
-.decision-preview .theme-asset-table .judge-col { width: 35%; }
+.decision-preview .main-asset-table .price-col,
+.decision-preview .theme-asset-table .price-col,
+.decision-preview .stock-decision-table .price-col { width: 14%; }
 
-.decision-preview .stock-decision-table .stock-col { width: 12%; }
-.decision-preview .stock-decision-table .price-col { width: 16%; }
-.decision-preview .stock-decision-table .change-col { width: 12%; }
-.decision-preview .stock-decision-table .cap-col { width: 17%; }
-.decision-preview .stock-decision-table .judge-col { width: 43%; }
-}
+.decision-preview .main-asset-table .change-col,
+.decision-preview .theme-asset-table .change-col,
+.decision-preview .stock-decision-table .change-col { width: 10%; }
+
+.decision-preview .main-asset-table .cap-col,
+.decision-preview .theme-asset-table .cap-col,
+.decision-preview .stock-decision-table .cap-col { width: 16%; }
+
+.decision-preview .main-asset-table .judge-col,
+.decision-preview .theme-asset-table .judge-col,
+.decision-preview .stock-decision-table .judge-col { width: 40%; }
 
 .decision-preview .exchange-mainline,
 .decision-preview .exchange-alpha {
   margin: 7px 0;
   padding: 8px 10px;
+  border: 1px solid var(--preview-line);
+  border-radius: 5px;
+  background: #f8fafc;
+}
+
+.decision-preview .exchange-mainline h4,
+.decision-preview .exchange-alpha h4 {
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--preview-line);
+  color: var(--preview-ink);
+}
+
+.decision-preview .exchange-alpha {
+  background: #fffaf0;
+}
+
+.decision-preview .exchange-source {
+  margin-top: 5px;
 }
 
 .decision-preview .signal-strip {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 1px;
+  gap: 5px;
   margin: 10px 0 6px;
-  overflow: hidden;
+  padding: 5px;
   border: 1px solid var(--preview-line);
   border-radius: 6px;
-  background: var(--preview-line);
+  background: #f8fafc;
 }
 
 .decision-preview .signal-item {
-  min-height: 66px;
-  padding: 8px 10px;
-  background: #fff;
-  border-top: 3px solid transparent;
+  min-height: 38px;
+  padding: 7px 8px;
+  border: 1px solid #edf0f4;
+  border-radius: 4px;
+  background: #fbfcfe;
+  text-align: left;
 }
 
 .decision-preview .signal-trend {
-  border-top-color: #15803d;
-  background: #f2faf5;
+  background: #f7fbf8;
 }
 
 .decision-preview .signal-funds {
-  border-top-color: #2563eb;
-  background: #f3f7ff;
+  background: #f7f9fd;
 }
 
 .decision-preview .signal-etf {
-  border-top-color: #d97706;
-  background: #fff9ed;
+  background: #fdfbf7;
 }
 
 .decision-preview .signal-sentiment {
-  border-top-color: var(--preview-red);
-  background: #fff6f5;
+  background: #fdf9f8;
 }
 
 .decision-preview .signal-onchain {
-  border-top-color: #7c3aed;
-  background: #f8f5ff;
+  background: #faf9fd;
 }
 
 .decision-preview .signal-label {
-  display: block;
+  display: inline;
   color: #6b7280;
   font-size: 12px;
   font-weight: 700;
 }
 
 .decision-preview .signal-value {
-  display: block;
-  margin-top: 2px;
-  font-size: 14px;
+  display: inline;
+  margin-left: 2px;
+  font-size: 13px;
   font-weight: 750;
   line-height: 1.42;
 }
@@ -269,15 +307,15 @@
 }
 
 .decision-preview .status-block {
-  padding: 9px 11px;
-  border-left: 3px solid #7c3aed;
-  background: #f8f6ff;
+  padding: 6px 8px;
+  background: transparent;
 }
 
 .decision-preview .status-block h3 {
   margin: 0 0 3px;
-  padding: 0;
+  padding: 0 0 5px;
   border: 0;
+  border-bottom: 1px solid var(--preview-line);
   font-size: 15px;
 }
 
@@ -288,35 +326,36 @@
 }
 
 .decision-preview .subsection-label {
-  display: flex;
-  align-items: center;
-  gap: 8px;
   margin: 13px 0 6px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--preview-line);
   font-size: 16px;
   font-weight: 750;
 }
 
 .decision-preview .subsection-label::before {
-  width: 4px;
-  height: 18px;
-  background: var(--accent);
-  content: "";
-}
-
-.decision-preview .subsection-label.theme::before {
-  background: #7c3aed;
-}
-
-.decision-preview .subsection-label.stock::before {
-  background: var(--preview-orange);
+  content: none;
 }
 
 .decision-preview .compact-note {
   margin: 5px 0 8px;
   padding: 8px 10px;
-  border-left: 3px solid var(--preview-green);
-  background: #f1f8f5;
+  border: 1px solid var(--preview-line);
+  border-radius: 5px;
+  background: #f8fafc;
   font-size: 14px;
+}
+
+.decision-preview .summary-review {
+  margin: 10px 0 4px;
+  padding: 10px 12px !important;
+  border: 1px solid #cbdcf7;
+  border-radius: 5px;
+  background: #f3f7fd;
+}
+
+.decision-preview .summary-review strong {
+  color: var(--preview-blue);
 }
 
 .decision-preview .priority-title,
