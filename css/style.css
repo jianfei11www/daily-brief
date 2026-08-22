@@ -520,6 +520,65 @@ body {
   margin-top: 6px;
 }
 
+.exchange-mainline,
+.exchange-alpha {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-left: 4px solid var(--green);
+}
+
+.exchange-mainline {
+  background: rgba(5, 150, 105, 0.05);
+}
+
+.exchange-alpha {
+  border-left-color: #d97706;
+  background: #fffbeb;
+}
+
+.exchange-mainline h4,
+.exchange-alpha h4 {
+  margin: 0 0 6px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.exchange-mainline h4 {
+  color: var(--green);
+}
+
+.exchange-alpha h4 {
+  color: #b45309;
+}
+
+.alpha-token-list {
+  display: grid;
+  gap: 0;
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+}
+
+.alpha-token-list li {
+  display: grid;
+  grid-template-columns: minmax(48px, 64px) minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+  padding: 8px 0;
+  border-top: 1px solid rgba(217, 119, 6, 0.18);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.alpha-token-list li strong {
+  color: #b45309;
+}
+
+.alpha-token-list li span {
+  min-width: 0;
+  color: var(--text);
+}
+
 .brief-card h4 {
   font-size: 16px;
   line-height: 1.45;
@@ -936,6 +995,10 @@ body {
     padding: 14px 14px;
   }
   .brief-card h4 { font-size: 15px; }
+  .alpha-token-list li {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
   .opportunity-meta {
     grid-template-columns: 1fr;
   }
