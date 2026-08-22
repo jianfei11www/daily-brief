@@ -319,38 +319,41 @@
 .decision-preview .stock-decision-table .judge-col { width: 40%; }
 
 .decision-preview .event-subsection {
-  margin: 4px 0 0;
-  padding: 10px 12px;
-  border: 1px solid rgba(197, 106, 18, 0.16);
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.66);
+  margin: 0;
+  padding: 12px 16px;
+  border: 0;
+  border-radius: 0;
+  background: rgba(255, 255, 255, 0.48);
 }
 
 .decision-preview .event-subsection + .event-subsection {
-  margin-top: 14px;
+  margin-top: 0;
+  border-top: 1px solid var(--section-border);
 }
 
 .decision-preview .event-exchanges {
-  border-color: rgba(197, 106, 18, 0.24);
-  background: rgba(255, 247, 237, 0.86);
+  background: rgba(255, 243, 228, 0.58);
 }
 
 .decision-preview .event-subsection-title {
-  display: inline-block;
+  display: block;
   margin: 0 0 8px !important;
-  padding: 3px 8px !important;
+  padding: 0 0 5px !important;
   border: 0 !important;
-  border-radius: 3px;
-  background: rgba(197, 106, 18, 0.10);
+  border-radius: 0;
+  background: transparent;
   font-size: 16px;
 }
 
 .decision-preview .exchange-bar {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   padding: 0;
   border-bottom: 0;
 }
 
 .decision-preview .exchange-scope {
+  grid-column: 1 / -1;
   margin: 0 0 6px;
   line-height: 1.45;
 }
@@ -358,10 +361,10 @@
 .decision-preview .exchange-mainline,
 .decision-preview .exchange-alpha {
   margin: 5px 0 0;
-  padding: 7px 10px;
+  padding: 7px 16px 7px 0;
   border: 0;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.58);
+  border-radius: 0;
+  background: transparent;
 }
 
 .decision-preview .exchange-mainline h4,
@@ -374,7 +377,9 @@
 }
 
 .decision-preview .exchange-alpha {
-  margin-top: 6px;
+  padding-right: 0;
+  padding-left: 16px;
+  border-left: 1px solid var(--section-border);
 }
 
 .decision-preview .exchange-mainline p,
@@ -385,9 +390,14 @@
 }
 
 .decision-preview .exchange-source {
+  grid-column: 1 / -1;
   margin: 5px 0 0;
   padding: 7px 0 0;
   border-top: 1px solid var(--section-border);
+}
+
+.decision-preview .report-section-events .report-section-content {
+  padding: 0;
 }
 
 .decision-preview .subheading-with-source {
@@ -621,6 +631,18 @@
   .decision-preview .event-subsection {
     padding-right: 12px;
     padding-left: 12px;
+  }
+
+  .decision-preview .exchange-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .decision-preview .exchange-alpha {
+    margin-top: 0;
+    padding-top: 8px;
+    padding-left: 0;
+    border-top: 1px solid var(--section-border);
+    border-left: 0;
   }
 
   .decision-preview .signal-strip {
