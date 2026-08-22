@@ -463,7 +463,8 @@
 .decision-preview .status-block p {
   margin: 0;
   padding: 0;
-  font-size: 14px;
+  font-size: 15px;
+  line-height: 1.55;
 }
 
 .decision-preview .subsection-label {
@@ -515,6 +516,12 @@
 .decision-preview .etf-decision-table tbody td:nth-child(3),
 .decision-preview .stable-decision-table tbody td:nth-child(2),
 .decision-preview .stable-decision-table tbody td:nth-child(3) {
+  color: var(--preview-ink);
+  font-weight: 400;
+}
+
+.decision-preview .chain-decision-table tbody td:nth-child(3),
+.decision-preview .sentiment-decision-table tbody td:nth-child(3) {
   color: var(--preview-ink);
   font-weight: 400;
 }
