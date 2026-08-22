@@ -15,7 +15,10 @@
   --preview-blue-soft: #f4f7fc;
   --section-core-accent: #2563eb;
   --section-events-accent: #c56a12;
-  --section-opps-accent: #7651c8;
+  --section-opps-accent: #3f7f78;
+  --section-opps-border: #c8dfdb;
+  --section-opps-bg: #f7fbfa;
+  --section-opps-summary: #eaf5f2;
   --section-flows-accent: #168064;
   --section-prices-accent: #b84b64;
 }
@@ -82,9 +85,9 @@
 
 .decision-preview .report-section-opps {
   --section-accent: var(--section-opps-accent);
-  --section-border: #d9cff0;
-  --section-bg: #faf8ff;
-  --section-summary-bg: #f2edff;
+  --section-border: var(--section-opps-border);
+  --section-bg: var(--section-opps-bg);
+  --section-summary-bg: var(--section-opps-summary);
 }
 
 .decision-preview .report-section-flows {
