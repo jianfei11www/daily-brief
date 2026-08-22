@@ -114,6 +114,11 @@
   padding-bottom: 0;
 }
 
+.decision-preview .report-section-core ol,
+.decision-preview .report-section-core ul {
+  margin-bottom: 0;
+}
+
 .decision-preview .article-body h3 {
   margin-top: 11px;
   margin-bottom: 5px;
@@ -160,7 +165,7 @@
 }
 
 .decision-preview .strategy-note {
-  margin-top: 9px;
+  margin-top: 0;
   margin-bottom: 0 !important;
   font-size: 15px !important;
   font-weight: 400 !important;
@@ -205,24 +210,25 @@
 
 .decision-preview .brief-card-list,
 .decision-preview .event-list {
-  gap: 7px;
+  gap: 0;
   margin: 0;
 }
 
 .decision-preview .brief-card {
-  padding: 9px 0;
+  padding: 5px 0;
   border: 0;
   border-radius: 0;
   background: transparent;
 }
 
 .decision-preview .brief-card p {
+  margin: 0;
   padding: 2px 0;
 }
 
 .decision-preview .source-meta {
-  margin-top: 3px;
-  padding: 3px 8px !important;
+  margin-top: 1px;
+  padding: 2px 8px !important;
   font-size: 13px !important;
 }
 
@@ -332,7 +338,7 @@
 
 .decision-preview .event-subsection {
   margin: 0;
-  padding: 12px 16px;
+  padding: 8px 16px;
   border: 0;
   border-radius: 0;
   background: rgba(255, 255, 255, 0.48);
@@ -349,8 +355,8 @@
 
 .decision-preview .event-subsection-title {
   display: block;
-  margin: 0 0 8px !important;
-  padding: 0 0 5px !important;
+  margin: 0 0 3px !important;
+  padding: 0 0 2px !important;
   border: 0 !important;
   border-radius: 0;
   background: transparent;
@@ -372,8 +378,8 @@
 
 .decision-preview .exchange-mainline,
 .decision-preview .exchange-alpha {
-  margin: 5px 0 0;
-  padding: 7px 16px 7px 0;
+  margin: 1px 0 0;
+  padding: 4px 16px 4px 0;
   border: 0;
   border-radius: 0;
   background: transparent;
@@ -403,8 +409,8 @@
 
 .decision-preview .exchange-source {
   grid-column: 1 / -1;
-  margin: 5px 0 0;
-  padding: 7px 0 0;
+  margin: 3px 0 0;
+  padding: 4px 0 0;
   border-top: 1px solid var(--section-border);
 }
 
@@ -527,8 +533,24 @@
 }
 
 .decision-preview .compact-note {
-  margin: 5px 0 8px;
+  margin: 3px 0 0;
   font-size: 14px;
+}
+
+.decision-preview .report-section-opps .report-section-content {
+  padding-bottom: 0;
+}
+
+.decision-preview .exchange-listing-list,
+.decision-preview .alpha-token-list {
+  margin: 2px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.decision-preview .exchange-listing-list li,
+.decision-preview .alpha-token-list li {
+  padding: 4px 0;
 }
 
 .decision-preview .summary-review {
