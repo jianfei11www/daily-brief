@@ -4,6 +4,8 @@
   --preview-line: #e1e5eb;
   --preview-red: #b5473c;
   --preview-green: #067a57;
+  --preview-up: #3f7e68;
+  --preview-down: #a65b55;
   --preview-orange: #b45309;
   --preview-blue: #2563eb;
   --preview-blue-soft: #f4f7fc;
@@ -19,8 +21,29 @@
 }
 
 .decision-preview .site-header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
   padding: 26px 0 16px;
   margin-bottom: 22px;
+}
+
+.decision-preview .site-header h1 {
+  flex: 0 0 auto;
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.3;
+}
+
+.decision-preview .site-header .subtitle {
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  color: #747b89;
+  font-size: 13px;
+  line-height: 1.4;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .decision-preview .article-header {
@@ -71,10 +94,10 @@
 }
 
 .decision-preview .report-section-events {
-  --section-accent: var(--section-events-accent);
-  --section-border: #ecd4b7;
-  --section-bg: #fffaf4;
-  --section-summary-bg: #fff3e4;
+  --section-accent: #a96b31;
+  --section-border: #eadfd2;
+  --section-bg: #fffdfa;
+  --section-summary-bg: #faf4ed;
 }
 
 .decision-preview .report-section-opps {
@@ -430,7 +453,7 @@
 
 .decision-preview .signal-strip {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 0;
   margin: 8px 0 6px;
   padding: 6px 0;
@@ -588,6 +611,21 @@
   font-weight: 600;
 }
 
+.decision-preview .report-section .data-table tbody td.up {
+  color: var(--preview-up);
+  font-weight: 400;
+}
+
+.decision-preview .report-section .data-table tbody td.down {
+  color: var(--preview-down);
+  font-weight: 400;
+}
+
+.decision-preview .report-section .data-table tbody td.neutral {
+  color: #747b89;
+  font-weight: 400;
+}
+
 .decision-preview .preview-badge {
   display: inline-block;
   margin-bottom: 6px;
@@ -649,9 +687,7 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .decision-preview .signal-item:last-child {
-    grid-column: 1 / -1;
-  }
+  .decision-preview .signal-item:last-child { grid-column: auto; }
 
   .decision-preview .signal-item:nth-child(2n) {
     border-right: 0;
