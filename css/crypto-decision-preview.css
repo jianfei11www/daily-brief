@@ -6,6 +6,10 @@
   --preview-green: #067a57;
   --preview-up: #2563eb;
   --preview-down: #b5473c;
+  --preview-positive: #2563eb;
+  --preview-risk: #b5473c;
+  --preview-summary-ink: #5f6675;
+  --preview-summary-bg: #f2f4f7;
   --preview-orange: #b45309;
   --preview-blue: #2563eb;
   --preview-blue-soft: #f4f7fc;
@@ -539,6 +543,17 @@
   color: var(--section-accent);
 }
 
+.decision-preview .section-summary.strategy-note,
+.decision-preview .section-summary.summary-review {
+  color: var(--preview-ink);
+  background: var(--preview-summary-bg) !important;
+}
+
+.decision-preview .section-summary.strategy-note strong,
+.decision-preview .section-summary.summary-review strong {
+  color: var(--preview-summary-ink) !important;
+}
+
 .decision-preview .price-source {
   margin: 7px 0 2px;
   padding: 0;
@@ -576,9 +591,17 @@
   line-height: inherit;
 }
 
-.decision-preview .priority-title,
-.decision-preview .key-impact {
-  color: var(--preview-red) !important;
+.decision-preview .priority-title {
+  color: var(--preview-ink) !important;
+}
+
+.decision-preview .key-impact,
+.decision-preview .risk-signal {
+  color: var(--preview-risk) !important;
+}
+
+.decision-preview .positive-signal {
+  color: var(--preview-positive) !important;
 }
 
 .decision-preview .priority-title::before {
