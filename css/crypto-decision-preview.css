@@ -142,6 +142,16 @@
   border-bottom: 0;
 }
 
+.decision-preview .report-section-core li {
+  padding-top: 9px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid rgba(37, 99, 235, 0.12);
+}
+
+.decision-preview .report-section-core li:last-child {
+  border-bottom: 0;
+}
+
 .decision-preview .strategy-note {
   margin-top: 9px;
   font-size: 15px !important;
@@ -310,20 +320,28 @@
 
 .decision-preview .event-subsection {
   margin: 4px 0 0;
-  padding: 9px 12px;
-  border: 0;
+  padding: 10px 12px;
+  border: 1px solid rgba(197, 106, 18, 0.16);
   border-radius: 6px;
-  background: rgba(255, 255, 255, 0.46);
+  background: rgba(255, 255, 255, 0.66);
 }
 
 .decision-preview .event-subsection + .event-subsection {
-  margin-top: 8px;
+  margin-top: 14px;
+}
+
+.decision-preview .event-exchanges {
+  border-color: rgba(197, 106, 18, 0.24);
+  background: rgba(255, 247, 237, 0.86);
 }
 
 .decision-preview .event-subsection-title {
-  margin: 0 0 5px !important;
-  padding: 0 !important;
+  display: inline-block;
+  margin: 0 0 8px !important;
+  padding: 3px 8px !important;
   border: 0 !important;
+  border-radius: 3px;
+  background: rgba(197, 106, 18, 0.10);
   font-size: 16px;
 }
 
@@ -449,7 +467,7 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 10px;
-  margin: 9px 0 5px;
+  margin: 9px -16px 5px;
 }
 
 .decision-preview .status-block {
@@ -620,6 +638,8 @@
   .decision-preview .status-grid {
     grid-template-columns: 1fr;
     gap: 8px;
+    margin-right: -12px;
+    margin-left: -12px;
   }
 
   .decision-preview .status-block {
