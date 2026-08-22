@@ -569,7 +569,7 @@
 }
 
 .decision-preview .priority-title::before {
-  color: var(--preview-red);
+  content: none;
 }
 
 .decision-preview .key-impact {
