@@ -101,14 +101,96 @@
   font-size: 13px !important;
 }
 
+.decision-preview .inline-source,
+.decision-preview .table-source {
+  color: #747b89;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.decision-preview .inline-source {
+  margin-left: 4px;
+}
+
+.decision-preview .table-source {
+  margin: 3px 0 9px;
+  padding: 0 3px;
+  line-height: 1.45;
+}
+
+.decision-preview .inline-source a,
+.decision-preview .table-source a {
+  color: #5f6b7a;
+}
+
 .decision-preview .table-wrap {
   margin: 9px 0 11px;
 }
 
-.decision-preview table th,
-.decision-preview table td {
+.decision-preview .data-table table {
+  width: 100%;
+  min-width: 0;
+  table-layout: fixed;
+}
+
+.decision-preview .data-table th,
+.decision-preview .data-table td {
   padding: 8px 9px;
   line-height: 1.48;
+  vertical-align: middle;
+}
+
+.decision-preview .data-table th {
+  text-align: center;
+}
+
+.decision-preview .data-table td {
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.decision-preview .data-table td:not(:last-child) {
+  white-space: nowrap;
+}
+
+.decision-preview .data-table td:last-child {
+  padding-left: 14px;
+  text-align: left;
+}
+
+.decision-preview .etf-decision-table .asset-col { width: 12%; }
+.decision-preview .etf-decision-table .flow-col { width: 18%; }
+.decision-preview .etf-decision-table .judge-col { width: 52%; }
+
+.decision-preview .stable-decision-table .asset-col { width: 12%; }
+.decision-preview .stable-decision-table .flow-col { width: 18%; }
+.decision-preview .stable-decision-table .judge-col { width: 52%; }
+
+.decision-preview .chain-decision-table .chain-col { width: 17%; }
+.decision-preview .chain-decision-table .tvl-col { width: 20%; }
+.decision-preview .chain-decision-table .judge-col { width: 63%; }
+
+.decision-preview .sentiment-decision-table .indicator-col { width: 25%; }
+.decision-preview .sentiment-decision-table .value-col { width: 18%; }
+.decision-preview .sentiment-decision-table .judge-col { width: 57%; }
+
+.decision-preview .main-asset-table .asset-col { width: 10%; }
+.decision-preview .main-asset-table .price-col { width: 15%; }
+.decision-preview .main-asset-table .change-col { width: 10%; }
+.decision-preview .main-asset-table .volume-col { width: 15%; }
+.decision-preview .main-asset-table .judge-col { width: 40%; }
+
+.decision-preview .theme-asset-table .asset-col { width: 10%; }
+.decision-preview .theme-asset-table .price-col { width: 15%; }
+.decision-preview .theme-asset-table .change-col { width: 10%; }
+.decision-preview .theme-asset-table .theme-col { width: 20%; }
+.decision-preview .theme-asset-table .judge-col { width: 35%; }
+
+.decision-preview .stock-decision-table .stock-col { width: 12%; }
+.decision-preview .stock-decision-table .price-col { width: 16%; }
+.decision-preview .stock-decision-table .change-col { width: 12%; }
+.decision-preview .stock-decision-table .cap-col { width: 17%; }
+.decision-preview .stock-decision-table .judge-col { width: 43%; }
 }
 
 .decision-preview .exchange-mainline,
@@ -132,6 +214,32 @@
   min-height: 66px;
   padding: 8px 10px;
   background: #fff;
+  border-top: 3px solid transparent;
+}
+
+.decision-preview .signal-trend {
+  border-top-color: #15803d;
+  background: #f2faf5;
+}
+
+.decision-preview .signal-funds {
+  border-top-color: #2563eb;
+  background: #f3f7ff;
+}
+
+.decision-preview .signal-etf {
+  border-top-color: #d97706;
+  background: #fff9ed;
+}
+
+.decision-preview .signal-sentiment {
+  border-top-color: var(--preview-red);
+  background: #fff6f5;
+}
+
+.decision-preview .signal-onchain {
+  border-top-color: #7c3aed;
+  background: #f8f5ff;
 }
 
 .decision-preview .signal-label {
@@ -270,5 +378,24 @@
 
   .decision-preview table {
     min-width: 670px;
+  }
+
+  .decision-preview .data-table th,
+  .decision-preview .data-table td {
+    padding: 7px 7px;
+    font-size: 11px;
+  }
+
+  .decision-preview .data-table td:last-child {
+    padding-left: 10px;
+  }
+
+  .decision-preview .main-asset-table table,
+  .decision-preview .theme-asset-table table {
+    min-width: 700px;
+  }
+
+  .decision-preview .stock-decision-table table {
+    min-width: 600px;
   }
 }
