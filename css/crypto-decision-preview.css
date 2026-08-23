@@ -242,6 +242,11 @@
   font-size: 13px !important;
 }
 
+.decision-preview .report-section-opps .source-meta {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
 .decision-preview .inline-source,
 .decision-preview .table-source {
   color: #747b89;
