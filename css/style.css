@@ -1112,3 +1112,19 @@ body {
 }
 
 .hidden { display: none !important; }
+
+.exchange-mainline,
+.exchange-alpha {
+  min-width: 0;
+}
+
+.exchange-listing-list,
+.alpha-token-list {
+  margin: 8px 0 0;
+  padding-left: 18px;
+}
+
+.exchange-listing-list li,
+.alpha-token-list li {
+  margin: 6px 0;
+}
