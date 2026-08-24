@@ -324,15 +324,15 @@
   text-align: left;
 }
 
-.decision-preview .etf-decision-table .asset-col { width: 12%; }
-.decision-preview .etf-decision-table .flow-col { width: 14%; }
-.decision-preview .etf-decision-table .holdings-col { width: 20%; }
-.decision-preview .etf-decision-table .judge-col { width: 40%; }
+.decision-preview .etf-decision-table .asset-col { width: 10%; }
+.decision-preview .etf-decision-table .flow-col { width: 12%; }
+.decision-preview .etf-decision-table .holdings-col { width: 16%; }
+.decision-preview .etf-decision-table .judge-col { width: 38%; }
 
-.decision-preview .stable-decision-table .asset-col { width: 12%; }
-.decision-preview .stable-decision-table .flow-col { width: 14%; }
-.decision-preview .stable-decision-table .issuance-col { width: 20%; }
-.decision-preview .stable-decision-table .judge-col { width: 40%; }
+.decision-preview .stable-decision-table .asset-col { width: 10%; }
+.decision-preview .stable-decision-table .flow-col { width: 12%; }
+.decision-preview .stable-decision-table .issuance-col { width: 16%; }
+.decision-preview .stable-decision-table .judge-col { width: 38%; }
 
 .decision-preview .chain-decision-table .chain-col { width: 20%; }
 .decision-preview .chain-decision-table .tvl-col { width: 20%; }
@@ -346,23 +346,23 @@
 
 .decision-preview .main-asset-table .asset-col,
 .decision-preview .theme-asset-table .asset-col,
-.decision-preview .stock-decision-table .asset-col { width: 10%; }
+.decision-preview .stock-decision-table .asset-col { width: 8%; }
 
 .decision-preview .main-asset-table .price-col,
 .decision-preview .theme-asset-table .price-col,
-.decision-preview .stock-decision-table .price-col { width: 14%; }
+.decision-preview .stock-decision-table .price-col { width: 12%; }
 
 .decision-preview .main-asset-table .change-col,
 .decision-preview .theme-asset-table .change-col,
-.decision-preview .stock-decision-table .change-col { width: 10%; }
+.decision-preview .stock-decision-table .change-col { width: 9%; }
 
 .decision-preview .main-asset-table .cap-col,
 .decision-preview .theme-asset-table .cap-col,
-.decision-preview .stock-decision-table .cap-col { width: 16%; }
+.decision-preview .stock-decision-table .cap-col { width: 12%; }
 
 .decision-preview .main-asset-table .judge-col,
 .decision-preview .theme-asset-table .judge-col,
-.decision-preview .stock-decision-table .judge-col { width: 40%; }
+.decision-preview .stock-decision-table .judge-col { width: 41%; }
 
 .decision-preview .event-subsection {
   margin: 0;
@@ -653,8 +653,10 @@
 
 .decision-preview .etf-decision-table tbody td:nth-child(2),
 .decision-preview .etf-decision-table tbody td:nth-child(3),
+.decision-preview .etf-decision-table tbody td:nth-child(4),
 .decision-preview .stable-decision-table tbody td:nth-child(2),
-.decision-preview .stable-decision-table tbody td:nth-child(3) {
+.decision-preview .stable-decision-table tbody td:nth-child(3),
+.decision-preview .stable-decision-table tbody td:nth-child(4) {
   color: var(--preview-ink);
   font-weight: 400;
 }
@@ -818,20 +820,25 @@
   .decision-preview .main-asset-table table,
   .decision-preview .theme-asset-table table,
   .decision-preview .stock-decision-table table {
-    min-width: 700px;
+    min-width: 780px;
+  }
+
+  .decision-preview .etf-decision-table table,
+  .decision-preview .stable-decision-table table {
+    min-width: 760px;
   }
 
   .decision-preview .main-asset-table .asset-col,
   .decision-preview .theme-asset-table .asset-col,
-  .decision-preview .stock-decision-table .asset-col { width: 9%; }
+  .decision-preview .stock-decision-table .asset-col { width: 8%; }
 
   .decision-preview .main-asset-table .price-col,
   .decision-preview .theme-asset-table .price-col,
-  .decision-preview .stock-decision-table .price-col { width: 12%; }
+  .decision-preview .stock-decision-table .price-col { width: 11%; }
 
   .decision-preview .main-asset-table .change-col,
   .decision-preview .theme-asset-table .change-col,
-  .decision-preview .stock-decision-table .change-col { width: 9%; }
+  .decision-preview .stock-decision-table .change-col { width: 8%; }
 
   .decision-preview .main-asset-table .cap-col,
   .decision-preview .theme-asset-table .cap-col,
@@ -839,5 +846,5 @@
 
   .decision-preview .main-asset-table .judge-col,
   .decision-preview .theme-asset-table .judge-col,
-  .decision-preview .stock-decision-table .judge-col { width: 51%; }
+  .decision-preview .stock-decision-table .judge-col { width: 47%; }
 }
