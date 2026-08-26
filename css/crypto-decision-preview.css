@@ -472,7 +472,7 @@
 
 .decision-preview .report-section-content > .signal-strip:first-child,
 .decision-preview .report-section-content > .event-subsection:first-child,
-.decision-preview .report-section-content > .status-grid:first-child,
+.decision-preview .report-section-content > .opportunity-stream:first-child,
 .decision-preview .report-section-content > .subheading-with-source:first-child,
 .decision-preview .report-section-content > .subsection-label:first-child {
   margin-top: 3px;
@@ -523,55 +523,34 @@
   color: var(--preview-red);
 }
 
-.decision-preview .status-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
-  margin: 9px -16px 5px;
+.decision-preview .opportunity-stream {
+  margin: 3px -16px 0;
 }
 
-.decision-preview .status-block {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 96px;
-  padding: 12px;
-  border: 1px solid var(--section-border);
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.5);
-}
-
-.decision-preview .status-block h3 {
-  margin: 0 0 3px;
-  padding: 0;
-  border: 0 !important;
-  font-size: 15px;
-}
-
-.decision-preview .status-block p {
-  margin: 0;
-  padding: 0;
-  font-size: 15px;
-  line-height: 1.55;
-}
-
-.decision-preview .institution-wind {
-  margin: 0 -16px;
+.decision-preview .opportunity-row {
   padding: 11px 16px;
   border-top: 1px solid var(--section-border);
 }
 
-.decision-preview .institution-wind h3 {
+.decision-preview .opportunity-row:first-child {
+  border-top: 0;
+}
+
+.decision-preview .opportunity-row h3 {
   margin: 0 0 4px;
   padding: 0;
   border: 0 !important;
   font-size: 15px;
 }
 
-.decision-preview .institution-wind p {
+.decision-preview .opportunity-row p {
   margin: 0;
   font-size: 15px;
   line-height: 1.55;
+}
+
+.decision-preview .opportunity-row .opportunity-card {
+  margin-top: 8px;
 }
 
 .decision-preview .subsection-label {
@@ -795,22 +774,14 @@
     border-right: 0;
   }
 
-  .decision-preview .status-grid {
-    grid-template-columns: 1fr;
-    gap: 8px;
+  .decision-preview .opportunity-stream {
     margin-right: -12px;
     margin-left: -12px;
   }
 
-  .decision-preview .institution-wind {
-    margin-right: -12px;
-    margin-left: -12px;
+  .decision-preview .opportunity-row {
     padding-right: 12px;
     padding-left: 12px;
-  }
-
-  .decision-preview .status-block {
-    min-height: 82px;
   }
 
   .decision-preview .full-detail-content {
