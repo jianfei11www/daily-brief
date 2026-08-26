@@ -325,24 +325,24 @@
 }
 
 .decision-preview .etf-decision-table .asset-col { width: 10%; }
-.decision-preview .etf-decision-table .flow-col { width: 12%; }
+.decision-preview .etf-decision-table .flow-col { width: 11%; }
 .decision-preview .etf-decision-table .holdings-col { width: 16%; }
-.decision-preview .etf-decision-table .judge-col { width: 38%; }
+.decision-preview .etf-decision-table .judge-col { width: 41%; }
 
 .decision-preview .stable-decision-table .asset-col { width: 10%; }
-.decision-preview .stable-decision-table .flow-col { width: 12%; }
+.decision-preview .stable-decision-table .flow-col { width: 11%; }
 .decision-preview .stable-decision-table .issuance-col { width: 16%; }
-.decision-preview .stable-decision-table .judge-col { width: 38%; }
+.decision-preview .stable-decision-table .judge-col { width: 41%; }
 
 .decision-preview .chain-decision-table .chain-col { width: 12%; }
 .decision-preview .chain-decision-table .tvl-col { width: 16%; }
-.decision-preview .chain-decision-table .trend-col { width: 17%; }
-.decision-preview .chain-decision-table .judge-col { width: 38%; }
+.decision-preview .chain-decision-table .trend-col { width: 15.5%; }
+.decision-preview .chain-decision-table .judge-col { width: 41%; }
 
 .decision-preview .sentiment-decision-table .indicator-col { width: 20%; }
 .decision-preview .sentiment-decision-table .value-col { width: 18%; }
-.decision-preview .sentiment-decision-table .trend-col { width: 24%; }
-.decision-preview .sentiment-decision-table .judge-col { width: 38%; }
+.decision-preview .sentiment-decision-table .trend-col { width: 21%; }
+.decision-preview .sentiment-decision-table .judge-col { width: 41%; }
 
 .decision-preview .main-asset-table .asset-col,
 .decision-preview .theme-asset-table .asset-col,
