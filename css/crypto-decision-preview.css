@@ -334,10 +334,10 @@
 .decision-preview .stable-decision-table .issuance-col { width: 16%; }
 .decision-preview .stable-decision-table .judge-col { width: 38%; }
 
-.decision-preview .chain-decision-table .chain-col { width: 20%; }
-.decision-preview .chain-decision-table .tvl-col { width: 20%; }
-.decision-preview .chain-decision-table .trend-col { width: 20%; }
-.decision-preview .chain-decision-table .judge-col { width: 40%; }
+.decision-preview .chain-decision-table .chain-col { width: 12%; }
+.decision-preview .chain-decision-table .tvl-col { width: 16%; }
+.decision-preview .chain-decision-table .trend-col { width: 14%; }
+.decision-preview .chain-decision-table .judge-col { width: 44%; }
 
 .decision-preview .sentiment-decision-table .indicator-col { width: 20%; }
 .decision-preview .sentiment-decision-table .value-col { width: 20%; }
