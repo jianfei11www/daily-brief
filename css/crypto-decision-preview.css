@@ -501,17 +501,21 @@
 }
 
 .decision-preview .signal-item {
+  display: flex;
+  align-items: center;
   min-width: 0;
-  min-height: 54px;
+  min-height: 46px;
   padding: 9px 11px;
   border: 1px solid #dfe5ec;
   border-radius: 7px;
   background: #fafbfd;
   text-align: left;
+  white-space: nowrap;
 }
 
 .decision-preview .signal-label {
-  display: block;
+  display: inline;
+  flex: 0 0 auto;
   color: #6b7280;
   font-size: 11.5px;
   font-weight: 700;
@@ -519,12 +523,12 @@
 }
 
 .decision-preview .signal-value {
-  display: block;
-  margin: 3px 0 0;
+  display: inline;
+  min-width: 0;
+  margin: 0;
   font-size: 12.5px;
   font-weight: 750;
   line-height: 1.35;
-  overflow-wrap: anywhere;
 }
 
 .decision-preview .signal-value.alert {
@@ -970,8 +974,16 @@
   .decision-preview .signal-item:last-child { grid-column: auto; }
 
   .decision-preview .signal-item {
-    min-height: 58px;
-    padding: 9px 10px;
+    min-height: 46px;
+    padding: 8px 7px;
+  }
+
+  .decision-preview .signal-label {
+    font-size: 10.5px;
+  }
+
+  .decision-preview .signal-value {
+    font-size: 11.5px;
   }
 
   .decision-preview .opportunity-stream {
