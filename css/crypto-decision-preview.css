@@ -21,6 +21,8 @@
   --section-opps-summary: #eaf5f2;
   --section-flows-accent: #168064;
   --section-prices-accent: #b84b64;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 .decision-preview .wrapper {
@@ -315,8 +317,16 @@
   white-space: nowrap;
 }
 
-.decision-preview .sentiment-decision-table td:nth-child(3) {
+.decision-preview .sentiment-decision-table td:not(:last-child) {
   white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.decision-preview .chain-decision-table td:first-child {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .decision-preview .data-table td:last-child {
