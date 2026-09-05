@@ -1041,6 +1041,15 @@
     min-width: 760px;
   }
 
+  .decision-preview .chain-decision-table table {
+    min-width: 720px;
+  }
+
+  .decision-preview .chain-decision-table .chain-col { width: 11%; }
+  .decision-preview .chain-decision-table .tvl-col { width: 15%; }
+  .decision-preview .chain-decision-table .trend-col { width: 16.5%; }
+  .decision-preview .chain-decision-table .judge-col { width: 41%; }
+
   .decision-preview .main-asset-table .asset-col,
   .decision-preview .theme-asset-table .asset-col,
   .decision-preview .stock-decision-table .asset-col { width: 8%; }
