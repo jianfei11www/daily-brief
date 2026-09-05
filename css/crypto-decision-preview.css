@@ -349,6 +349,11 @@
 .decision-preview .chain-decision-table .trend-col { width: 15.5%; }
 .decision-preview .chain-decision-table .judge-col { width: 41%; }
 
+.decision-preview .chain-decision-table.has-24h .chain-col { width: 10%; }
+.decision-preview .chain-decision-table.has-24h .tvl-col { width: 13%; }
+.decision-preview .chain-decision-table.has-24h .trend-col { width: 12%; }
+.decision-preview .chain-decision-table.has-24h .judge-col { width: 41%; }
+
 .decision-preview .sentiment-decision-table .indicator-col { width: 20%; }
 .decision-preview .sentiment-decision-table .value-col { width: 18%; }
 .decision-preview .sentiment-decision-table .trend-col { width: 21%; }
@@ -797,7 +802,24 @@
 
 .decision-preview .exchange-listing-list li,
 .decision-preview .alpha-token-list li {
+  display: block;
   padding: 4px 0;
+}
+
+.decision-preview .exchange-listing-list li > strong,
+.decision-preview .alpha-token-list li > strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.decision-preview .exchange-token-intro,
+.decision-preview .exchange-token-facts {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+.decision-preview .exchange-token-facts {
+  margin-top: 4px;
 }
 
 .decision-preview .summary-review {
