@@ -598,11 +598,26 @@
   line-height: 1.55;
 }
 
+.decision-preview .opportunity-digest-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.decision-preview .opportunity-digest-funding {
+  min-width: 0;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
 .decision-preview .primary-detail-link {
   display: inline-flex;
   align-items: center;
+  flex: 0 0 auto;
   min-height: 36px;
-  margin-top: 10px;
   padding: 0 14px;
   border: 1px solid var(--section-accent);
   border-radius: 6px;
@@ -835,9 +850,11 @@
   }
 
   .decision-preview .primary-detail-link {
-    display: flex;
+    display: inline-flex;
     justify-content: center;
-    width: 100%;
+    min-height: 32px;
+    padding: 0 10px;
+    white-space: nowrap;
   }
 
   .decision-preview .primary-report-nav {
