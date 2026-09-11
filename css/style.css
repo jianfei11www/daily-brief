@@ -536,6 +536,11 @@ body {
   background: #fffbeb;
 }
 
+.exchange-robinhood-alpha,
+.exchange-binance-alpha {
+  min-width: 0;
+}
+
 .exchange-mainline h4,
 .exchange-alpha h4 {
   margin: 0 0 6px;
@@ -1116,6 +1121,10 @@ body {
 .exchange-mainline,
 .exchange-alpha {
   min-width: 0;
+}
+
+.exchange-mainline {
+  grid-column: 1 / -1;
 }
 
 .exchange-listing-list,

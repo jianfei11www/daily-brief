@@ -434,6 +434,15 @@
   text-align: left;
 }
 
+.decision-preview .exchange-mainline {
+  grid-column: 1 / -1;
+}
+
+.decision-preview .exchange-robinhood-alpha,
+.decision-preview .exchange-binance-alpha {
+  min-width: 0;
+}
+
 .decision-preview .exchange-mainline h4,
 .decision-preview .exchange-alpha h4 {
   margin: 0 0 4px;
@@ -1074,6 +1083,10 @@
   .decision-preview .exchange-alpha {
     padding: 9px 12px 10px;
     font-size: 14px;
+  }
+
+  .decision-preview .exchange-mainline {
+    grid-column: auto;
   }
 
   .decision-preview .exchange-mainline h4,
