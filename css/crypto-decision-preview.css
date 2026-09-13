@@ -1170,6 +1170,17 @@
     min-width: 780px;
   }
 
+  .decision-preview .main-asset-table th:nth-child(n+3):nth-child(-n+5),
+  .decision-preview .main-asset-table td:nth-child(n+3):nth-child(-n+5),
+  .decision-preview .theme-asset-table th:nth-child(n+3):nth-child(-n+5),
+  .decision-preview .theme-asset-table td:nth-child(n+3):nth-child(-n+5),
+  .decision-preview .stock-decision-table th:nth-child(n+3):nth-child(-n+5),
+  .decision-preview .stock-decision-table td:nth-child(n+3):nth-child(-n+5) {
+    padding-right: 4px;
+    padding-left: 4px;
+    font-size: 10px;
+  }
+
   .decision-preview .etf-decision-table table,
   .decision-preview .stable-decision-table table {
     min-width: 760px;
