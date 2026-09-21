@@ -344,9 +344,9 @@
 .decision-preview .stable-decision-table .issuance-col { width: 16%; }
 .decision-preview .stable-decision-table .judge-col { width: 41%; }
 
-.decision-preview .chain-decision-table .chain-col { width: 12%; }
-.decision-preview .chain-decision-table .tvl-col { width: 16%; }
-.decision-preview .chain-decision-table .trend-col { width: 15.5%; }
+.decision-preview .chain-decision-table .chain-col { width: 10%; }
+.decision-preview .chain-decision-table .tvl-col { width: 13%; }
+.decision-preview .chain-decision-table .trend-col { width: 12%; }
 .decision-preview .chain-decision-table .judge-col { width: 41%; }
 
 .decision-preview .chain-decision-table.has-24h .chain-col { width: 10%; }
@@ -1190,9 +1190,9 @@
     min-width: 720px;
   }
 
-  .decision-preview .chain-decision-table .chain-col { width: 11%; }
-  .decision-preview .chain-decision-table .tvl-col { width: 15%; }
-  .decision-preview .chain-decision-table .trend-col { width: 16.5%; }
+  .decision-preview .chain-decision-table .chain-col { width: 10%; }
+  .decision-preview .chain-decision-table .tvl-col { width: 13%; }
+  .decision-preview .chain-decision-table .trend-col { width: 12%; }
   .decision-preview .chain-decision-table .judge-col { width: 41%; }
 
   .decision-preview .main-asset-table .asset-col,
