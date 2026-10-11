@@ -406,16 +406,17 @@
   font-size: 16px;
 }
 
+/* Exchange bar: mainline full width, alphas balanced side-by-side */
 .decision-preview .exchange-bar {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1px;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
   margin: 3px -16px 0;
   padding: 0;
   border-top: 1px solid var(--section-border);
   border-bottom: 1px solid var(--section-border);
   border-radius: 0;
-  background: var(--section-border);
+  background: transparent;
 }
 
 .decision-preview .exchange-scope {
@@ -424,50 +425,69 @@
   line-height: 1.45;
 }
 
-.decision-preview .exchange-mainline,
-.decision-preview .exchange-alpha {
-  margin: 0;
-  padding: 10px 16px 11px;
-  border: 0;
-  border-radius: 0;
-  background: rgba(255, 255, 255, 0.88);
-  text-align: left;
-}
-
 .decision-preview .exchange-mainline {
   grid-column: 1 / -1;
+  margin: 0;
+  padding: 12px 16px;
+  border: 0;
+  border-bottom: 1px solid var(--section-border);
+  border-radius: 0;
+  background: rgba(255, 255, 255, 0.92);
+  text-align: left;
 }
 
 .decision-preview .exchange-robinhood-alpha,
 .decision-preview .exchange-binance-alpha {
-  min-width: 0;
+  margin: 0;
+  padding: 14px 18px;
+  border: 0;
+  border-radius: 0;
+  background: rgba(255, 255, 255, 0.92);
+  text-align: center;
+  min-height: 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.decision-preview .exchange-robinhood-alpha {
+  border-right: 1px solid var(--section-border);
 }
 
 .decision-preview .exchange-mainline h4,
-.decision-preview .exchange-alpha h4 {
-  margin: 0 0 4px;
+.decision-preview .exchange-alpha h4,
+.decision-preview .exchange-block-title {
+  margin: 0 0 6px;
   padding: 0;
   border: 0;
   color: var(--preview-ink);
+  font-size: 14px;
+  font-weight: 700;
   line-height: 1.4;
-  text-align: left;
+  text-align: center;
 }
 
 .decision-preview .exchange-mainline p,
-.decision-preview .exchange-alpha p {
+.decision-preview .exchange-alpha p,
+.decision-preview .exchange-robinhood-alpha p,
+.decision-preview .exchange-binance-alpha p {
   margin: 0;
   padding: 0;
   line-height: 1.55;
+  text-align: center;
 }
 
 .decision-preview .exchange-source {
   grid-column: 1 / -1;
   margin: 0;
-  padding: 5px 16px !important;
+  padding: 8px 16px !important;
   border: 0;
+  border-top: 1px solid var(--section-border);
   background: rgba(255, 255, 255, 0.72);
   font-size: 12px !important;
   line-height: 1.35;
+  text-align: left;
 }
 
 .decision-preview .report-section-events .report-section-content {
@@ -731,487 +751,4 @@
 
 .decision-preview .opportunity-detail-table tbody tr:hover td {
   background: #fff;
-}
-
-/* Primary detail: three independent blocks, compact cards with no page-level table scrolling. */
-.decision-preview.primary-card-page .wrapper { max-width: 1180px; }
-.decision-preview .primary-three-blocks {
-  display: grid;
-  gap: 22px;
-  border: 0;
-  background: transparent;
-  min-width: 0;
-}
-.decision-preview .primary-three-blocks > .primary-card-block {
-  min-width: 0;
-  padding: 14px;
-  border: 1px solid var(--section-border);
-  border-radius: 10px;
-  background: #fff;
-}
-.decision-preview .primary-card-block h3 { margin: 0 0 12px; font-size: 18px; }
-.decision-preview .primary-card-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-  min-width: 0;
-}
-.decision-preview .primary-card-grid .primary-project-card {
-  min-width: 0;
-  margin: 0;
-  padding: 14px;
-  box-shadow: 0 3px 12px rgba(31, 45, 61, 0.045);
-}
-.decision-preview .project-card-head {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 10px;
-}
-.decision-preview .project-card-title { min-width: 0; }
-.decision-preview .project-card-title h4 { margin: 0 0 4px; font-size: 18px; line-height: 1.35; }
-.decision-preview .project-card-title > a { font-size: 12px; font-weight: 750; text-decoration: none; }
-.decision-preview .project-card-badges {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 5px;
-  max-width: 58%;
-}
-.decision-preview .project-card-badges span {
-  display: inline-flex;
-  align-items: center;
-  min-height: 24px;
-  padding: 2px 8px;
-  border: 1px solid #d9e4e8;
-  border-radius: 999px;
-  background: #f6fafb;
-  color: #46586b;
-  font-size: 11px;
-  font-weight: 750;
-  line-height: 1.3;
-}
-.decision-preview .project-card-badges .project-chain-badge { border-color: #cbdcf4; background: #f2f7ff; color: #315d94; }
-.decision-preview .project-card-badges .project-rating-badge { border-color: #f0d8b7; background: #fff8ee; color: #9a5b10; }
-.decision-preview .project-card-badges .project-status-badge { border-color: #d8dedf; background: #f8faf9; color: #5e696e; }
-.decision-preview .primary-project-card .opportunity-detail-table th {
-  width: 88px;
-  padding: 7px 8px;
-  font-size: 12px;
-  white-space: normal;
-  overflow-wrap: anywhere;
-  word-break: break-word;
-}
-.decision-preview .primary-project-card .opportunity-detail-table td { padding: 7px 9px; font-size: 13px; line-height: 1.58; }
-.decision-preview .primary-project-card > .source-meta { margin: 8px 2px 0; font-size: 11px; line-height: 1.45; }
-@media (max-width: 640px) {
-  .decision-preview .primary-three-blocks > .primary-card-block { padding: 10px; }
-  .decision-preview .primary-card-grid { grid-template-columns: 1fr; gap: 10px; }
-  .decision-preview .project-card-head { display: block; }
-  .decision-preview .project-card-badges { justify-content: flex-start; max-width: none; margin-top: 8px; }
-  .decision-preview .primary-card-grid .primary-project-card { padding: 11px; }
-  .decision-preview .primary-project-card .opportunity-detail-table th { width: 78px; padding: 7px 6px; font-size: 11px; }
-  .decision-preview .primary-project-card .opportunity-detail-table td { padding: 7px; font-size: 12.5px; }
-}
-
-.decision-preview .subsection-label {
-  margin: 13px 0 6px;
-  padding-bottom: 0;
-  border-bottom: 0;
-  font-size: 16px;
-  font-weight: 750;
-}
-
-.decision-preview .subsection-label::before {
-  content: none;
-}
-
-.decision-preview .compact-note {
-  margin: 3px 0 0;
-  font-size: 14px;
-}
-
-.decision-preview .report-section-opps .report-section-content {
-  padding-bottom: 0;
-}
-
-@media (min-width: 721px) {
-  .decision-preview .signal-item,
-  .decision-preview .signal-label,
-  .decision-preview .signal-value {
-    white-space: nowrap;
-  }
-
-  .decision-preview .exchange-source {
-    white-space: nowrap;
-  }
-}
-
-@media (max-width: 600px) {
-  .decision-preview .opportunity-digest {
-    padding: 12px;
-  }
-
-  .decision-preview .opportunity-digest-stats,
-  .decision-preview .opportunity-digest-lead {
-    font-size: 12px;
-  }
-
-  .decision-preview .primary-detail-link {
-    display: inline-flex;
-    justify-content: center;
-    min-height: 32px;
-    padding: 0 10px;
-    white-space: nowrap;
-  }
-
-  .decision-preview .primary-report-nav {
-    gap: 10px;
-    font-size: 12px;
-  }
-
-  .decision-preview .opportunity-row .opportunity-card {
-    padding: 10px;
-  }
-
-  .decision-preview .opportunity-card .opportunity-meta {
-    padding: 6px 8px;
-    font-size: 10.5px;
-  }
-
-  .decision-preview .opportunity-detail-table {
-    min-width: 0;
-  }
-
-  .decision-preview .opportunity-detail-table th,
-  .decision-preview .opportunity-detail-table td {
-    padding: 7px 8px;
-  }
-
-  .decision-preview .opportunity-detail-table th {
-    width: 82px;
-    font-size: 11px;
-    line-height: 1.45;
-  }
-
-  .decision-preview .opportunity-detail-table td {
-    font-size: 12.5px;
-    line-height: 1.55;
-  }
-}
-
-.decision-preview .exchange-listing-list,
-.decision-preview .alpha-token-list {
-  margin: 2px 0 0;
-  padding: 0;
-  list-style: none;
-}
-
-.decision-preview .exchange-listing-list li,
-.decision-preview .alpha-token-list li {
-  display: block;
-  padding: 4px 0;
-}
-
-.decision-preview .exchange-listing-list li > strong,
-.decision-preview .alpha-token-list li > strong {
-  display: block;
-  margin-bottom: 4px;
-}
-
-.decision-preview .exchange-token-intro,
-.decision-preview .exchange-token-facts {
-  display: block;
-  overflow-wrap: anywhere;
-}
-
-.decision-preview .exchange-token-facts {
-  margin-top: 4px;
-}
-
-.decision-preview .summary-review {
-  margin: 10px 0 4px;
-}
-
-.decision-preview .section-summary {
-  margin-right: -16px !important;
-  margin-left: -16px !important;
-  padding: 10px 16px !important;
-  border: 0 !important;
-  border-radius: 0 !important;
-  background: var(--section-summary-bg) !important;
-}
-
-.decision-preview .section-summary strong {
-  color: var(--section-accent);
-}
-
-.decision-preview .section-summary.strategy-note {
-  padding-top: 12px !important;
-  padding-bottom: 12px !important;
-  color: var(--preview-ink);
-  background: var(--section-summary-bg) !important;
-}
-
-.decision-preview .section-summary.strategy-note strong {
-  color: var(--section-accent) !important;
-}
-
-.decision-preview .section-summary.summary-review {
-  color: var(--preview-ink);
-  background: var(--preview-summary-bg) !important;
-}
-
-.decision-preview .section-summary.summary-review strong {
-  color: var(--preview-summary-ink) !important;
-}
-
-.decision-preview .price-source {
-  margin: 7px 0 2px;
-  padding: 0;
-}
-
-.decision-preview .report-section-prices .data-table tbody td,
-.decision-preview .report-section-prices .data-table tbody td strong,
-.decision-preview .report-section-prices .data-table tbody .up,
-.decision-preview .report-section-prices .data-table tbody .down,
-.decision-preview .report-section-prices .data-table tbody .key-impact {
-  color: var(--preview-ink);
-  font-weight: 400;
-}
-
-.decision-preview .etf-decision-table tbody td:nth-child(2),
-.decision-preview .etf-decision-table tbody td:nth-child(3),
-.decision-preview .etf-decision-table tbody td:nth-child(4),
-.decision-preview .stable-decision-table tbody td:nth-child(2),
-.decision-preview .stable-decision-table tbody td:nth-child(3),
-.decision-preview .stable-decision-table tbody td:nth-child(4) {
-  color: var(--preview-ink);
-  font-weight: 400;
-}
-
-.decision-preview .report-section-funds .data-table tbody td {
-  color: var(--preview-ink);
-  font-weight: 400;
-}
-
-.decision-preview .sentiment-decision-table .key-impact {
-  padding: 0;
-  color: var(--preview-red);
-  background: transparent;
-  font-size: inherit;
-  font-weight: 400;
-  line-height: inherit;
-}
-
-.decision-preview .priority-title {
-  color: var(--preview-ink) !important;
-}
-
-.decision-preview .key-impact,
-.decision-preview .risk-signal {
-  color: var(--preview-risk) !important;
-}
-
-.decision-preview .positive-signal {
-  color: var(--preview-positive) !important;
-}
-
-.decision-preview .priority-title::before {
-  content: none;
-}
-
-.decision-preview .key-impact {
-  padding: 0;
-  background: transparent;
-  font-weight: 600;
-}
-
-.decision-preview .report-section .data-table tbody td.up {
-  color: var(--preview-up);
-  font-weight: 400;
-}
-
-.decision-preview .report-section .data-table tbody td.down {
-  color: var(--preview-down);
-  font-weight: 400;
-}
-
-.decision-preview .report-section .data-table tbody td.neutral {
-  color: #747b89;
-  font-weight: 400;
-}
-
-@media (max-width: 720px) {
-  .decision-preview .wrapper {
-    padding: 0 15px;
-  }
-
-  .decision-preview .article-header h2 {
-    font-size: 22px;
-  }
-
-  .decision-preview .article-body {
-    font-size: 15px;
-    padding: 7px;
-  }
-
-  .decision-preview .article-body h2 {
-    padding: 6px 11px;
-    font-size: 18px;
-  }
-
-  .decision-preview .report-section-content {
-    padding-right: 12px;
-    padding-left: 12px;
-  }
-
-  .decision-preview .event-subsection {
-    padding-right: 12px;
-    padding-left: 12px;
-  }
-
-  .decision-preview .exchange-bar {
-    grid-template-columns: 1fr;
-    gap: 1px;
-    margin-right: -12px;
-    margin-left: -12px;
-  }
-
-  .decision-preview .exchange-mainline,
-  .decision-preview .exchange-alpha {
-    padding: 9px 12px 10px;
-    font-size: 14px;
-  }
-
-  .decision-preview .exchange-mainline {
-    grid-column: auto;
-  }
-
-  .decision-preview .exchange-mainline h4,
-  .decision-preview .exchange-alpha h4 {
-    margin: 0 0 3px;
-    font-size: 14px;
-  }
-
-  .decision-preview .exchange-source {
-    padding-right: 12px;
-    padding-left: 12px;
-  }
-
-  .decision-preview .signal-strip {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 4px;
-  }
-
-  .decision-preview .signal-item:last-child { grid-column: auto; }
-
-  .decision-preview .signal-item {
-    min-height: 38px;
-    padding: 6px 4px;
-    overflow: hidden;
-  }
-
-  .decision-preview .signal-label {
-    font-size: 9px;
-    line-height: 1.15;
-  }
-
-  .decision-preview .signal-value {
-    overflow: hidden;
-    font-size: 9.5px;
-    line-height: 1.15;
-    text-overflow: clip;
-  }
-
-  .decision-preview .opportunity-stream {
-    margin-right: -12px;
-    margin-left: -12px;
-  }
-
-  .decision-preview .opportunity-row {
-    padding-right: 12px;
-    padding-left: 12px;
-  }
-
-  .decision-preview .full-detail-content {
-    padding: 0;
-  }
-
-  .decision-preview .table-wrap,
-  .decision-preview .section-summary {
-    margin-right: -12px !important;
-    margin-left: -12px !important;
-  }
-
-  .decision-preview .section-summary {
-    padding-right: 12px !important;
-    padding-left: 12px !important;
-  }
-
-  .decision-preview table {
-    min-width: 670px;
-  }
-
-  .decision-preview .data-table th,
-  .decision-preview .data-table td {
-    padding: 7px 7px;
-    font-size: 11px;
-  }
-
-  .decision-preview .data-table td:last-child {
-    padding-left: 10px;
-  }
-
-  .decision-preview .main-asset-table table,
-  .decision-preview .theme-asset-table table,
-  .decision-preview .stock-decision-table table {
-    min-width: 780px;
-  }
-
-  .decision-preview .main-asset-table th:nth-child(n+3):nth-child(-n+5),
-  .decision-preview .main-asset-table td:nth-child(n+3):nth-child(-n+5),
-  .decision-preview .theme-asset-table th:nth-child(n+3):nth-child(-n+5),
-  .decision-preview .theme-asset-table td:nth-child(n+3):nth-child(-n+5),
-  .decision-preview .stock-decision-table th:nth-child(n+3):nth-child(-n+5),
-  .decision-preview .stock-decision-table td:nth-child(n+3):nth-child(-n+5) {
-    padding-right: 4px;
-    padding-left: 4px;
-    font-size: 10px;
-  }
-
-  .decision-preview .etf-decision-table table,
-  .decision-preview .stable-decision-table table {
-    min-width: 760px;
-  }
-
-  .decision-preview .chain-decision-table table {
-    min-width: 720px;
-  }
-
-  .decision-preview .chain-decision-table .chain-col { width: 10%; }
-  .decision-preview .chain-decision-table .tvl-col { width: 13%; }
-  .decision-preview .chain-decision-table .trend-col { width: 12%; }
-  .decision-preview .chain-decision-table .judge-col { width: 41%; }
-
-  .decision-preview .main-asset-table .asset-col,
-  .decision-preview .theme-asset-table .asset-col,
-  .decision-preview .stock-decision-table .asset-col { width: 8%; }
-
-  .decision-preview .main-asset-table .price-col,
-  .decision-preview .theme-asset-table .price-col,
-  .decision-preview .stock-decision-table .price-col { width: 11%; }
-
-  .decision-preview .main-asset-table .change-col,
-  .decision-preview .theme-asset-table .change-col,
-  .decision-preview .stock-decision-table .change-col { width: 8%; }
-
-  .decision-preview .main-asset-table .cap-col,
-  .decision-preview .theme-asset-table .cap-col,
-  .decision-preview .stock-decision-table .cap-col { width: 10%; }
-
-  .decision-preview .main-asset-table .judge-col,
-  .decision-preview .theme-asset-table .judge-col,
-  .decision-preview .stock-decision-table .judge-col { width: 47%; }
 }
