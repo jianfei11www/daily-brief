@@ -406,7 +406,7 @@
   font-size: 16px;
 }
 
-/* Exchange bar: mainline full width, alphas balanced side-by-side */
+/* Exchange bar: mainline full width, alphas side-by-side left-aligned with balanced padding */
 .decision-preview .exchange-bar {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -439,16 +439,16 @@
 .decision-preview .exchange-robinhood-alpha,
 .decision-preview .exchange-binance-alpha {
   margin: 0;
-  padding: 14px 18px;
+  padding: 12px 20px;
   border: 0;
   border-radius: 0;
   background: rgba(255, 255, 255, 0.92);
-  text-align: center;
-  min-height: 72px;
+  text-align: left;
+  min-height: 64px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .decision-preview .exchange-robinhood-alpha {
@@ -458,14 +458,14 @@
 .decision-preview .exchange-mainline h4,
 .decision-preview .exchange-alpha h4,
 .decision-preview .exchange-block-title {
-  margin: 0 0 6px;
+  margin: 0 0 4px;
   padding: 0;
   border: 0;
   color: var(--preview-ink);
   font-size: 14px;
   font-weight: 700;
   line-height: 1.4;
-  text-align: center;
+  text-align: left;
 }
 
 .decision-preview .exchange-mainline p,
@@ -475,7 +475,7 @@
   margin: 0;
   padding: 0;
   line-height: 1.55;
-  text-align: center;
+  text-align: left;
 }
 
 .decision-preview .exchange-source {
