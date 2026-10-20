@@ -425,7 +425,8 @@
 }
 
 .decision-preview .exchange-mainline,
-.decision-preview .exchange-alpha {
+.decision-preview .exchange-alpha,
+.decision-preview .exchange-robinhood-alpha {
   margin: 0;
   padding: 10px 16px 11px;
   border: 0;
@@ -443,6 +444,10 @@
   min-width: 0;
 }
 
+.decision-preview .exchange-robinhood-alpha {
+  color: var(--preview-ink);
+}
+
 .decision-preview .exchange-mainline h4,
 .decision-preview .exchange-alpha h4 {
   margin: 0 0 4px;
@@ -454,7 +459,8 @@
 }
 
 .decision-preview .exchange-mainline p,
-.decision-preview .exchange-alpha p {
+.decision-preview .exchange-alpha p,
+.decision-preview .exchange-robinhood-alpha p {
   margin: 0;
   padding: 0;
   line-height: 1.55;
@@ -1080,7 +1086,8 @@
   }
 
   .decision-preview .exchange-mainline,
-  .decision-preview .exchange-alpha {
+  .decision-preview .exchange-alpha,
+  .decision-preview .exchange-robinhood-alpha {
     padding: 9px 12px 10px;
     font-size: 14px;
   }
